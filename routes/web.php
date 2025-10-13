@@ -6,4 +6,7 @@ use App\Http\Controllers\KanblueProfileController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/perfil',[KanblueProfileController::class,'profile']);
+Route::get('/editar',[KanblueProfileController::class,'profile']);
+Route::get('/proyecto',[KanblueProfileController::class,'proyect']);
+
+

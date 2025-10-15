@@ -20,10 +20,51 @@
       <h2 class="columnTitle">BACKLOG</h2>
       <img src="images/add_task.png" alt="Añadir tarea" width="30px" height="30px" class="d-inline-block align-text-center ms-2">
     </div>
-     <div class="taskList">
+    <div class="taskList">
       <div class="taskCard">
-        <h5 class="taskTitle">Tarea de ejemplo</h5>
-        <p class="taskDescription">Descripción de la tarea de ejemplo. Esta es una tarea que ha sido completada.</p>
+        <div class="taskHeader">
+          <h4>TAREA #1</h4>
+        </div>
+        <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
+        <p class="descTask">Descripción de tarea</p>
+        <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
+      <div class="taskDetails">
+        <a>
+          <img src="images/available_task.png" alt="Disponible" width="20px" height="20px" class="d-inline-block align-text-center me-1">
+           Disponible
+        </a>
+        <p class="tagRed">DOCUMENTACION</p>
+      </div>
+      </div>
+      <div class="taskCard">
+        <div class="taskHeader">
+          <h4>TAREA #1</h4>
+        </div>
+        <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
+        <p class="descTask">Descripción de tarea</p>
+        <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
+      <div class="taskDetails">
+        <a>
+          <img src="images/available_task.png" alt="Disponible" width="20px" height="20px" class="d-inline-block align-text-center me-1">
+           Disponible
+        </a>
+        <p>DOCUMENTACION</p>
+      </div>
+      </div>
+      <div class="taskCard">
+        <div class="taskHeader">
+          <h4>TAREA #1</h4>
+        </div>
+        <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
+        <p class="descTask">Descripción de tarea</p>
+        <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
+      <div class="taskDetails">
+        <a>
+           <img src="images/available_task.png" alt="Disponible" width="20px" height="20px" class="d-inline-block align-text-center me-1">
+           Disponible
+        </a>
+        <p class="tagRed">DOCUMENTACION</p>
+      </div>
       </div>
     </div>
   </div>
@@ -32,17 +73,26 @@
       <h2 class="columnTitle">TODO</h2>
       <img src="images/add_task.png" alt="Añadir tarea" width="30px" height="30px" class="d-inline-block align-text-center ms-2">
     </div>
+     <div class="taskList">
+      
+    </div>
   </div>
   <div class="column">
     <div class="d-flex align-items-center"> 
       <h2 class="columnTitle">IN PROGRESS</h2>
       <img src="images/add_task.png" alt="Añadir tarea" width="30px" height="30px" class="d-inline-block align-text-center ms-2">
     </div>
+     <div class="taskList">
+      
+    </div>
   </div>
   <div class="column">
     <div class="d-flex align-items-center"> 
       <h2 class="columnTitle">DONE</h2>
       <img src="images/add_task.png" alt="Añadir tarea" width="30px" height="30px" class="d-inline-block align-text-center ms-2">
+    </div>
+     <div class="taskList">
+      
     </div>
   </div>
 </div>

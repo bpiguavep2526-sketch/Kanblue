@@ -2,8 +2,8 @@
 
 @section('navbar')
   <div class="d-flex align-items-center ms-auto">
-    <span class="text-white small me-3" style="font-family: 'Poppins', sans-serif; font-weight: 300;">PROYECTO #45</span>
-    <div class="vr text-white me-3" style="height: 20px;"></div>
+    <span class="text-white small me-3" style="font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 20px">PROYECTO #45</span>
+    <div class="vr text-white me-3" style="height: 50px;"></div>
     <a href="" >    
       <img src="images/return.png.png" alt="Volver" width="30" height="30">
     </a>
@@ -44,11 +44,11 @@
         <p class="descTask">Descripción de tarea</p>
         <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
       <div class="taskDetails">
-        <a>
-          <img src="images/available_task.png" alt="Disponible" width="20px" height="20px" class="d-inline-block align-text-center me-1">
-           Disponible
+        <a font-family: Poppins;>
+          <img src="images/asigned_task.png" alt="Asignado a" width="20px" height="20px" class="d-inline-block align-text-center me-1">
+           Usuario #45
         </a>
-        <p>DOCUMENTACION</p>
+        <p class="tagRed">DOCUMENTACION</p>
       </div>
       </div>
       <div class="taskCard">

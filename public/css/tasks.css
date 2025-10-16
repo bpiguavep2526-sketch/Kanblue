@@ -36,9 +36,6 @@
     overflow-y: auto;
 }
 
-.taskList::-webkit-scrollbar {
-    display: none; 
-}
 
 /** Tarjeta de tareas**/
 

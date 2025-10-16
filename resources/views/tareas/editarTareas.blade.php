@@ -20,38 +20,36 @@
                             <form>
                                 <fieldset>
                                     <legend>TAREA #2</legend>
-                                    <div class="mb-3">
+                                    <div class="mb-3 my-custom-style">
                                         <label for="disabledSelect" class="form-label">Asignado a: </label>
-                                        <select id="disabledSelect" class="form-select" holder="Usuario #32">
+                                        <select id="disabledSelect" class="form-select center-form" holder="Usuario #32">
                                             <option>Disabled select</option>
                                         </select>
                                     </div>
-                                    <div class="mb-3">
+                                    <div class="mb-3 my-custom-style">
                                         <label for="disabledSelect" class="form-label">Tipo de tarea: </label>
-                                        <select id="disabledSelect" class="form-select" holder="Usuario #32">
+                                        <select id="disabledSelect" class="form-select center-form-one" holder="Usuario #32">
                                             <option style="background-color: #F0E73D">Diseño</option>
                                             <option style="background-color: #7CA3F7">Desarrollo Web</option>
                                             <option style="background-color: #5BF778">Configuración</option>
                                             <option style="background-color: #EF6B54">Documentacion</option>
                                         </select>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+                                    <div class="mb-3 my-custom-style">
+                                        <label for="exampleFormControlTextarea1" class="form-label center-form-label">Descripción</label>
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Escribe aquí...."></textarea>
                                     </div>
-                                    <div class="mb-3">
+                                    <div class="mb-3 my-custom-style">
                                         <label for="disabledSelect" class="form-label">Estado</label>
-                                        <select id="disabledSelect" class="form-select" holder="TODO">
+                                        <select id="disabledSelect" class="form-select center-form-two" holder="TODO">
                                             <option>Todo</option>
                                             <option>Acabado</option>
                                             <option>En Progreso</option>
                                         </select>
                                     </div>
-                                    <div class="mb-3">
-                                        <button type="submit" class="btn btn-danger">ELIMINAR</button>
-                                    </div>
-                                    <div class="mb-3">
+                                    <div class="mb-3 my-custom-style">
                                         <button type="submit" class="btn btn-primary">EDITAR</button>
+                                        <button type="submit" class="btn btn-danger">ELIMINAR</button>
                                     </div>
                                 </fieldset>
                             </form>

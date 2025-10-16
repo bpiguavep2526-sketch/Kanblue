@@ -1,0 +1,31 @@
+.btn-primary {
+    background-color: #018AB0 !important;
+    border-color: #018AB0 !important;
+}
+
+.btn-primary:hover {
+    background-color: #016a8c !important;
+    border-color: #016a8c !important;
+}
+
+.form-control {
+    border-color: #018AB0 !important;
+}
+
+a {
+    color: #018AB0;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #016a8c;
+    text-decoration: underline;
+}
+
+.logo-login img {
+    width: 350px;   
+}
+
+.logo-login {
+    margin-bottom: -100px; 
+}

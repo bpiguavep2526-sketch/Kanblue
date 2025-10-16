@@ -6,4 +6,10 @@ use App\Http\Controllers\KanblueProfileController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/perfil',[KanblueProfileController::class,'profile']);
+
+Route::get('/Login', [KanblueProfileController::class, 'profile']);
+
+// NUEVA RUTA PARA REGISTRO
+Route::get('/Registro', function () {
+    return view('kanblueRegistro'); // Aquí va tu blade
+});

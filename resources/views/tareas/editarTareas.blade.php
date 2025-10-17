@@ -1,5 +1,7 @@
 @extends('templates.base')
 
+@section('title', 'Editar Tareas')
+
 @section('navbar')
   <div class="d-flex align-items-center ms-auto">
     <span class="text-white small me-3" style="font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 20px">PROYECTO #45</span>
@@ -12,23 +14,7 @@
 
 @section('content')
 
-
-
-@endsection
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ asset('../resources/css/editarTareas.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Editar tarea</title>
-</head>
-<body>
-    <div class="card" style="width: 89rem; background-color: #457582;">
+<div class="card" style="width: 89rem; background-color: #457582;">
         <div class="card-body">
             <div class="card" style="width: 86rem; background-color: #79AAB7;">
                 <div class="card-body">
@@ -74,5 +60,5 @@
         </div>
     </div>
     <img src="{{ asset('img/formasGeometricas.png') }}" alt="Formas geométricas" class="img-esquina" width="200" height="200">
-</body>
-</html>
+
+@endsection

@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="{{ asset('css/tasks.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/editarTareas.css') }}">
     
+    <link rel="stylesheet" href="{{ asset('css/tasks.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/perfil.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/editar.css') }}">
+
 
     </script>
 </head>

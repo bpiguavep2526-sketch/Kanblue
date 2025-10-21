@@ -1,4 +1,4 @@
-.btn-logout {
+.mybutton {
   background: #f39c12;
   color: #000000;
   font-weight: 600;
@@ -9,16 +9,11 @@
   transition: background 0.3s;
 }
 
-.btn-logout:hover {
-  background: #e67e22;
-}
-
 body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f4;
-  
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -46,22 +41,57 @@ body {
   border-radius: 35px;
   box-shadow: 0 0 30px rgba(0,0,0,0.5);
   border-right: 12px solid #176F9E;
-  background: #e6f1f5;
+  background: #EDEDED;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 /* ===== Tarjeta ===== */
-.card {
-  width: 100%;          /* mismo tamaño */
-  height: 100%;
-  background: #1b1b1b;
-  border-radius: 0 0 30px 30px;
-  color: #fff;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
+.card-custom {
+   width: 100%;           /* ocupa todo el ancho del container-layer */
+  height: 100%;          /* ocupa toda la altura del container-layer */
+     /* fondo oscuro, puedes cambiarlo */
+  border-radius: 35px;    /* casi igual que container-layer */
+  padding: 20px;
+  box-sizing: border-box; /* para que el padding no afecte el tamaño total */
+  overflow: hidden;     
   justify-content: center;
   align-items: center;
+
+}
+
+.form-card {
+  margin-top: 5%; 
+  width: 100%;      
+  height: 100%;       
+  padding: 20px;      
+  box-sizing: border-box; 
+  overflow-y: auto;   
+
+
+}
+.form-card label {
+    font-size: 1.1rem; 
+    font-weight: 500; 
+    font-family: poppins, sans-serif; 
+}
+.uniform-input {
+  font-size: 1.2rem;
+  padding: 15px;
+  height: 50px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.perfil-title {
+  font-family: 'Inter', sans-serif;  
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/* Header */
+.perfil-header {
+  margin-bottom: 30px;
+  border-bottom: 2px solid #ccc;  
+  padding-bottom: 10px;
 }

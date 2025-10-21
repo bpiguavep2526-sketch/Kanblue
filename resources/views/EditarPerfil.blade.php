@@ -15,41 +15,48 @@
          <div class="card-custom">
           <div class="perfil-header d-flex align-items-center justify-content-between mb-4">
             <h5 class="perfil-title m-0 flex-fill text-center">INFORMACIÓN DEL PERFIL</h5>
-              <button class="btn-logout">CERRAR SESIÓN</button>
+              <button class="btn-logout mybutton">CERRAR SESIÓN</button>
           </div>
-           <form>
-
-         <div class="mb-3 row align-items-center">
+        
+           <form class="form-card">
+  <!-- Correo electrónico -->
+  <div class="mb-5 row align-items-center">
     <label class="col-md-3 col-form-label d-flex align-items-center">
-        <img src="{{ asset('assets/correo.png') }}" alt="icono correo" class="me-2" style="width:22px; height:22px;">
-        Correo electrónico
+      <img src="{{ asset('images/correo.png') }}" alt="icono correo" class="me-2" style="width:22px; height:22px;">
+      Correo electrónico
     </label>
     <div class="col-md-9">
-        <input type="email" class="form-control" style="font-size:1.2rem; padding:15px;">
-    </div>
-</div>
-<div class="mb-3 row">
-    <label for="inputUsuario" class="col-sm-2 col-form-label">Usuario</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputUsuario" >
+      <input type="email" class="form-control uniform-input" >
     </div>
   </div>
-
-<div class="mb-3 row">
-  <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña</label>
-  <div class="col-sm-10">
-    <input type="password" class="form-control" id="inputPassword">
-  </div>
-</div>
-<div class="mb-3 row">
-    <label for="inputConfirmPassword" class="col-sm-2 col-form-label">Confirmar contraseña</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputConfirmPassword">
+  <!-- Usuario -->
+  <div class="mb-5 row align-items-center">
+    <label for="inputUsuario" class="col-md-3 col-form-label">
+       <img src="{{ asset('images/avatar.png') }}" alt="icono correo" class="me-2" style="width:22px; height:22px;">
+      Usuario</label>
+    <div class="col-md-9">
+      <input type="text" class="form-control uniform-input" id="inputUsuario">
     </div>
   </div>
-
-</form>
-        
+  <!-- Contraseña -->
+  <div class="mb-5 row align-items-center">
+    <label for="inputPassword" class="col-md-3 col-form-label">
+      <img src="{{ asset('images/bloquear.png') }}" alt="icono correo" class="me-2" style="width:22px; height:22px;">
+      Contraseña</label>
+    <div class="col-md-9">
+      <input type="password" class="form-control uniform-input" id="inputPassword" >
+    </div>
+  </div>
+  <!-- Confirmar contraseña -->
+  <div class="mb-5 row align-items-center">
+    <label for="inputConfirmPassword" class="col-md-3 col-form-label">
+      <img src="{{ asset('images/aprobar.png') }}" alt="icono correo" class="me-2" style="width:22px; height:22px;">
+      Confirmar contraseña</label>
+    <div class="col-md-9">
+      <input type="password" class="form-control uniform-input" id="inputConfirmPassword">
+    </div>
+  </div>
+</form> 
       </div>
     </div>
   </div>

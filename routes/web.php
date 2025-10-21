@@ -8,7 +8,7 @@ use App\Http\Controllers\TareasController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/editarperfil',[KanblueProfileController::class,'profile']);
+Route::get('/editarperfil',[KanblueProfileController::class,'editarperfil']);
 Route::get('/editarTarea',[TareasController::class,'index']);
 Route::get('/proyecto',[KanblueProfileController::class,'proyect']);
 Route::get('/Login', [KanblueProfileController::class, 'profile']);

@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Editar Proyecto</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('css/editar.css') }}">
+@extends('templates.base')
 
-</head>
-<body> 
+@section('navbar')
+  <div class="d-flex align-items-center ms-auto">
+    <span class="text-white small me-3" style="font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 20px">PROYECTO #45</span>
+    <div class="vr text-white me-3" style="height: 50px;"></div>
+    <a href="" >    
+      <img src="images/return.png.png" alt="Volver" width="30" height="30">
+    </a>
+  </div>
+@endsection
+
+@section('content')
   <div class="container-box">
   <div class="container-layer">
     <div class="card-custom">
@@ -36,6 +38,6 @@
     </div>
   </div>
   </div>
+@endsection
 
-</body>
-</html>
+

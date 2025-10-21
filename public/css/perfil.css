@@ -1,46 +1,67 @@
-body {
-      background: #ffffff;
-      font-family: 'Poppins', sans-serif;
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 30px;
-    }
-
-    /* ===== capa externa: "carpeta" o marco ===== */
-    .container-layer {
-      border-radius: 30px;
-     box-shadow: 0 0 25px rgba(0,0,0,0.6);
-    border-right: 10px solid #176F9E;
-    overflow: hidden;
-    }
-
-    /* ===== caja interna: la tarjeta principal ===== */
-    .container-box {
-      width: 100%;
-      max-width: 680px;
-      background: linear-gradient(to bottom right, #e8f0f8, #d2e1f3);
-       border-radius: 35px;
-       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-       border-right: 10px solid #79AAB7;
-       overflow: hidden;
-    }
-
-    .card-custom {
-      background: #ffffff;
-      border-radius: 0 0 20px 20px;
-      padding: 36px 30px;
-      color: #000;
-      position: relative;
-    }
-
-  .btn-logoutt {
+.btn-logout {
   background: #f39c12;
-  border: none;
-  color: #fff;
+  color: #000000;
   font-weight: 600;
   border-radius: 20px;
-  padding: 5px 15px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-logout:hover {
+  background: #e67e22;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ===== Caja principal ===== */
+.container-box {
+  width: 90%;           /* más ancho */
+  max-width: 1400px;    /* límite máximo */
+  height: 85vh;         /* más alto */
+  border-radius: 40px;
+  box-shadow: 0 8px 35px rgba(0,0,0,0.3);
+  border-right: 12px solid #79AAB7;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== Capa interna ===== */
+.container-layer {
+  width: 100%;          /* mismo tamaño que .container-box */
+  height: 100%;
+  border-radius: 35px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  border-right: 12px solid #176F9E;
+  background: #e6f1f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== Tarjeta ===== */
+.card {
+  width: 100%;          /* mismo tamaño */
+  height: 100%;
+  background: #1b1b1b;
+  border-radius: 0 0 30px 30px;
+  color: #fff;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

@@ -10,6 +10,4 @@ Route::get('/', function () {
 Route::get('/editar',[KanblueProfileController::class,'profile']);
 Route::get('/proyecto',[KanblueProfileController::class,'proyect']);
 
-
-
 Route::get('/tasks', [TaskController::class, 'index']);

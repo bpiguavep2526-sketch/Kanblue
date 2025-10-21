@@ -2,9 +2,24 @@
     position: fixed;
     bottom: 0;
     right: 0;
-    width: 800px;
-    height: auto;
+    width: 50%;
+    height: 55%;
     z-index: -1;
+}
+
+.ultimacarta {
+  width: 90rem !important;
+  background-color: #457582 !important;
+}
+
+.segundacarta {
+  width: 86rem;
+  background-color: #79AAB7;
+}
+
+.primeracarta {
+  width: 84rem;
+  background-color: #EDEDED;
 }
 
 .my-custom-style {

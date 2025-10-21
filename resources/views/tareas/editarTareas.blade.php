@@ -14,11 +14,11 @@
 
 @section('content')
 
-<div class="card" style="width: 89rem; background-color: #457582;">
+<div class="card ultimacarta">
         <div class="card-body">
-            <div class="card" style="width: 86rem; background-color: #79AAB7;">
+            <div class="card segundacarta">
                 <div class="card-body">
-                    <div class="card" style="width: 84rem; background-color: #EDEDED;">
+                    <div class="card primeracarta">
                         <div class="card-body">
                             <form>
                                 <fieldset>

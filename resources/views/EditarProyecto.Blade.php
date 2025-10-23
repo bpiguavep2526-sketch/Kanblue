@@ -11,16 +11,16 @@
 @endsection
 
 @section('content')
+<main class="main-editarperfil">
   <div class="container-box">
   <div class="container-layer">
     <div class="card-custom">
       <form>
         <div class="mb-9">
-          <label class="form-label">Escribe el nombre del proyecto...</label>
-          <input type="text" class="form-control" placeholder="Nombre del proyecto">
+          <input type="text" class="form-control" placeholder=" Escribe el nombre del proyecto">
         </div>
 
-        <div class="mb-3">
+        <div class="mb-5 row align-items-center">
           <label class="form-label">Añade descripción</label>
           <textarea class="form-control" rows="3" placeholder="Describe el proyecto..."></textarea>
         </div>
@@ -38,6 +38,7 @@
     </div>
   </div>
   </div>
+</main>
 @endsection
 
 

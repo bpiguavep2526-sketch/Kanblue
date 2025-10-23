@@ -1,0 +1,26 @@
+/* Botones */
+.btn-primary {
+    background-color: #018AB0 !important;
+    border-color: #018AB0 !important;
+}
+
+.btn-primary:hover {
+    background-color: #016a8c !important;
+    border-color: #016a8c !important;
+}
+
+/* Borde de inputs */
+.form-control {
+    border-color: #018AB0 !important;
+}
+
+/* Enlaces */
+a {
+    color: #018AB0;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #016a8c;
+    text-decoration: underline;
+}

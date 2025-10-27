@@ -1,0 +1,54 @@
+.img-esquina {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 55%;
+    z-index: -1;
+}
+
+.ultimacarta {
+  width: 90rem !important;
+  background-color: #457582 !important;
+}
+
+.segundacarta {
+  width: 86rem;
+  background-color: #79AAB7;
+}
+
+.primeracarta {
+  width: 84rem;
+  background-color: #EDEDED;
+}
+
+.my-custom-style {
+    display: flex;
+}
+
+.form-select{
+    width: 45% !important;
+    margin-right: 5%;
+}
+
+.center-form{
+    margin-left: 5%;
+}
+
+.center-form-one{
+    margin-left: 4%;
+}
+
+.center-form-two{
+    margin-left: 7.8%;
+}
+
+.form-control{
+    width: 80% !important;
+    margin-left: 1%;
+}
+
+.center-form-label {
+    margin-right: 4%;
+    margin-top: 6%;
+}

@@ -44,6 +44,7 @@
 /** Tarjeta de tareas**/
 
 .taskCard {
+  user-select: none;
   background-color: #EDEDED; 
   border-radius: 20px; 
   border-style: solid;

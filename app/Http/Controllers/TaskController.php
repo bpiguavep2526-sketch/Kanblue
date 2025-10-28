@@ -11,6 +11,7 @@ class TaskController extends Controller
      */
     public function index()
     {
+        
         return view('tasks.taskscreen');
     }
 
@@ -60,5 +61,15 @@ class TaskController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function updateStatus(Request $request, string $id)
+    {
+        $status = $request->input('status');
+
+        $task = Task::where('id', $id)->first();
+
+        $task->status = $status;
+        $task->save();
     }
 }

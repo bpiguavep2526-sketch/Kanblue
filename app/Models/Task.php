@@ -2,12 +2,55 @@
 
 namespace App\Models;
 
+use App\Models\Tipus;
+use App\Models\Status;
+use App\Models\Project;
+use App\Models\Usuaris;
 use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-    protected $table = 'usuaris';
-    protected $timestamps = false;
+    protected $table = 'TAREAS';
+    protected $primaryKey = 'id_tareas';
+    public $timestamps = false;
 
-    
+    /**
+     * Get the Project that owns the Task
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function Project(): BelongsTo
+    {
+        return $this->belongsTo(Project::class, 'id_proyectos');
+    }
+
+    /**
+     * Get the Tipus that owns the Task
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function Tipus(): BelongsTo
+    {
+        return $this->belongsTo(Tipus::class, 'id_tipus');
+    }
+
+    /**
+     * Get the Usuaris that owns the Task
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function Usuaris(): BelongsTo
+    {
+        return $this->belongsTo(Usuaris::class, 'id_usuario');
+    }
+
+    /**
+     * Get the Status that owns the Task
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function Status(): BelongsTo
+    {
+        return $this->belongsTo(Status::class, 'id_estado');
+    }
 }

@@ -8,18 +8,36 @@
 }
 
 .ultimacarta {
-  width: 90rem !important;
+  width: 92rem !important;
+  height: 50.7rem;
   background-color: #457582 !important;
+  margin-top: 3%;
+  margin-left: 2%;
+  border-left-width: 0px;
+  border-top-width: 0px;
+  border-color: #176F9E;
+
 }
 
 .segundacarta {
-  width: 86rem;
+  width: 91rem;
+  height: 102.2%;
   background-color: #79AAB7;
+  border-left-width: 0px;
+  border-top-width: 0px;
+  border-color: #176F9E;
+
 }
 
 .primeracarta {
-  width: 84rem;
+  width: 90rem;
+  height: 102.1%;
   background-color: #EDEDED;
+  border-color: #176F9E;
+}
+
+.ultimacardbody{
+    padding: 0px 0px 16px 0px;
 }
 
 .my-custom-style {

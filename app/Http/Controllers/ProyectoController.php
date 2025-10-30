@@ -28,11 +28,7 @@ class ProyectoController extends Controller
      */
     public function store(Request $request)
     {
-        $proyectos = session ('proyectos', []);
-        $proyectos = new Cicle($request->input('nombre'), $request->input('descripcion'), $request->input('fechaInicio'), $request->input('fechaFin'));
-        $proyectos[] = $proyectos;
-        session(['proyectos' => $proyectos]);
-        return redirect()->route('tasks');
+       
     }
 
     /**

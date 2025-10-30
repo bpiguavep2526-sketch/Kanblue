@@ -6,7 +6,7 @@
   <div class="d-flex align-items-center ms-auto">
     <span class="text-white small me-3" style="font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 20px">PROYECTO #42378 | TAREA #2</span>
     <div class="vr text-white me-3" style="height: 50px;"></div>
-    <a href="" >    
+    <a href="" >
       <button type="button" class="btn btn-light btnstyle borderizq"><img src="{{ asset('images/salvar.png') }}" alt="Volver" width="30" height="30"></button>
     </a>
     <a href="">

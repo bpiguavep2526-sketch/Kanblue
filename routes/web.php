@@ -9,17 +9,18 @@ use App\Http\Controllers\ProyectoController;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/editarperfil',[KanblueProfileController::class,'editarperfil']);
 Route::get('/editarTarea',[TareasController::class,'index']);
 Route::get('/proyecto',[KanblueProfileController::class,'proyect']);
+
 Route::get('/Login', [KanblueProfileController::class, 'profile']);
+Route::post('/Login', [KanblueProfileController::class, 'login']);
 
-
-// NUEVA RUTA PARA REGISTRO
 Route::get('/Registro', function () {   
-    return view('kanblueRegistro'); // Aquí va tu blade
+    return view('kanblueRegistro');
 });
+
 Route::get('/tasks', [TaskController::class, 'index']);
 
 Route::resource('proyectos', ProyectoController::class);
-

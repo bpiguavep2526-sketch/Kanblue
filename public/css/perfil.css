@@ -8,15 +8,7 @@
   cursor: pointer;
   transition: background 0.3s;
 }
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+
 /* ===== Caja principal ===== */
 .container-box {
   width: 90%;           /* más ancho */

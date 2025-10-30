@@ -11,7 +11,7 @@ Route::get('/', function () {
 });
 
 Route::get('/editarperfil',[KanblueProfileController::class,'editarperfil']);
-Route::get('/editarTarea',[TareasController::class,'index']);
+Route::get('/editarTarea',[TareasController::class,'index']) ->name('editarTarea');
 Route::get('/proyecto',[KanblueProfileController::class,'proyect']);
 
 Route::get('/Login', [KanblueProfileController::class, 'profile']);

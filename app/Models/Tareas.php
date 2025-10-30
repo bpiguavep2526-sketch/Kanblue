@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tareas extends Model
 {
-    /** @use HasFactory<\Database\Factories\TareasFactory> */
-    use HasFactory;
+   protected $table = 'TAREAS';
+   public $timestamps = false;
 }

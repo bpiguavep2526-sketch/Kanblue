@@ -7,7 +7,7 @@
     <span class="text-white small me-3" style="font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 20px">PROYECTO #45</span>
     <div class="vr text-white me-3" style="height: 50px;"></div>
     <a href="" >    
-      <img src="images/return.png.png" alt="Volver" width="30" height="30">
+      <img src="images/return.png.png" alt="Volver" width="30" height="30">s
     </a>
   </div>
 @endsection

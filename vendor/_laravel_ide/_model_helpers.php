@@ -5,6 +5,20 @@ namespace App\Models {
     /**
      * App\Models\Tareas
      *
+     * @property int $id_usuario
+     * @property int $id_tipus
+     * @property int $id_proyectos
+     * @property int $id_estado
+     * @property string $fecha
+     * @property string $titulo
+     * @property int $id_tareas
+     * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas whereIdTareas($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas whereTitulo($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas whereFecha($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas whereIdEstado($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas whereIdProyectos($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas whereIdTipus($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas whereIdUsuario($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas query()
@@ -310,11 +324,11 @@ namespace App\Models {
      *
      * @property \Illuminate\Support\Carbon|null $updated_at
      * @property \Illuminate\Support\Carbon|null $created_at
-     * @property string|null $remember_token
+     * @property mixed $remember_token
      * @property string $password
      * @property \Illuminate\Support\Carbon|null $email_verified_at
-     * @property string $email
-     * @property string $name
+     * @property mixed $email
+     * @property mixed $name
      * @property int $id
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
      * @property-read int|null $notifications_count

@@ -12,7 +12,9 @@
 
 @section('content') 
 <div class="d-flex justify-content-end p-2">
-  <button class="btnOg" style="margin-right: 20px; margin-top: 10px" >NUEVA TAREA</button>
+  <a href="{{ route('editarTarea') }}" class="btnOg" style="margin-right: 20px; margin-top: 10px; display:inline-block; text-decoration:none; text-align:center;">
+  NUEVA TAREA
+</a>
 </div>
 <div class="kanbanTable">
   <div class="column">
@@ -96,4 +98,8 @@
     </div>
   </div>
 </div>
+@endsection
+
+@section('scripts')
+  <script src="{{ asset('public/js/Tareas.js') }}"></script>
 @endsection

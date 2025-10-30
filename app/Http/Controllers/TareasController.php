@@ -13,7 +13,7 @@ class TareasController extends Controller
      */
     public function index()
     {
-        return view('tareas.editarTareas');
+        return view('tasks.editartareas');
     }
 
     /**

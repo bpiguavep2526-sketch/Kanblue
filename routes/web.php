@@ -17,10 +17,12 @@ Route::get('/proyecto',[KanblueProfileController::class,'proyect']);
 Route::get('/Login', [KanblueProfileController::class, 'profile']);
 Route::post('/Login', [KanblueProfileController::class, 'login']);
 
+
 Route::get('/Registro', function () {   
     return view('kanblueRegistro');
 });
 
 Route::get('/tasks', [TaskController::class, 'index']);
 
+Route::put('/updateStatus/{taskId}', [TaskController::class, 'updateStatus']);
 Route::resource('proyectos', ProyectoController::class);

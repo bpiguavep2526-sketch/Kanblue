@@ -15,11 +15,11 @@
 @section('content')
 
 <div class="card ultimacarta">
-        <div class="card-body">
+        <div class="card-body ultimacardbody">
             <div class="card segundacarta">
-                <div class="card-body">
+                <div class="card-body ultimacardbody">
                     <div class="card primeracarta">
-                        <div class="card-body">
+                        <div class="card-body ultimacardbody">
                             <form>
                                 <fieldset>
                                     <legend>TAREA #2</legend>
@@ -50,7 +50,12 @@
                                             <option>En Progreso</option>
                                         </select>
                                     </div>
+                                    <div class="mb-3 my-custom-style">
+                                        <img src="{{ asset('images/borrar2.png') }}" alt="">
+                                        <label for="disabledSelect" class="form-label">Borrar Tarea</label>
+                                        <label for="disabledSelect" class="form-label"></label>
                                         <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                                    </div>
                                 </fieldset>
                             </form>
                         </div>
@@ -59,6 +64,6 @@
             </div>
         </div>
     </div>
-    <img src="{{ asset('img/formasGeometricas.png') }}" alt="Formas geométricas" class="img-esquina" width="200" height="200">
+    <img src="{{ asset('images/formasGeometricas.png') }}" alt="Formas geométricas" class="img-esquina" width="200" height="200">
 
 @endsection

@@ -11,18 +11,12 @@
     </div>
 @endsection
 
-@section('content') 
+@section('content')
 <div class="d-flex justify-content-end p-2">
   <a href="{{ route('editarTarea') }}" class="btnOg" style="margin-right: 20px; margin-top: 10px; display:inline-block; text-decoration:none; text-align:center;">
   NUEVA TAREA
 </a>
 </div>
-<div class="kanbanTable">
-  <div class="column">
-    <div class="d-flex align-items-center"> 
-      <h2 class="columnTitle">BACKLOG</h2>
-      <img src="images/add_task.png" alt="Añadir tarea" width="30px" height="30px" class="d-inline-block align-text-center ms-2">
-    </div>
     <div class="kanbanTable">
         <div class="column">
             <div class="d-flex align-items-center">
@@ -183,8 +177,4 @@
         <script src="js/tasks/tasks.js"></script>
 
     </div>
-@endsection
-
-@section('scripts')
-  <script src="{{ asset('public/js/Tareas.js') }}"></script>
 @endsection

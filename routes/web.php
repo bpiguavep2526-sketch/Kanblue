@@ -13,10 +13,10 @@ Route::get('/editarTarea',[TareasController::class,'index']);
 
 Route::get('/Login', [KanblueProfileController::class, 'profile']);
 
-// NUEVA RUTA PARA REGISTRO
 Route::get('/Registro', function () {
-    return view('kanblueRegistro'); // Aquí va tu blade
+    return view('kanblueRegistro'); 
 });
+
 Route::get('/tasks', [TaskController::class, 'index']);
 
 Route::put('/updateStatus/{taskId}', [TaskController::class, 'updateStatus']);

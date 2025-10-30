@@ -13,6 +13,6 @@ class Usuari extends Authenticatable
     //
     protected $table ='USUARIO';
     public $timestamps = false;
-        protected $fillable = ['username', 'password']; // <-- Añade esto
+        protected $fillable = ['username', 'password'];
 
 }

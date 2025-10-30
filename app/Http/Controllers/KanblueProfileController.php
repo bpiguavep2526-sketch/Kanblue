@@ -13,7 +13,7 @@ class KanblueProfileController extends Controller
         $usuario = Usuari::where('username', $request->input('username'))->first();
 
         if ($usuario && Hash::check($request->input('password'), $usuario->password)) {
-            return redirect('/')->with('success', 'Bienvenido bro 👍');
+            return redirect('/public')->with('success');
         } else {
             return back()->withInput()->with('error', 'Usuario o contraseña incorrecta');
         }

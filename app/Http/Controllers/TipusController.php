@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tipus;
 use Illuminate\Http\Request;
 
-class TaskController extends Controller
+class TipusController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        
-        return view('tasks.taskscreen');
+        //
     }
 
     /**
@@ -34,7 +34,7 @@ class TaskController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Tipus $tipus)
     {
         //
     }
@@ -42,7 +42,7 @@ class TaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Tipus $tipus)
     {
         //
     }
@@ -50,7 +50,7 @@ class TaskController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Tipus $tipus)
     {
         //
     }
@@ -58,18 +58,8 @@ class TaskController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Tipus $tipus)
     {
         //
-    }
-
-    public function updateStatus(Request $request, string $id)
-    {
-        $status = $request->input('status');
-
-        $task = Task::where('id', $id)->first();
-
-        $task->status = $status;
-        $task->save();
     }
 }

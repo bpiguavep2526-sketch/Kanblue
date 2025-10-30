@@ -15,11 +15,11 @@ Route::get('/proyecto',[KanblueProfileController::class,'proyect']);
 Route::get('/Login', [KanblueProfileController::class, 'profile']);
 
 
-// NUEVA RUTA PARA REGISTRO
 Route::get('/Registro', function () {   
-    return view('kanblueRegistro'); // Aquí va tu blade
+    return view('kanblueRegistro');
 });
-Route::resource('/tasks', TaskController::class,);
+Route::get('/tasks', [TaskController::class, 'index']);
 
+Route::put('/updateStatus/{taskId}', [TaskController::class, 'updateStatus']);
 Route::resource('proyectos', ProyectoController::class);
 

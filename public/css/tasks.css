@@ -210,3 +210,17 @@
     from { opacity: 1; }
     to { opacity: 0;}
   }
+
+  
+.tagYellow{
+  margin: 8px 0 0 0;
+  background: #F2D479;
+  border-radius: 20px;
+  padding: 7px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+    
+
+    
+    

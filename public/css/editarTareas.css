@@ -1,0 +1,72 @@
+.img-esquina {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 55%;
+    z-index: -1;
+}
+
+.ultimacarta {
+  width: 92rem !important;
+  height: 50.7rem;
+  background-color: #457582 !important;
+  margin-top: 3%;
+  margin-left: 2%;
+  border-left-width: 0px;
+  border-top-width: 0px;
+  border-color: #176F9E;
+
+}
+
+.segundacarta {
+  width: 91rem;
+  height: 102.2%;
+  background-color: #79AAB7;
+  border-left-width: 0px;
+  border-top-width: 0px;
+  border-color: #176F9E;
+
+}
+
+.primeracarta {
+  width: 90rem;
+  height: 102.1%;
+  background-color: #EDEDED;
+  border-color: #176F9E;
+}
+
+.ultimacardbody{
+    padding: 0px 0px 16px 0px;
+}
+
+.my-custom-style {
+    display: flex;
+}
+
+.form-select{
+    width: 45% !important;
+    margin-right: 5%;
+}
+
+.center-form{
+    margin-left: 5%;
+}
+
+.center-form-one{
+    margin-left: 4%;
+}
+
+.center-form-two{
+    margin-left: 7.8%;
+}
+
+.form-control{
+    width: 80% !important;
+    margin-left: 1%;
+}
+
+.center-form-label {
+    margin-right: 4%;
+    margin-top: 6%;
+}

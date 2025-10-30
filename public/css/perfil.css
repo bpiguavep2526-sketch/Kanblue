@@ -1,0 +1,113 @@
+.mybutton {
+  background: #f39c12;
+  color: #000000;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+/* ===== Caja principal ===== */
+.container-box {
+  width: 90%;           /* más ancho */
+  max-width: 1400px;    /* límite máximo */
+  height: 85vh;         /* más alto */
+  border-radius: 40px;
+  box-shadow: 0 8px 35px rgba(0,0,0,0.3);
+  border-right: 12px solid #79AAB7;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ===== Capa interna ===== */
+.container-layer {
+  width: 100%;          /* mismo tamaño que .container-box */
+  height: 100%;
+  border-radius: 35px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  border-right: 12px solid #176F9E;
+  background: #EDEDED;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ===== Tarjeta ===== */
+.card-custom {
+   width: 100%;          
+  height: 100%;          
+  border-radius: 35px;   
+  padding: 20px;
+  box-sizing: border-box; 
+  overflow: hidden;     
+  justify-content: center;
+  align-items: center;
+
+}
+
+.form-card {
+  margin-top: 5%; 
+  width: 100%;      
+  height: 100%;       
+  padding: 20px;      
+  box-sizing: border-box; 
+  overflow-y: auto;   
+
+
+}
+.form-card label {
+    font-size: 1.1rem; 
+    font-weight: 500; 
+    font-family: poppins, sans-serif; 
+}
+.uniform-input {
+  font-size: 1.2rem;
+  padding: 15px;
+  height: 50px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.perfil-title {
+  font-family: 'Inter', sans-serif;  
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/* Header */
+.perfil-header {
+  margin-bottom: 30px;
+  border-bottom: 2px solid #ccc;  
+  padding-bottom: 10px;
+}
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #D9D9D9; /* color de fondo opcional */
+  border: 1px solid #000000; /* borde del contenedor */
+  border-radius: 12px; /* esquinas redondeadas */
+  padding: 7px 20px;
+  gap: 15px; /* separación entre íconos */
+}
+.icon-container img:first-child {
+  border-right: 1px solid #0f0f0f; /* línea que separa los íconos */
+  padding-right: 5px;
+}
+
+.main-editarperfil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px); /* Ajusta 70px según la altura de tu navbar */
+}

@@ -54,3 +54,4 @@ class Task extends Model
         return $this->belongsTo(Status::class, 'id_estado');
     }
 }
+

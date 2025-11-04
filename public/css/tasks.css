@@ -199,7 +199,7 @@
   }
 }
 
-/*Animaciones de vista*/
+/*Animaciones de vista para ocultar las tarjetas.*/
   
   @keyframes fadeIn {
     from { opacity: 0; }

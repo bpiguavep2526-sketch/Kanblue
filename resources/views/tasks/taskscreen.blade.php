@@ -23,22 +23,27 @@
                 <img src="images/showlist.png" class="showList" alt="Desplegar" width="30px" height="30px">
             </div>
             <div class="taskList" data-status="backlog">
-                <div draggable="true" class="taskCard">
-                    <div class="taskHeader">
-                        <h4>TAREA #1</h4>
+                @foreach ($backlogtasks as $task)
+                    <div draggable="true" class="taskCard">
+                        <div class="taskHeader">
+                            <h4>{{ $cicle->getTitulo() }}</h4>
+                        </div>
+                        <hr
+                            style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
+                        <p class="descTask">Descripción de tarea</p>
+                        <hr
+                            style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
+                        <div class="taskDetails">
+                            <a>
+                                <img src="images/available_task.png" alt="Disponible" width="20px" height="20px"
+                                    class="d-inline-block align-text-center me-1">
+                                Disponible
+                            </a>
+                            <p class="tagRed">DOCUMENTACION</p>
+                        </div>
                     </div>
-                    <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
-                    <p class="descTask">Descripción de tarea</p>
-                    <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
-                    <div class="taskDetails">
-                        <a>
-                            <img src="images/available_task.png" alt="Disponible" width="20px" height="20px"
-                                class="d-inline-block align-text-center me-1">
-                            Disponible
-                        </a>
-                        <p class="tagRed">DOCUMENTACION</p>
-                    </div>
-                </div>
+                @endforeach
+
                 <div draggable="true" class="taskCard">
                     <div class="taskHeader">
                         <h4>TAREA #1</h4>
@@ -154,13 +159,15 @@
                     class="align-text-center ms-2">
             </div>
             <div class="taskList" data-status="done">
-              <div class="taskCard" data-status="done">
+                <div class="taskCard" data-status="done">
                     <div class="taskHeader">
                         <h4>TAREA #1</h4>
                     </div>
-                    <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
+                    <hr
+                        style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
                     <p class="descTask">Descripción de tarea</p>
-                    <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
+                    <hr
+                        style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
                     <div class="taskDetails">
                         <a>
                             <img src="images/available_task.png" alt="Disponible" width="20px" height="20px"

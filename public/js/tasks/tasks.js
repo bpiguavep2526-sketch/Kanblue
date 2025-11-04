@@ -76,8 +76,3 @@ function updateTaskStatus(taskId, status) {
         }),
     })
 }
-
-
-
-
-

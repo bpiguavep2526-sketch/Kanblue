@@ -4,10 +4,13 @@
 
 @section('navbar')
   <div class="d-flex align-items-center ms-auto">
-    <span class="text-white small me-3" style="font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 20px">PROYECTO #45</span>
+    <span class="text-white small me-3" style="font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 20px">PROYECTO #42378 | TAREA #2</span>
     <div class="vr text-white me-3" style="height: 50px;"></div>
-    <a href="" >    
-      <img src="images/return.png.png" alt="Volver" width="30" height="30">
+    <a href="" >
+      <button type="button" class="btn btn-light btnstyle borderizq"><img src="{{ asset('images/salvar.png') }}" alt="Volver" width="30" height="30"></button>
+    </a>
+    <a href="">
+        <button type="button" class="btn btn-light btnstyle borderdrch"><img src="{{ asset('images/salida.png') }}" alt="Volver" width="30" height="30"></button>
     </a>
   </div>
 @endsection
@@ -22,7 +25,10 @@
                         <div class="card-body ultimacardbody">
                             <form>
                                 <fieldset>
-                                    <legend>TAREA #2</legend>
+                                    <legend>
+                                        TAREA #2
+                                        <hr>
+                                    </legend>
                                     <div class="mb-3 my-custom-style">
                                         <label for="disabledSelect" class="form-label">Asignado a: </label>
                                         <select id="disabledSelect" class="form-select center-form" holder="Usuario #32">

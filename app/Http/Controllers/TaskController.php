@@ -11,8 +11,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        
-        return view('tasks.taskscreen');
+        $tareas = session ('tasks', []);
+        return view('tasks.taskscreen', compact('tareas'));
     }
 
     /**
@@ -63,6 +63,8 @@ class TaskController extends Controller
         //
     }
 
+
+    /*Recibe la petición, busca en la base de datos la tarea con la misma ID, cambia su estado y lo guarda.*/
     public function updateStatus(Request $request, string $id)
     {
         $status = $request->input('status');

@@ -5,19 +5,19 @@ namespace App\Models;
 use App\Models\Task;
 use Illuminate\Database\Eloquent\Model;
 
-class Status extends Model
+class Usuaris extends Model
 {
-    protected $table = 'estado';
-    protected $primaryKey = 'id_estado';
+    protected $table = 'usuarios';
+    protected $primaryKey = 'id_usuario';
     public $timestamps = false;
 
     /**
-     * Get all of the Task for the Status
+     * Get all of the Task for the Usuaris
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function Task(): HasMany
     {
-        return $this->hasMany(Task::class, 'id_estado');
+        return $this->hasMany(Task::class, 'id_usuario');
     }
 }

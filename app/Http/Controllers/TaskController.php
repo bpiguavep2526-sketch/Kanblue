@@ -12,7 +12,6 @@ class TaskController extends Controller
     public function index()
     {
         $tareas = session ('tasks', []);
-        $backlogtasks = $tasks;
         return view('tasks.taskscreen', compact('tareas'));
     }
 

@@ -160,12 +160,12 @@ textarea.form-control {
   background: #cc3a29;
 }
 
-img {
+.editTaskBg {
   width: 32px;
   margin-right: 12px;
 }
 
-hr {
+.lineformat {
   height: 3px;
   background-color: black;
   width: 99%;

@@ -27,7 +27,7 @@
                                 <fieldset>
                                     <legend>
                                         TAREA #2
-                                        <hr>
+                                        <hr class="lineformat">
                                     </legend>
                                     <div class="mb-3 my-custom-style">
                                         <label for="disabledSelect" class="form-label">Asignado a: </label>
@@ -70,6 +70,6 @@
             </div>
         </div>
     </div>
-    <img src="{{ asset('images/formasGeometricas.png') }}" alt="Formas geométricas" class="img-esquina" width="200" height="200">
+    <img class="editTaskBg" src="{{ asset('images/formasGeometricas.png') }}" alt="Formas geométricas" class="img-esquina" width="200" height="200">
 
 @endsection

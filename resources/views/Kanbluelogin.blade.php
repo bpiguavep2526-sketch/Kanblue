@@ -23,7 +23,7 @@
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
 
-        <form method="POST" action="/Registro">
+        <form method="POST" action="/Kanblue/public/Login">
             @csrf
             <div class="form-floating mb-3">
                 <input type="text" name="username" class="form-control rounded-pill border border-primary" id="username" placeholder="Usuario" value="{{ old('username') }}">

@@ -8,26 +8,29 @@ use App\Models\Usuari;
 
 class KanblueProfileController extends Controller
 {
-    public function login(Request $request) 
-    {
-        $usuario = Usuari::where('username', $request->input('username'))->first();
+public function login(Request $request)
+{
+    $usuario = Usuari::where('username', $request->input('username'))->first();
 
-        if ($usuario && Hash::check($request->input('password'), $usuario->password)) {
-            return redirect('/public')->with('success');
-        } else {
-            return back()->withInput()->with('error', 'Usuario o contraseña incorrecta');
-        }
+    if ($usuario && Hash::check($request->input('password'), $usuario->password)) {
+        // Si el usuario y contraseña son correctos
+        return redirect('/Registro');
+    } else {
+        // Si son incorrectos
+        return back()->withInput()->with('error', 'Usuario o contraseña incorrecta');
     }
+}
 
-    public function profile(){
+
+    public function profile() {
         return view('Kanbluelogin');
     }
 
-    public function proyect(){
+    public function proyect() {
         return view('EditarProyecto');
     }
 
-    public function editarperfil(){
+    public function editarperfil() {
         return view('EditarPerfil');
     }
 }

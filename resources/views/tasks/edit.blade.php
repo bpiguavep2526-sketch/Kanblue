@@ -27,7 +27,7 @@
                                 <fieldset>
                                     <legend>
                                         TAREA #2
-                                        <hr>
+                                        <hr class="lineformat">
                                     </legend>
                                     <div class="mb-3 my-custom-style">
                                         <img class="imgTareas" src="{{ asset('images/usuario2.png') }}" alt="Volver" width="30" height="30">

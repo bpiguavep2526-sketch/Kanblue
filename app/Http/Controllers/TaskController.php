@@ -11,7 +11,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        
+
         return view('tasks.taskscreen');
     }
 
@@ -42,9 +42,9 @@ class TaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit()
     {
-        //
+        return view('tasks.edit');
     }
 
     /**

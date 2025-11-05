@@ -86,3 +86,12 @@
     font-size: 22px;
     width: 93%;
  }
+
+ .hrCard{
+    height: 3px;
+    background-color: black;
+    width: 99%;
+    margin: 0px auto;
+    opacity: 1;
+    border: none;
+ }

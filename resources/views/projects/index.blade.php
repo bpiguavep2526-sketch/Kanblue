@@ -36,7 +36,7 @@
                             <h3>PROYECTO #42378</h3>
                             <a href=""><img src="{{ asset('images/botonEditar.png') }}" alt="Editar" class="imgEditar"></a>
                         </div>
-                        <hr>
+                        <hr class="hrCard">
                         <ul>
                             <li>Documentación de la app HR</li>
                         </ul>
@@ -62,7 +62,7 @@
                             <h3>PROYECTO #42378</h3>
                             <a href=""><img src="{{ asset('images/botonEditar.png') }}" alt="Editar" class="imgEditar"></a>
                         </div>
-                        <hr>
+                        <hr class="hrCard">
                         <ul>
                             <li>Documentación de la app HR</li>
                         </ul>
@@ -85,7 +85,7 @@
                             <h3>PROYECTO #42378</h3>
                             <a href=""><img src="{{ asset('images/botonEditar.png') }}" alt="Editar" class="imgEditar"></a>
                         </div>
-                        <hr>
+                        <hr class="hrCard">
                         <ul>
                             <li>Documentación de la app HR</li>
                         </ul>
@@ -111,7 +111,7 @@
                             <h3>PROYECTO #42378</h3>
                             <a href=""><img src="{{ asset('images/botonEditar.png') }}" alt="Editar" class="imgEditar"></a>
                         </div>
-                        <hr>
+                        <hr class="hrCard">
                         <ul>
                             <li>Documentación de la app HR</li>
                         </ul>
@@ -135,7 +135,7 @@
                             <h3>PROYECTO #42378</h3>
                             <a href=""><img src="{{ asset('images/botonEditar.png') }}" alt="Editar" class="imgEditar"></a>
                         </div>
-                        <hr>
+                        <hr class="hrCard">
                         <ul>
                             <li>Documentación de la app HR</li>
                         </ul>
@@ -158,7 +158,7 @@
                             <h3>PROYECTO #42378</h3>
                             <a href=""><img src="{{ asset('images/botonEditar.png') }}" alt="Editar" class="imgEditar"></a>
                         </div>
-                        <hr>
+                        <hr class="hrCard">
                         <ul>
                             <li>Documentación de la app HR</li>
                         </ul>

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/editarTareas.css') }}">
     <link rel="stylesheet" href="{{ asset('css/perfil.css') }}">
     <link rel="stylesheet" href="{{ asset('css/editar.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('css/indexProyecto.css') }}">
 
     </script>
 </head>

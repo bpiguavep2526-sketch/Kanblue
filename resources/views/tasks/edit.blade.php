@@ -25,19 +25,21 @@
                         <div class="card-body ultimacardbody">
                             <form>
                                 <fieldset>
-                                    <legend>
-                                        TAREA #2
-                                        <hr class="lineformat">
-                                    </legend>
+                                    <div class="mb-3">
+                                    <input  type="text" id="tituloTarea" class="form-control" placeholder="Escribe el nombre de la tarea"  required>
+                                         <hr>
+                                          </div>
                                     <div class="mb-3 my-custom-style">
+                                        <img class="imgTareas" src="{{ asset('images/usuario2.png') }}" alt="Volver" width="30" height="30">
                                         <label for="disabledSelect" class="form-label">Asignado a: </label>
-                                        <select id="disabledSelect" class="form-select center-form" holder="Usuario #32">
+                                        <select id="disabledSelect" class="form-select center-form" placeholder="Usuario #32">
                                             <option>Disabled select</option>
                                         </select>
                                     </div>
                                     <div class="mb-3 my-custom-style">
+                                        <img class="imgTareas" src="{{ asset('images/etiqueta2.png') }}" alt="Volver" width="30" height="30">
                                         <label for="disabledSelect" class="form-label">Tipo de tarea: </label>
-                                        <select id="disabledSelect" class="form-select center-form-one" holder="Usuario #32">
+                                        <select id="Tipo" class="form-select center-form-one" holder="Usuario #32">
                                             <option style="background-color: #F0E73D">Diseño</option>
                                             <option style="background-color: #7CA3F7">Desarrollo Web</option>
                                             <option style="background-color: #5BF778">Configuración</option>
@@ -45,22 +47,24 @@
                                         </select>
                                     </div>
                                     <div class="mb-3 my-custom-style">
+                                        <img class="imgTareas" src="{{ asset('images/fuente.png') }}" alt="Volver" width="30" height="30">
                                         <label for="exampleFormControlTextarea1" class="form-label center-form-label">Descripción</label>
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Escribe aquí...."></textarea>
                                     </div>
                                     <div class="mb-3 my-custom-style">
+                                        <img class="imgTareas" src="{{ asset('images/lista2.png') }}" alt="Volver" width="30" height="30">
                                         <label for="disabledSelect" class="form-label">Estado</label>
-                                        <select id="disabledSelect" class="form-select center-form-two" holder="TODO">
+                                        <select id="Estado" class="form-select center-form-two" holder="TODO">
                                             <option>Todo</option>
                                             <option>Acabado</option>
                                             <option>En Progreso</option>
                                         </select>
                                     </div>
                                     <div class="mb-3 my-custom-style">
-                                        <img src="{{ asset('images/borrar2.png') }}" alt="">
+                                        <img class="imgTareas" src="{{ asset('images/borrar2.png') }}" alt="">
                                         <label for="disabledSelect" class="form-label">Borrar Tarea</label>
                                         <label for="disabledSelect" class="form-label"></label>
-                                        <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                                        <button type="submit" class="btn btn-danger btntareas">ELIMINAR</button>
                                     </div>
                                 </fieldset>
                             </form>
@@ -70,6 +74,5 @@
             </div>
         </div>
     </div>
-    <img class="editTaskBg" src="{{ asset('images/formasGeometricas.png') }}" alt="Formas geométricas" class="img-esquina" width="200" height="200">
-
+    <img src="{{ asset('images/formasGeometricas.png') }}" alt="Formas geométricas" class="img-esquina" width="200" height="200">
 @endsection

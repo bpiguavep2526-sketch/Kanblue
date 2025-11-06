@@ -25,19 +25,19 @@
                         <div class="card-body ultimacardbody">
                             <form>
                                 <fieldset>
-                                    <legend>
-                                        TAREA #2
-                                        <hr class="lineformat">
-                                    </legend>
+                                    <div class="mb-3">
+                                    <input  type="text" id="tituloTarea" class="form-control" placeholder="Escribe el nombre de la tarea"  required>
+                                         <hr>
+                                          </div>
                                     <div class="mb-3 my-custom-style">
                                         <label for="disabledSelect" class="form-label">Asignado a: </label>
-                                        <select id="disabledSelect" class="form-select center-form" holder="Usuario #32">
+                                        <select id="disable" class="form-select center-form" holder="Usuario #32">
                                             <option>Disabled select</option>
                                         </select>
                                     </div>
                                     <div class="mb-3 my-custom-style">
                                         <label for="disabledSelect" class="form-label">Tipo de tarea: </label>
-                                        <select id="disabledSelect" class="form-select center-form-one" holder="Usuario #32">
+                                        <select id="Tipo" class="form-select center-form-one" holder="Usuario #32">
                                             <option style="background-color: #F0E73D">Diseño</option>
                                             <option style="background-color: #7CA3F7">Desarrollo Web</option>
                                             <option style="background-color: #5BF778">Configuración</option>
@@ -50,7 +50,7 @@
                                     </div>
                                     <div class="mb-3 my-custom-style">
                                         <label for="disabledSelect" class="form-label">Estado</label>
-                                        <select id="disabledSelect" class="form-select center-form-two" holder="TODO">
+                                        <select id="Estado" class="form-select center-form-two" holder="TODO">
                                             <option>Todo</option>
                                             <option>Acabado</option>
                                             <option>En Progreso</option>

@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Usuari;
 use Illuminate\Http\Request;
 
-class ProyectoController extends Controller
+class UsuariController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $proyectos = session ('proyectos', []);
-        return view('tasks.taskscreen', compact('proyectos'));
+        //
     }
 
     /**
@@ -20,7 +20,7 @@ class ProyectoController extends Controller
      */
     public function create()
     {
-        return view('EditarProyecto');
+        //
     }
 
     /**
@@ -28,17 +28,13 @@ class ProyectoController extends Controller
      */
     public function store(Request $request)
     {
-        $proyectos = session ('proyectos', []);
-        $proyectos = new Cicle($request->input('nombre'), $request->input('descripcion'), $request->input('fechaInicio'), $request->input('fechaFin'));
-        $proyectos[] = $proyectos;
-        session(['proyectos' => $proyectos]);
-        return redirect()->route('tasks');
+        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Usuari $usuari)
     {
         //
     }
@@ -46,7 +42,7 @@ class ProyectoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Usuari $usuari)
     {
         //
     }
@@ -54,7 +50,7 @@ class ProyectoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Usuari $usuari)
     {
         //
     }
@@ -62,7 +58,7 @@ class ProyectoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Usuari $usuari)
     {
         //
     }

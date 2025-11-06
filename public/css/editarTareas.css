@@ -8,65 +8,178 @@
 }
 
 .ultimacarta {
-  width: 92rem !important;
-  height: 50.7rem;
-  background-color: #457582 !important;
-  margin-top: 3%;
-  margin-left: 2%;
-  border-left-width: 0px;
-  border-top-width: 0px;
-  border-color: #176F9E;
+    width: 93rem !important;
+    height: 50.7rem;
+    background-color: #457582 !important;
+    margin-top: 3%;
+    margin-left: 2%;
+    border-top-right-radius: 38px;
+    border-top-left-radius: 38px;
+    border-bottom: none;
+    border-color: #176F9E;
 
 }
 
 .segundacarta {
-  width: 91rem;
-  height: 102.2%;
-  background-color: #79AAB7;
-  border-left-width: 0px;
-  border-top-width: 0px;
-  border-color: #176F9E;
+    width: 91rem;
+    height: 100%;
+    background-color: #79AAB7;
+    border-left-width: 0px;
+    border-top-right-radius: 38px;
+    border-top-left-radius: 38px;
+    border-bottom: none;
+    border-top: none;
+    border-left: none;
+    border-color: #176F9E;
 
 }
 
 .primeracarta {
-  width: 90rem;
-  height: 102.1%;
-  background-color: #EDEDED;
-  border-color: #176F9E;
+    width: 89rem;
+    height: 100%;
+    background-color: #EDEDED;
+    border-color: #176F9E;
+    border-top-right-radius: 38px;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-top-left-radius: 38px;
 }
 
-.ultimacardbody{
-    padding: 0px 0px 16px 0px;
+.ultimacardbody {
+    padding: 0px 0px 0px 0px;
 }
 
 .my-custom-style {
     display: flex;
 }
 
-.form-select{
+.btnstyle {
+    border: 2px solid #333;
+    height: 53px;
+    width: 87px;
+}
+
+.borderizq {
+    border-radius: 20px 0 0 20px;
+}
+
+.borderdrch {
+    border-radius: 0 20px 20px 0;
+}
+
+.form-select {
     width: 45% !important;
     margin-right: 5%;
 }
 
-.center-form{
+.center-form {
     margin-left: 5%;
 }
 
-.center-form-one{
+.center-form-one {
     margin-left: 4%;
 }
 
-.center-form-two{
+.center-form-two {
     margin-left: 7.8%;
 }
 
-.form-control{
+.form-control {
     width: 80% !important;
     margin-left: 1%;
 }
 
 .center-form-label {
-    margin-right: 4%;
-    margin-top: 6%;
+    margin-top: 0.8%;
+}
+
+.ultimacardbody legend {
+    font-size: 2.3rem;
+    font-weight: bold;
+    background: #d3d3d3;
+    border-radius: 18px;
+    padding: 12px 32px;
+    border: 2px solid #444;
+    box-shadow: none;
+    margin-bottom: 37px;
+    letter-spacing: 1px;
+    margin-top: 19px;
+    width: 96%;
+    margin-left: 25px;
+
+}
+
+.my-custom-style {
+  display: flex;
+  align-items: center;
+  margin: 45px 0 0 32px;
+  gap: 12px;
+}
+
+label.form-label {
+  font-size: 1.18rem;
+  font-weight: 500;
+  min-width: 120px;
+  color: #222;
+}
+
+select.form-select,
+input.form-control,
+textarea.form-control {
+  border: 2px solid #222;
+  border-radius: 18px;
+  padding: 10px 18px;
+  font-size: 1.15rem;
+  outline: none;
+  background: #fff;
+  transition: border 0.2s;
+  margin-left: 12px;
+  min-width: 220px;
+}
+
+select.form-select:focus,
+input.form-control:focus,
+textarea.form-control:focus {
+  border: 2px solid #295dae;
+  background: #f2f6fa;
+}
+
+textarea.form-control {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.btn-danger {
+  background: #e74c3c;
+  color: #fff;
+  border-radius: 24px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 10px 48px;
+  border: none;
+  margin-left: 24px;
+}
+
+.btn-danger:hover {
+  background: #cc3a29;
+}
+
+.imgTareas{
+  width: 32px;
+  margin-right: 12px;
+  margin-bottom: .5rem;
+}
+
+.lineformat {
+  height: 3px;
+  background-color: black;
+  width: 99%;
+  margin: 0px auto;
+  opacity: 1;
+  border: none;
+}
+
+.btntareas {
+  width: 23%;
 }

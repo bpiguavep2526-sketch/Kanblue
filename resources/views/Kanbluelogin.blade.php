@@ -14,21 +14,31 @@
     </div>
 
     <div class="card shadow p-4" style="width: 350px; border-radius: 1rem; background-color: rgba(255, 255, 255, 0.9);">
-        <form>
+
+        @if(session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+
+        @if(session('error'))
+            <div class="alert alert-danger">{{ session('error') }}</div>
+        @endif
+
+        <form method="POST" action="/Registro">
+            @csrf
             <div class="form-floating mb-3">
-                <input type="email" class="form-control rounded-pill border border-primary" id="email" placeholder="Correo electrónico">
-                <label for="email">Correo electrónico</label>
+                <input type="text" name="username" class="form-control rounded-pill border border-primary" id="username" placeholder="Usuario" value="{{ old('username') }}">
+                <label for="username">Usuario</label>
             </div>
 
             <div class="form-floating mb-3">
-                <input type="password" class="form-control rounded-pill border border-primary" id="password" placeholder="Contraseña">
+                <input type="password" name="password" class="form-control rounded-pill border border-primary" id="password" placeholder="Contraseña">
                 <label for="password">Contraseña</label>
             </div>
 
             <button type="submit" class="btn btn-primary w-100 rounded-pill mt-3">Login</button>
         </form>
 
-        <p class="text-center mt-3 mb-0">¿Sin cuenta? <a href="Registro">Regístrate</a></p>
+        <p class="text-center mt-3 mb-0">¿Sin cuenta? <a href="/Registro">Regístrate</a></p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

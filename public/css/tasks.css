@@ -44,6 +44,7 @@
 /** Tarjeta de tareas**/
 
 .taskCard {
+  user-select: none;
   background-color: #EDEDED; 
   border-radius: 20px; 
   border-style: solid;
@@ -90,6 +91,12 @@
 }
 
 
+.showList{
+  display: none;
+  margin-left: 10px;
+}
+
+
 /*Textos y títulos*/
 .columnTitle{
     font-family: 'Poppins', sans-serif;
@@ -118,6 +125,7 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     padding: 8px 40px;
+    color: #000;
 }
 
 .tagRed{
@@ -128,6 +136,83 @@
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
 }
+
+/*Ajustes para vista responsive (movil)*/
+@media (max-width: 1000px) {
+  .kanbanTable {
+    flex-direction: column;
+    align-items: center; 
+  }
+
+  .column {
+    width: 90%; 
+    height: auto; 
+    margin-bottom: 20px; 
+  }
+
+  .taskList{
+    height: 0px;
+    column-gap: 20px;
+    transition: height 1s;
+    background-color:#50acde ;
+  }
+
+  .taskList > * {
+    animation: fadeOut 1s;
+    animation-fill-mode: forwards;
+  }
+
+  
+  .taskList.active{
+    height: 550px;
+  }
+
+  .taskList.active > * {
+    visibility: visible; 
+    animation: fadeIn 1s;
+
+  }
+
+  .taskCard {
+   break-inside: avoid
+  }
+
+  .showList{
+  display: inline;
+  }
+} 
+
+
+@media (max-width: 530px) {
+
+.taskList{
+    height: 0px;
+    transition: height 1s;
+    background-color:#50acde ;
+  }
+
+  .taskList.active{
+    height: 300px;
+  }
+
+  .columnTitle{
+    font-size: 16px;
+  }
+}
+
+/*Animaciones de vista para ocultar las tarjetas.*/
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0;}
+  }
+
+  
 .tagYellow{
   margin: 8px 0 0 0;
   background: #F2D479;

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Task;
+use App\Models\Tipus;
+use App\Models\Usuaris;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -11,8 +14,11 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $tareas = session ('tasks', []);
-        return view('tasks.taskscreen', compact('tareas'));
+        $tareas = Task::all();
+        $usuarios = Usuaris::all();
+        $tipostarea = Tipus::all();
+        
+        return view('tasks.taskscreen', compact('tareas', 'usuarios', 'tipostarea'));
     }
 
     /**

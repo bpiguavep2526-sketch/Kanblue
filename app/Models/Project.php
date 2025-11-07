@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     protected $table = 'proyectos';
-    protected $primaryKey = 'id_proyectos';
+    protected $primaryKey = 'id_proyecto';
     public $timestamps = false;
 
     /**
@@ -18,7 +18,7 @@ class Project extends Model
      */
     public function Task(): HasMany
     {
-        return $this->hasMany(Task::class, 'id_proyectos');
+        return $this->hasMany(Task::class, 'id_proyecto');
     }
 
 }

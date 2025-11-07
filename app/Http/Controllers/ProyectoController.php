@@ -11,8 +11,7 @@ class ProyectoController extends Controller
      */
     public function index()
     {
-        $proyectos = session ('proyectos', []);
-        return view('tasks.taskscreen', compact('proyectos'));
+        
     }
 
     /**

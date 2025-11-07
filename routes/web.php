@@ -22,7 +22,7 @@ Route::get('/Registro', function () {
     return view('kanblueRegistro');
 });
 
-Route::get('/tasks', [TaskController::class, 'index']);
+Route::resource('tasks', TaskController::Class);
 
 Route::put('/updateStatus/{taskId}', [TaskController::class, 'updateStatus']);
 Route::resource('proyectos', ProyectoController::class);

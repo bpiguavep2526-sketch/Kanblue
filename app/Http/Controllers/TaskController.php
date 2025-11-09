@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use App\Models\Tipus;
+use App\Models\Status;
 use App\Models\Usuaris;
 use Illuminate\Http\Request;
 
@@ -48,9 +49,13 @@ class TaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Task $task)
     {
-        //
+        $usuarios = Usuaris::all();
+        $tipostarea = Tipus::all();
+        $estados = Status::all();
+
+        return view('tasks.editarTareas', compact('task',  'usuarios', 'tipostarea', 'estados'));
     }
 
     /**

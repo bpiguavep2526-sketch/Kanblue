@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/estilosregistro.css') }}">
 </head>
-<body class="d-flex justify-content-center align-items-center vh-100 bg-white">
+<body class="d-flex justify-content-center align-items-center vh-100 bg-white background_registro">
 
 <div class="d-flex align-items-center">
     <div class="me-4 logo-registro text-center">

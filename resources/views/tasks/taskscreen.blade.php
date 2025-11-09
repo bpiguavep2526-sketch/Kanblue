@@ -15,7 +15,7 @@
 
 @section('content')
     <div class="d-flex justify-content-end p-2">
-        <a href="{{ route('editarTarea') }}" class="btnOg"
+        <a href="{{ route('tasks.create') }}" class="btnOg"
             style="margin-right: 20px; margin-top: 10px; display:inline-block; text-decoration:none; text-align:center;">
             NUEVA TAREA
         </a>

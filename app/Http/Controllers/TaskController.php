@@ -27,7 +27,12 @@ class TaskController extends Controller
      */
     public function create()
     {
-        //
+        $tipostarea = Tipus::all();
+        $task = null;
+        $usuarios = Usuaris::all();
+        $estados = Status::all();
+
+        return view('tasks.editarTareas', compact('task',  'usuarios', 'tipostarea', 'estados'));
     }
 
     /**

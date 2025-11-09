@@ -11,7 +11,7 @@
             <button type="button" class="btn btn-light btnstyle borderizq"><img src="{{ asset('images/salvar.png') }}"
                     alt="Volver" width="30" height="30"></button>
         </a>
-        <a href="">
+        <a href="{{ route('tasks.index') }}">
             <button type="button" class="btn btn-light btnstyle borderdrch"><img src="{{ asset('images/salida.png') }}"
                     alt="Volver" width="30" height="30"></button>
         </a>
@@ -19,9 +19,6 @@
 @endsection
 
 @section('content')
-    @php
-        $tasktype = $tipostarea->firstWhere('id_tipus', $task->id_tipus);
-    @endphp
     <div class="card ultimacarta">
         <div class="card-body ultimacardbody">
             <div class="card segundacarta">
@@ -30,21 +27,24 @@
                         <div class="card-body ultimacardbody">
                             <form>
                                 <fieldset>
-                                    <legend>
+                                    <textarea class="titleinput">
                                         @if ($task != null)
                                             {{ $task->titulo }}
                                         @else
                                             Escribe el nombre de la tarea...
                                         @endif
-                                        <hr class="lineformat">
-                                    </legend>
+                                    </textarea>
                                     <div class="mb-3 my-custom-style">
 
                                         <label for="disabledSelect" class="form-label">Asignado a: </label>
                                         <select id="disabledSelect" class="form-select center-form" placeholder='usuario'>
                                             @foreach ($usuarios as $usuari)
-                                                @if ($usuari->id_usuario == $task->id_usuario)
-                                                    <option selected>{{ $usuari->username }}</option>
+                                                @if ($task != null)
+                                                    @if ($usuari->id_usuario == $task->id_usuario)
+                                                        <option selected>{{ $usuari->username }}</option>
+                                                    @else
+                                                        <option>{{ $usuari->username }}</option>
+                                                    @endif
                                                 @else
                                                     <option>{{ $usuari->username }}</option>
                                                 @endif
@@ -56,23 +56,31 @@
                                         <select id="disabledSelect" class="form-select center-form-one"
                                             holder="Usuario #32">
                                             @foreach ($tipostarea as $tipo)
-                                                <option>{{ $tipo->nom}}</option>
+                                                <option>{{ $tipo->nom }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="mb-3 my-custom-style">
                                         <label for="exampleFormControlTextarea1"
                                             class="form-label center-form-label">Descripción</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Escribe aquí....">{{ $task->descripcion }}</textarea>
+                                        @if ($task != null)
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Escribe aquí....">{{ $task->descripcion }}</textarea>
+                                        @else
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Escribe aquí...."></textarea>
+                                        @endif
                                     </div>
                                     <div class="mb-3 my-custom-style">
                                         <label for="disabledSelect" class="form-label">Estado</label>
                                         <select id="disabledSelect" class="form-select center-form-two" holder="TODO">
                                             @foreach ($estados as $status)
-                                                @if ($task->id_estado = $status->id_estado)
-                                                    <option selected>{{ $status->nom }}</option>
+                                                @if ($task != null)
+                                                    @if ($task->id_estado = $status->id_estado)
+                                                        <option selected>{{ $status->nom }}</option>
+                                                    @else
+                                                        <option>{{ $status->nom }}</option>
+                                                    @endif
                                                 @else
-                                                <option>{{ $status->nom }}</option>
+                                                    <option>{{ $status->nom }}</option>
                                                 @endif
                                             @endforeach
                                         </select>

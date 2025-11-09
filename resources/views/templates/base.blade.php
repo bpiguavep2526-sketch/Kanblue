@@ -19,7 +19,7 @@
     </script>
 </head>
 
-<body style="background-color: #EDEDED">
+<body class="generic_background">
 <nav class="navbar" style="background-color: #79AAB7;" data-bs-theme="dark" >
   <div class="container-fluid">
     <a class="navbar-brand d-flex align-items-center" href="#"  style="font-family: 'Poppins', sans-serif; font-weight: 600;">

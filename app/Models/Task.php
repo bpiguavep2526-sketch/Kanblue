@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 class Task extends Model
 {
     protected $table = 'TAREAS';
-    protected $primaryKey = 'id_tareas';
+    protected $primaryKey = 'id_tarea';
     public $timestamps = false;
 
     /**
@@ -21,7 +21,7 @@ class Task extends Model
      */
     public function Project(): BelongsTo
     {
-        return $this->belongsTo(Project::class, 'id_proyectos');
+        return $this->belongsTo(Project::class, 'id_proyecto');
     }
 
     /**

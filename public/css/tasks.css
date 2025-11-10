@@ -129,7 +129,9 @@
 }
 
 .tagRed{
+  align-items: center;
   margin: 8px 0 0 0;
+  text-align: center;
   background: #EF6B54;
   border-radius: 20px;
   padding: 7px;
@@ -220,6 +222,14 @@
   padding: 7px;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
+}
+
+.generic_background{
+    background-image:url(../images/generic_background.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
     
 

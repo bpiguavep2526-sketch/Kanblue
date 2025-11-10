@@ -29,3 +29,11 @@ a:hover {
 .logo-login {
     margin-bottom: -100px; 
 }
+
+.background_login{
+    background-image: url(../images/login_background.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}

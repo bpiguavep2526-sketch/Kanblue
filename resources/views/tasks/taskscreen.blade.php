@@ -1,5 +1,7 @@
 @extends('templates.base')
 
+@section('title', 'Tareas')
+
 @section('navbar')
     <div class="d-flex align-items-center ms-auto">
         <span class="text-white small me-3"
@@ -12,11 +14,12 @@
 @endsection
 
 @section('content')
-<div class="d-flex justify-content-end p-2">
-  <a href="{{ route('tasks.edit') }}" class="btnOg" style="margin-right: 20px; margin-top: 10px; display:inline-block; text-decoration:none; text-align:center;">
-  EDITAR TAREA
-</a>
-</div>
+    <div class="d-flex justify-content-end p-2">
+        <a href="{{ route('tasks.create') }}" class="btnOg"
+            style="margin-right: 20px; margin-top: 10px; display:inline-block; text-decoration:none; text-align:center;">
+            NUEVA TAREA
+        </a>
+    </div>
     <div class="kanbanTable">
         <div class="column">
             <div class="d-flex align-items-center">
@@ -24,104 +27,50 @@
                 <img src="images/showlist.png" class="showList" alt="Desplegar" width="30px" height="30px">
             </div>
             <div class="taskList" data-status="backlog">
-                    <div draggable="true" class="taskCard">
-                        <div class="taskHeader">
-                        <h4>TAREA #1</h4>
-                        </div>
-                        <hr
-                            style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
-                        <p class="descTask">Descripción de tarea</p>
-                        <hr
-                            style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
-                        <div class="taskDetails">
-                            <div style="font-family: 'Poppins', sans-serif;">
-                                <img src="images/available_task.png" alt="Disponible" width="20px" height="20px"
-                                    class="d-inline-block align-text-center me-1">
-                                Disponible
+                @foreach ($tareas as $tarea)
+                    @if ($tarea->id_estado == 0)
+                        <div draggable="true" class="taskCard" data-status="backlog">
+                            <div class="taskHeader">
+                                <h4>{{ $tarea->titulo }}</h4>
                             </div>
-                            <p class="tagRed">DOCUMENTACION</p>
+                            <hr
+                                style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
+                            <p class="descTask">{{ $tarea->descripcion }}</p>
+                            <hr
+                                style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
+                            <div class="taskDetails">
+                                <div style="font-family: 'Poppins', sans-serif;">
+                                    <img src="images/available_task.png" alt="Disponible" width="20px" height="20px"
+                                        class="d-inline-block align-text-center me-1">
+                                    @if ($tarea->id_tipus)
+                                        @foreach ($usuarios as $user)
+                                            @if ($user->id_usuario == $tarea->id_usuario)
+                                                {{ $user->username }}
+                                            @endif
+                                        @endforeach
+                                    @else
+                                        Disponible
+                                    @endif
+                                </div>
+                                @foreach ($tipostarea as $tasktype)
+                                    @if ($tasktype->id_tipus == $tarea->id_tipus)
+                                        <div class="d-flex justify-content-between">
+                                            <form action="{{ route('tasks.edit', ['task' => $tarea->id_tarea]) }}"
+                                                method="get" class="d-inline me-1">
+                                                <button class="btn btn-primary" style="margin-top: 10px">
+                                                    <img src="images/info_task.png" alt="Disponible" width="25px"
+                                                        height="25px">
+                                                </button>
+                                            </form>
+                                            <p class="tagRed">{{ $tasktype->nom }}</p>
+                                        </div>
+                                    @endif
+                                @endforeach
+
+                            </div>
                         </div>
-                    </div>
-                <div draggable="true" class="taskCard">
-                    <div class="taskHeader">
-                        <h4>TAREA #1</h4>
-                    </div>
-                    <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
-                    <p class="descTask">Descripción de tarea</p>
-                    <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
-                    <div class="taskDetails">
-                        <a style="font-family: 'Poppins', sans-serif;">
-                            <img src="images/asigned_task.png" alt="Asignado a" width="20px" height="20px"
-                                class="d-inline-block align-text-center me-1">
-                            Usuario #45
-                        </a>
-                        <p class="tagRed">DOCUMENTACION</p>
-                    </div>
-                </div>
-                <div class="taskCard">
-                    <div class="taskHeader">
-                        <h4>TAREA #1</h4>
-                    </div>
-                    <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
-                    <p class="descTask">Descripción de tarea</p>
-                    <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
-                    <div class="taskDetails">
-                        <a style="font-family: 'Poppins', sans-serif;">
-                            <img src="images/available_task.png" alt="Disponible" width="20px" height="20px"
-                                class="d-inline-block align-text-center me-1">
-                            Disponible
-                        </a>
-                        <p class="tagRed">DOCUMENTACION</p>
-                    </div>
-                </div>
-                <div class="taskCard">
-                    <div class="taskHeader">
-                        <h4>TAREA #1</h4>
-                    </div>
-                    <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
-                    <p class="descTask">Descripción de tarea</p>
-                    <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
-                    <div class="taskDetails">
-                        <a style="font-family: 'Poppins', sans-serif;">
-                            <img src="images/available_task.png" alt="Disponible" width="20px" height="20px"
-                                class="d-inline-block align-text-center me-1">
-                            Disponible
-                        </a>
-                        <p class="tagRed">DOCUMENTACION</p>
-                    </div>
-                </div>
-                <div class="taskCard">
-                    <div class="taskHeader">
-                        <h4>TAREA #1</h4>
-                    </div>
-                    <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
-                    <p class="descTask">Descripción de tarea</p>
-                    <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
-                    <div class="taskDetails">
-                        <a style="font-family: 'Poppins', sans-serif;">
-                            <img src="images/available_task.png" alt="Disponible" width="20px" height="20px"
-                                class="d-inline-block align-text-center me-1">
-                            Disponible
-                        </a>
-                        <p class="tagRed">DOCUMENTACION</p>
-                    </div>
-                </div>
-                <div class="taskCard">
-                    <div class="taskHeader">
-                        <h4>TAREA #1</h4>
-                    </div>
-                    <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
-                    <p class="descTask">Descripción de tarea</p>
-                    <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
-                    <div class="taskDetails">
-                        <a style="font-family: 'Poppins', sans-serif;">
-                            <img src="images/available_task.png" alt="Disponible" width="20px" height="20px"
-                                class="d-inline-block align-text-center me-1">
-                            Disponible
-                        </a>
-                        <p class="tagRed">DOCUMENTACION</p>
-                    </div>
-                </div>
+                    @endif
+                @endforeach
             </div>
         </div>
         <div class="column">
@@ -131,7 +80,49 @@
                     class="align-text-center ms-2">
             </div>
             <div class="taskList" data-status="todo">
-
+                @foreach ($tareas as $tarea)
+                    @if ($tarea->id_estado == 1)
+                        <div draggable="true" class="taskCard" data-status="todo">
+                            <div class="taskHeader">
+                                <h4>{{ $tarea->titulo }}</h4>
+                            </div>
+                            <hr
+                                style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
+                            <p class="descTask">{{ $tarea->descripcion }}</p>
+                            <hr
+                                style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
+                            <div class="taskDetails">
+                                <div style="font-family: 'Poppins', sans-serif;">
+                                    <img src="images/available_task.png" alt="Disponible" width="20px" height="20px"
+                                        class="d-inline-block align-text-center me-1">
+                                    @if ($tarea->id_tipus)
+                                        @foreach ($usuarios as $user)
+                                            @if ($user->id_usuario == $tarea->id_usuario)
+                                                {{ $user->username }}
+                                            @endif
+                                        @endforeach
+                                    @else
+                                        Disponible
+                                    @endif
+                                </div>
+                                @foreach ($tipostarea as $tasktype)
+                                    @if ($tasktype->id_tipus == $tarea->id_tipus)
+                                        <div class="d-flex justify-content-between">
+                                            <form action="{{ route('tasks.edit', ['task' => $tarea->id_tarea]) }}"
+                                                method="get" class="d-inline me-1">
+                                                <button class="btn btn-primary" style="margin-top: 10px">
+                                                    <img src="images/info_task.png" alt="Disponible" width="25px"
+                                                        height="25px">
+                                                </button>
+                                            </form>
+                                            <p class="tagRed">{{ $tasktype->nom }}</p>
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
         <div class="column">
@@ -141,7 +132,49 @@
                     class="align-text-center ms-2">
             </div>
             <div class="taskList" data-status="in progress">
-
+                @foreach ($tareas as $tarea)
+                    @if ($tarea->id_estado == 2)
+                        <div draggable="true" class="taskCard" data-status="in progress">
+                            <div class="taskHeader">
+                                <h4>{{ $tarea->titulo }}</h4>
+                            </div>
+                            <hr
+                                style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
+                            <p class="descTask">{{ $tarea->descripcion }}</p>
+                            <hr
+                                style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
+                            <div class="taskDetails">
+                                <div style="font-family: 'Poppins', sans-serif;">
+                                    <img src="images/available_task.png" alt="Disponible" width="20px" height="20px"
+                                        class="d-inline-block align-text-center me-1">
+                                    @if ($tarea->id_tipus)
+                                        @foreach ($usuarios as $user)
+                                            @if ($user->id_usuario == $tarea->id_usuario)
+                                                {{ $user->username }}
+                                            @endif
+                                        @endforeach
+                                    @else
+                                        Disponible
+                                    @endif
+                                </div>
+                                @foreach ($tipostarea as $tasktype)
+                                    @if ($tasktype->id_tipus == $tarea->id_tipus)
+                                        <div class="d-flex justify-content-between">
+                                            <form action="{{ route('tasks.edit', ['task' => $tarea]) }}"
+                                                method="get" class="d-inline me-1">
+                                                <button class="btn btn-primary" style="margin-top: 10px">
+                                                    <img src="images/info_task.png" alt="Disponible" width="25px"
+                                                        height="25px">
+                                                </button>
+                                            </form>
+                                            <p class="tagRed">{{ $tasktype->nom }}</p>
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
         <div class="column">
@@ -151,24 +184,49 @@
                     class="align-text-center ms-2">
             </div>
             <div class="taskList" data-status="done">
-                <div class="taskCard" data-status="done">
-                    <div class="taskHeader">
-                        <h4>TAREA #1</h4>
-                    </div>
-                    <hr
-                        style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
-                    <p class="descTask">Descripción de tarea</p>
-                    <hr
-                        style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
-                    <div class="taskDetails">
-                        <a style="font-family: 'Poppins', sans-serif;">
-                            <img src="images/available_task.png" alt="Disponible" width="20px" height="20px"
-                                class="d-inline-block align-text-center me-1">
-                            Disponible
-                        </a>
-                        <p class="tagRed">DOCUMENTACION</p>
-                    </div>
-                </div>
+                @foreach ($tareas as $tarea)
+                    @if ($tarea->id_estado == 3)
+                        <div draggable="true" class="taskCard" data-status="done">
+                            <div class="taskHeader">
+                                <h4>{{ $tarea->titulo }}</h4>
+                            </div>
+                            <hr
+                                style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
+                            <p class="descTask">{{ $tarea->descripcion }}</p>
+                            <hr
+                                style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
+                            <div class="taskDetails">
+                                <div style="font-family: 'Poppins', sans-serif;">
+                                    <img src="images/available_task.png" alt="Disponible" width="20px" height="20px"
+                                        class="d-inline-block align-text-center me-1">
+                                    @if ($tarea->id_tipus)
+                                        @foreach ($usuarios as $user)
+                                            @if ($user->id_usuario == $tarea->id_usuario)
+                                                {{ $user->username }}
+                                            @endif
+                                        @endforeach
+                                    @else
+                                        Disponible
+                                    @endif
+                                </div>
+                                @foreach ($tipostarea as $tasktype)
+                                    @if ($tasktype->id_tipus == $tarea->id_tipus)
+                                        <div class="d-flex justify-content-between">
+                                            <form action="{{ route('tasks.edit', ['task' => $tarea->id_tarea]) }}"
+                                                method="get" class="d-inline me-1">
+                                                <button class="btn btn-primary" style="margin-top: 10px">
+                                                    <img src="images/info_task.png" alt="Disponible" width="25px"
+                                                        height="25px">
+                                                </button>
+                                            </form>
+                                            <p class="tagRed">{{ $tasktype->nom }}</p>
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
         <script src="js/tasks/tasks.js"></script>

@@ -35,7 +35,7 @@
                                         @endif
                                     </textarea>
                                     <div class="mb-3 my-custom-style">
-
+                                        <img class="imgTareas" src="{{ asset('images/usuario2.png') }}" alt="Volver" width="30" height="30">
                                         <label for="disabledSelect" class="form-label">Asignado a: </label>
                                         <select id="disabledSelect" class="form-select center-form" placeholder='usuario'>
                                             @foreach ($usuarios as $usuari)
@@ -62,6 +62,7 @@
                                         </select>
                                     </div>
                                     <div class="mb-3 my-custom-style">
+                                        <img class="imgTareas" src="{{ asset('images/fuente.png') }}" alt="Volver" width="30" height="30">
                                         <label for="exampleFormControlTextarea1"
                                             class="form-label center-form-label">Descripción</label>
                                         @if ($task != null)

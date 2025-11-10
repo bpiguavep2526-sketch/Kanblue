@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Task;
+use App\Models\Project;
 use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
@@ -19,6 +20,16 @@ class Project extends Model
     public function Task(): HasMany
     {
         return $this->hasMany(Task::class, 'id_proyectos');
+    }
+
+    /**
+     * The roles that belong to the Project
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function Usuarios(): BelongsToMany
+    {
+        return $this->belongsToMany(Usuaris::class, 'CREAR', 'id_proyecto', 'id_usuario')->whitPivot('id_rol');
     }
 
 }

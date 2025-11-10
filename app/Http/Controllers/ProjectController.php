@@ -12,7 +12,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return view('projects.index');
+        
     }
 
     /**
@@ -34,9 +34,9 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Project $project)
+    public function show()
     {
-        //
+        return view('projects.index');
     }
 
     /**

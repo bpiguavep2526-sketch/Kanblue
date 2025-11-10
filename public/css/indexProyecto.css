@@ -50,7 +50,6 @@
     padding-right: unset;
     padding-top: 1%;
     background-color: #79AAB7;
-    z-index: -1;
 }
 
 .projectCard {
@@ -74,7 +73,6 @@
     height: 280px;
     padding-top: 3%;
     width: 100%;
-    z-index: -1;
 }
 
 .imgEditar {

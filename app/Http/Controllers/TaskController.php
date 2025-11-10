@@ -32,7 +32,7 @@ class TaskController extends Controller
         $usuarios = Usuaris::all();
         $estados = Status::all();
 
-        return view('tasks.editarTareas', compact('task',  'usuarios', 'tipostarea', 'estados'));
+        return view('tasks.edit', compact('task',  'usuarios', 'tipostarea', 'estados'));
     }
 
     /**
@@ -60,7 +60,7 @@ class TaskController extends Controller
         $tipostarea = Tipus::all();
         $estados = Status::all();
 
-        return view('tasks.editarTareas', compact('task',  'usuarios', 'tipostarea', 'estados'));
+        return view('tasks.edit', compact('task',  'usuarios', 'tipostarea', 'estados'));
     }
 
     /**

@@ -52,6 +52,7 @@
                                         </select>
                                     </div>
                                     <div class="mb-3 my-custom-style">
+                                        <img class="imgTareas" src="{{ asset('images/etiqueta2.png') }}" alt="Volver" width="30" height="30">
                                         <label for="disabledSelect" class="form-label">Tipo de tarea: </label>
                                         <select id="disabledSelect" class="form-select center-form-one"
                                             holder="Usuario #32">
@@ -70,6 +71,7 @@
                                         @endif
                                     </div>
                                     <div class="mb-3 my-custom-style">
+                                        <img class="imgTareas" src="{{ asset('images/lista2.png') }}" alt="Volver" width="30" height="30">
                                         <label for="disabledSelect" class="form-label">Estado</label>
                                         <select id="disabledSelect" class="form-select center-form-two" holder="TODO">
                                             @foreach ($estados as $status)
@@ -86,10 +88,10 @@
                                         </select>
                                     </div>
                                     <div class="mb-3 my-custom-style">
-                                        <img src="{{ asset('images/borrar2.png') }}" alt="">
+                                        <img class="imgTareas" src="{{ asset('images/borrar2.png') }}" alt="">
                                         <label for="disabledSelect" class="form-label">Borrar Tarea</label>
                                         <label for="disabledSelect" class="form-label"></label>
-                                        <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                                        <button type="submit" class="btn btn-danger btntareas">ELIMINAR</button>
                                     </div>
                                 </fieldset>
                             </form>

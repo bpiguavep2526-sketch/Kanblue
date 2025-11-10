@@ -1,0 +1,97 @@
+.btnstylenewproject {
+    display: inline-block;
+    text-decoration: none;
+    padding-top: 11px;
+}
+
+.headerProyectos {
+    margin-top: 15px;
+}
+
+.borderContainer {
+    border: 1px solid #176F9E;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    width: 96%;
+    margin: 19px auto 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.p-3 h1 {
+    margin-bottom: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footerCard {
+    background: #AACED8;
+    border-radius: 15px 15px 15px 15px;
+    padding: 15px 10px;
+}
+
+.headerCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    padding: 6% 4% 0% 14%;
+}
+
+.cardUltima {
+    border-radius: 20px;
+    border: 3px solid;
+    width: 40%;
+    height: 300px;
+    margin-top: 3%;
+    margin-bottom: 2.7%;
+    margin-right: 3%;
+    margin-left: 3%;
+    padding-left: unset;
+    padding-right: unset;
+    padding-top: 1%;
+    background-color: #79AAB7;
+    z-index: -1;
+}
+
+.projectCard {
+    background-color: #E8E8E8;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 3px solid;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    height: 100%;
+}
+
+.cardSegunda {
+    background-color: #3290AA;
+    border-radius: 20px;
+    border-top: 3px solid;
+    height: 280px;
+    padding-top: 3%;
+    width: 100%;
+    z-index: -1;
+}
+
+.imgEditar {
+    height: 30px;
+    width: 30px;
+ }
+
+ .projectCard li{
+    font-size: 22px;
+    width: 93%;
+ }
+
+ .hrCard{
+    height: 3px;
+    background-color: black;
+    width: 99%;
+    margin: 0px auto;
+    opacity: 1;
+    border: none;
+ }

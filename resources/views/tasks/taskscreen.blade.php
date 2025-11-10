@@ -28,7 +28,7 @@
             </div>
             <div class="taskList" data-status="backlog">
                 @foreach ($tareas as $tarea)
-                    @if ($tarea->id_estado == 1)
+                    @if ($tarea->id_estado == 0)
                         <div draggable="true" class="taskCard" data-status="backlog">
                             <div class="taskHeader">
                                 <h4>{{ $tarea->titulo }}</h4>
@@ -81,7 +81,7 @@
             </div>
             <div class="taskList" data-status="todo">
                 @foreach ($tareas as $tarea)
-                    @if ($tarea->id_estado == 2)
+                    @if ($tarea->id_estado == 1)
                         <div draggable="true" class="taskCard" data-status="todo">
                             <div class="taskHeader">
                                 <h4>{{ $tarea->titulo }}</h4>
@@ -133,7 +133,7 @@
             </div>
             <div class="taskList" data-status="in progress">
                 @foreach ($tareas as $tarea)
-                    @if ($tarea->id_estado == 3)
+                    @if ($tarea->id_estado == 2)
                         <div draggable="true" class="taskCard" data-status="in progress">
                             <div class="taskHeader">
                                 <h4>{{ $tarea->titulo }}</h4>

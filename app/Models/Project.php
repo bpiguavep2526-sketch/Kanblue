@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Task;
 use App\Models\Project;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Project extends Model
 {

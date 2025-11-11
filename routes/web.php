@@ -13,7 +13,7 @@ Route::get('/', function () {
 Route::get('/editarperfil',[KanblueProfileController::class,'editarperfil']);
 
 Route::get('/editarTarea',[TaskController::class,'edit']) ->name('tasks.edit');
-Route::get('/pantallaproyectos',[ProjectController::class,'show']);
+Route::get('/pantallaproyectos',[ProjectController::class,'index']);
 
 Route::get('/proyecto',[KanblueProfileController::class,'proyect']);
 Route::get(('/KanblueProfile'),[KanblueProfileController::class,'kanblueprofile']) ->name('KanblueProfile');
@@ -29,3 +29,5 @@ Route::get('/Registro', function () {
 Route::get('/tasks', [TaskController::class,'index']);
 
 Route::put('/updateStatus/{taskId}', [TaskController::class, 'updateStatus']);
+
+Route::get('/proyectos/{id}/tareas', [ProjectController::class, 'show'])->name('projects.show');

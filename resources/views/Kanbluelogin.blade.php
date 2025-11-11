@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/estiloslogin.css') }}">
 </head>
 
-<body class="d-flex flex-column align-items-center justify-content-center vh-100 bg-white">
+<body class="d-flex flex-column align-items-center justify-content-center vh-100 background_login">
 
     <div class="logo-login">
         <img src="{{ asset('images/color_mid.png') }}" alt="Logo" class="img-fluid">
@@ -38,7 +38,7 @@
             <button type="submit" class="btn btn-primary w-100 rounded-pill mt-3">Login</button>
         </form>
 
-        <p class="text-center mt-3 mb-0">¿Sin cuenta? <a href="/Registro">Regístrate</a></p>
+        <p class="text-center mt-3 mb-0">¿Sin cuenta? <a href="Registro">Regístrate</a></p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

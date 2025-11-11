@@ -5,18 +5,18 @@ namespace App\Models {
     /**
      * App\Models\Tareas
      *
-     * @property int $id_usuario
+     * @property int|null $id_usuario
      * @property int $id_tipus
-     * @property int $id_proyectos
+     * @property int $id_proyecto
      * @property int $id_estado
-     * @property string $fecha
+     * @property string $descripcion
      * @property string $titulo
-     * @property int $id_tareas
-     * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas whereIdTareas($value)
+     * @property int $id_tarea
+     * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas whereIdTarea($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas whereTitulo($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas whereFecha($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas whereDescripcion($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas whereIdEstado($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas whereIdProyectos($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas whereIdProyecto($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas whereIdTipus($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas whereIdUsuario($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Tareas>|Tareas newModelQuery()

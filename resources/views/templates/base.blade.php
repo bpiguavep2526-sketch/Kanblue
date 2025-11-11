@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="images/icon.png">
      <title>@yield('title', 'Document')</title>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -18,7 +19,7 @@
     </script>
 </head>
 
-<body style="background-color: #EDEDED">
+<body class="generic_background">
 <nav class="navbar" style="background-color: #79AAB7;" data-bs-theme="dark" >
   <div class="container-fluid">
     <a class="navbar-brand d-flex align-items-center" href="#"  style="font-family: 'Poppins', sans-serif; font-weight: 600;">

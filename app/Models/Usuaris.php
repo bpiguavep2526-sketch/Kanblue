@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Usuaris;
 
 class Usuaris extends Model
 {
-    protected $table = 'usuarios';
-
+    protected $table = 'usuario';
     protected $primaryKey = 'id_usuario';
 
     public $timestamps = false;

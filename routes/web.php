@@ -29,3 +29,5 @@ Route::get('/Registro', function () {
 Route::resource('tasks', TaskController::Class);
 
 Route::put('/updateStatus/{taskId}', [TaskController::class, 'updateStatus']);
+
+Route::get('/proyectos/{id}/tareas', [ProjectController::class, 'show'])->name('projects.show');

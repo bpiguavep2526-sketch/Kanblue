@@ -2,7 +2,7 @@
 
 namespace App\Classes;
 
-class Task {
+class TaskClass {
     private $titulo;
     private $fecha;
     private $descripcion;

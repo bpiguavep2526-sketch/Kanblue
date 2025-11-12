@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Status extends Model
 {
-    protected $table = 'estado';
+    protected $table = 'ESTADO';
     protected $primaryKey = 'id_estado';
     public $timestamps = false;
 

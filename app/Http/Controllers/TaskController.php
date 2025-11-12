@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Status;
 use App\Models\Task;
 use App\Models\Tipus;
-use App\Models\Status;
 use App\Models\Usuaris;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class TaskController extends Controller
 {
@@ -18,7 +19,7 @@ class TaskController extends Controller
         $tareas = Task::all();
         $usuarios = Usuaris::all();
         $tipostarea = Tipus::all();
-        
+
         return view('tasks.taskscreen', compact('tareas', 'usuarios', 'tipostarea'));
     }
 
@@ -32,7 +33,7 @@ class TaskController extends Controller
         $usuarios = Usuaris::all();
         $estados = Status::all();
 
-        return view('tasks.edit', compact('task',  'usuarios', 'tipostarea', 'estados'));
+        return view('tasks.edit', compact('task', 'usuarios', 'tipostarea', 'estados'));
     }
 
     /**
@@ -60,7 +61,7 @@ class TaskController extends Controller
         $tipostarea = Tipus::all();
         $estados = Status::all();
 
-        return view('tasks.edit', compact('task',  'usuarios', 'tipostarea', 'estados'));
+        return view('tasks.edit', compact('task', 'usuarios', 'tipostarea', 'estados'));
     }
 
     /**
@@ -79,15 +80,31 @@ class TaskController extends Controller
         //
     }
 
-
-    /*Recibe la petición, busca en la base de datos la tarea con la misma ID, cambia su estado y lo guarda.*/
-    public function updateStatus(Request $request, string $id)
+    /* Recibe la petición, busca en la base de datos la tarea con la misma ID, cambia su estado y lo guarda. */
+    public function updateStatus(string $taskId, string $status)
     {
-        $status = $request->input('status');
 
-        $task = Task::where('id', $id)->first();
+        $taskId = (int) $taskId; // por seguridad
+        $task = Task::find($taskId);
 
-        $task->status = $status;
+        if (! $task) {
+            Log::error("Task no encontrada con id_tarea=$taskId");
+
+            return;
+        }
+
+        $statusBD = Status::where('nom', $status)->first();
+
+        if (! $statusBD) {
+            Log::error("Status no encontrado con nom=$status");
+
+            return;
+        }
+
+        $task->id_estado = $statusBD->id_estado;
         $task->save();
+
+        Log::info("Task actualizada correctamente: id_tarea={$task->id_tarea}, id_estado={$task->id_estado}");
+
     }
 }

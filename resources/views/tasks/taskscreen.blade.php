@@ -28,8 +28,8 @@
             </div>
             <div class="taskList" data-status="backlog">
                 @foreach ($tareas as $tarea)
-                    @if ($tarea->id_estado == 0)
-                        <div draggable="true" class="taskCard" data-status="backlog">
+                    @if ($tarea->id_estado == 1)
+                        <div draggable="true" class="taskCard" data-status="backlog" data-task-id={{$tarea->id_tarea}}>
                             <div class="taskHeader">
                                 <h4>{{ $tarea->titulo }}</h4>
                             </div>
@@ -81,8 +81,8 @@
             </div>
             <div class="taskList" data-status="todo">
                 @foreach ($tareas as $tarea)
-                    @if ($tarea->id_estado == 1)
-                        <div draggable="true" class="taskCard" data-status="todo">
+                    @if ($tarea->id_estado == 2)
+                        <div draggable="true" class="taskCard" data-status="todo" data-task-id={{$tarea->id_tarea}}>
                             <div class="taskHeader">
                                 <h4>{{ $tarea->titulo }}</h4>
                             </div>
@@ -133,8 +133,8 @@
             </div>
             <div class="taskList" data-status="in progress">
                 @foreach ($tareas as $tarea)
-                    @if ($tarea->id_estado == 2)
-                        <div draggable="true" class="taskCard" data-status="in progress">
+                    @if ($tarea->id_estado == 3)
+                        <div draggable="true" class="taskCard" data-status="in progress" data-task-id={{$tarea->id_tarea}}>
                             <div class="taskHeader">
                                 <h4>{{ $tarea->titulo }}</h4>
                             </div>
@@ -160,8 +160,8 @@
                                 @foreach ($tipostarea as $tasktype)
                                     @if ($tasktype->id_tipus == $tarea->id_tipus)
                                         <div class="d-flex justify-content-between">
-                                            <form action="{{ route('tasks.edit', ['task' => $tarea]) }}"
-                                                method="get" class="d-inline me-1">
+                                            <form action="{{ route('tasks.edit', ['task' => $tarea]) }}" method="get"
+                                                class="d-inline me-1">
                                                 <button class="btn btn-primary" style="margin-top: 10px">
                                                     <img src="images/info_task.png" alt="Disponible" width="25px"
                                                         height="25px">
@@ -185,8 +185,8 @@
             </div>
             <div class="taskList" data-status="done">
                 @foreach ($tareas as $tarea)
-                    @if ($tarea->id_estado == 3)
-                        <div draggable="true" class="taskCard" data-status="done">
+                    @if ($tarea->id_estado == 4)
+                        <div draggable="true" class="taskCard" data-status="done" data-task-id={{$tarea->id_tarea}}>
                             <div class="taskHeader">
                                 <h4>{{ $tarea->titulo }}</h4>
                             </div>

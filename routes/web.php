@@ -28,4 +28,4 @@ Route::get('/Registro', function () {
 
 Route::resource('tasks', TaskController::Class);
 
-Route::put('/updateStatus/{taskId}', [TaskController::class, 'updateStatus']);
+Route::put('/updateStatus/{taskId}/{status}', [TaskController::class, 'updateStatus']);

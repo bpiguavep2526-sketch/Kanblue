@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tipus;
+use App\Models\Status;
 use App\Models\Project;
+use App\Models\Usuaris;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -40,8 +43,11 @@ class ProjectController extends Controller
     {
         $project = Project::with('Task')->findOrFail($id_proyectos);
         $tareas = $project->Task;
+        $tipostarea = Tipus::all();
+        $estados = Status::all();
+        $usuarios = Usuaris::all();
 
-        return view('tasks.taskscreen', compact('project', 'tareas'));
+        return view('tasks.taskscreen', compact('project', 'tareas','tipostarea' ,'estados', 'usuarios'));
     }
 
     /**

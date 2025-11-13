@@ -25,7 +25,7 @@
         <div class="container text-center">
             @foreach ($projects->chunk(3) as $projectChunk)
                 <div class="row flex-nowrap justify-content-md-center">
-                    @foreach ($projectChunk as $project)
+                    @forelse ($projectChunk as $project)
                         <div class="col-md-auto cardUltima">
                             <div class="col-md-auto cardSegunda">
                                 <div class="col-md-auto projectCard">
@@ -49,7 +49,9 @@
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    @empty
+                        <p>No hay proyectos disponibles.</p>    
+                    @endforelse
                 </div>
             @endforeach
         </div>

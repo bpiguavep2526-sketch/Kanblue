@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\UsuariController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\KanblueProfileController;
 
 Route::get('/', function () {
@@ -20,10 +21,8 @@ Route::get(('/KanblueProfile'),[KanblueProfileController::class,'kanblueprofile'
 Route::get('/Login', [KanblueProfileController::class, 'profile']);
 Route::post('/Login', [KanblueProfileController::class, 'Login']);
 
-Route::get('/Registro', function () {
-    return view('kanblueRegistro');
-});
-Route::post('/Registro', [KanblueProfileController::class, 'registrarUsuario']);
+Route::get('/Registro',[UsuariController::class,'index']);
+Route::post('/Registro', [KanblueProfileController::class, 'store'])-> name ('registar.store');
 
 Route::resource('tasks', TaskController::Class);
 

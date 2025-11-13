@@ -12,7 +12,7 @@ class UsuariController extends Controller
      */
     public function index()
     {
-        //
+        return view ('KanblueRegistro');
     }
 
     /**

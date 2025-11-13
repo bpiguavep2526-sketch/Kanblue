@@ -14,34 +14,36 @@
     </div>
 
     <div class="card shadow p-4" style="width: 600px; border-radius: 1rem; background-color: rgba(255, 255, 255, 0.8);">
-        <form>
+
+        <form method="post" action ="{{route('registar.store')}}"  > 
+            @csrf
             <h2 class="text-center mb-4">Registro de Cuenta</h2>
 
             <div class="row mb-3 align-items-center">
                 <label for="Email" class="col-sm-4 col-form-label">Email</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control rounded-pill border border-primary" id="Email">
+                    <input type="email" class="form-control rounded-pill border border-primary" id="email" name='email'>
                 </div>
             </div>
 
             <div class="row mb-3 align-items-center">
                 <label for="Username" class="col-sm-4 col-form-label">Username</label>
                 <div class="col-sm-8">
-                    <input type="email" class="form-control rounded-pill border border-primary" id="Username">
+                    <input type="text" class="form-control rounded-pill border border-primary" id="username" name='username'>
                 </div>
             </div>
 
             <div class="row mb-3 align-items-center">
                 <label for="password" class="col-sm-4 col-form-label">Contraseña</label>
                 <div class="col-sm-8">
-                    <input type="password" class="form-control rounded-pill border border-primary" id="password">
+                    <input type="password" class="form-control rounded-pill border border-primary" id="password" name='password' >
                 </div>
             </div>
 
             <div class="row mb-3 align-items-center">
                 <label for="password-confirm" class="col-sm-4 col-form-label">Confirmar contraseña</label>
                 <div class="col-sm-8">
-                    <input type="password" class="form-control rounded-pill border border-primary" id="password-confirm">
+                    <input type="password" class="form-control rounded-pill border border-primary" id="password">
                 </div>
             </div>
 

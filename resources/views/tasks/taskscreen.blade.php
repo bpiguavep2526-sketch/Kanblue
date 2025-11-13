@@ -1,7 +1,5 @@
 @extends('templates.base')
 
-@section('title', 'Tareas')
-
 @section('navbar')
     <div class="d-flex align-items-center ms-auto">
         <span class="text-white small me-3"
@@ -15,9 +13,9 @@
 
 @section('content')
     <div class="d-flex justify-content-end p-2">
-        <a href="{{ route('tasks.create') }}" class="btnOg"
+        <a href="{{ route('tasks.edit') }}" class="btnOg"
             style="margin-right: 20px; margin-top: 10px; display:inline-block; text-decoration:none; text-align:center;">
-            NUEVA TAREA
+            EDITAR TAREA
         </a>
     </div>
     <div class="kanbanTable">
@@ -29,7 +27,7 @@
             <div class="taskList" data-status="backlog">
                 @foreach ($tareas as $tarea)
                     @if ($tarea->id_estado == 1)
-                        <div draggable="true" class="taskCard" data-status="backlog" data-task-id={{$tarea->id_tarea}}>
+                        <div draggable="true" class="taskCard" data-status="backlog" data-task-id={{ $tarea->id_tarea }}>
                             <div class="taskHeader">
                                 <h4>{{ $tarea->titulo }}</h4>
                             </div>
@@ -66,11 +64,8 @@
                                         </div>
                                     @endif
                                 @endforeach
-
                             </div>
                         </div>
-                    @endif
-                @endforeach
             </div>
         </div>
         <div class="column">
@@ -82,7 +77,7 @@
             <div class="taskList" data-status="todo">
                 @foreach ($tareas as $tarea)
                     @if ($tarea->id_estado == 2)
-                        <div draggable="true" class="taskCard" data-status="todo" data-task-id={{$tarea->id_tarea}}>
+                        <div draggable="true" class="taskCard" data-status="todo" data-task-id={{ $tarea->id_tarea }}>
                             <div class="taskHeader">
                                 <h4>{{ $tarea->titulo }}</h4>
                             </div>
@@ -134,7 +129,8 @@
             <div class="taskList" data-status="in progress">
                 @foreach ($tareas as $tarea)
                     @if ($tarea->id_estado == 3)
-                        <div draggable="true" class="taskCard" data-status="in progress" data-task-id={{$tarea->id_tarea}}>
+                        <div draggable="true" class="taskCard" data-status="in progress"
+                            data-task-id={{ $tarea->id_tarea }}>
                             <div class="taskHeader">
                                 <h4>{{ $tarea->titulo }}</h4>
                             </div>
@@ -186,7 +182,7 @@
             <div class="taskList" data-status="done">
                 @foreach ($tareas as $tarea)
                     @if ($tarea->id_estado == 4)
-                        <div draggable="true" class="taskCard" data-status="done" data-task-id={{$tarea->id_tarea}}>
+                        <div draggable="true" class="taskCard" data-status="done" data-task-id={{ $tarea->id_tarea }}>
                             <div class="taskHeader">
                                 <h4>{{ $tarea->titulo }}</h4>
                             </div>
@@ -230,6 +226,5 @@
             </div>
         </div>
         <script src="js/tasks/tasks.js"></script>
-
     </div>
 @endsection

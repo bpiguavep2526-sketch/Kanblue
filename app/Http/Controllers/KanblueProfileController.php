@@ -21,6 +21,11 @@ public function login(Request $request)
     }
 }
 
+public function store(Request $request)
+{
+    
+
+}
 
     public function profile() {
         return view('Kanbluelogin');

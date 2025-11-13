@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Task;
+use App\Models\Tipus;
+use App\Models\Status;
+use App\Models\Usuaris;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -11,8 +15,11 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $tareas = session ('tasks', []);
-        return view('tasks.taskscreen', compact('tareas'));
+        $tareas = Task::all();
+        $usuarios = Usuaris::all();
+        $tipostarea = Tipus::all();
+        
+        return view('tasks.taskscreen', compact('tareas', 'usuarios', 'tipostarea'));
     }
 
     /**
@@ -20,7 +27,12 @@ class TaskController extends Controller
      */
     public function create()
     {
-        //
+        $tipostarea = Tipus::all();
+        $task = null;
+        $usuarios = Usuaris::all();
+        $estados = Status::all();
+
+        return view('tasks.edit', compact('task',  'usuarios', 'tipostarea', 'estados'));
     }
 
     /**
@@ -42,9 +54,13 @@ class TaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Task $task)
     {
-        //
+        $usuarios = Usuaris::all();
+        $tipostarea = Tipus::all();
+        $estados = Status::all();
+
+        return view('tasks.edit', compact('task',  'usuarios', 'tipostarea', 'estados'));
     }
 
     /**

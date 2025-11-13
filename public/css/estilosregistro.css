@@ -24,3 +24,12 @@ a:hover {
     color: #016a8c;
     text-decoration: underline;
 }
+
+.background_registro{
+    background-image:url(../images/registro_background.png) ;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+

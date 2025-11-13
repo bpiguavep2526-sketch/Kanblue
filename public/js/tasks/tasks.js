@@ -1,11 +1,12 @@
 let taskColumns = document.querySelectorAll('.taskList');
 let showListBtn = document.querySelectorAll('.showList');
 let taskCards = document.querySelectorAll('.taskCard');
+
 toggleTaskDetails();
 dragTasks();
 dropAndLoadTasks();
 
-/*Permite desplegar/cerrar las tablas de tareas, activando y desactivando su estado (clase) active*/
+/* Permite desplegar/cerrar las tablas de tareas */
 function toggleTaskDetails() {
     for (let i = 0; i < showListBtn.length; i++) {
         showListBtn[i].addEventListener('click', function () {
@@ -14,19 +15,24 @@ function toggleTaskDetails() {
     }
 }
 
-/*Aplica la función de arrastre en las tarjetas*/
+/* Aplica la función de arrastre en las tarjetas */
 function dragTasks() {
     taskCards.forEach(card => {
         if (card.getAttribute('data-status') !== 'done') {
-            card.addEventListener('dragstart', () => {
-                card.classList.add('dragging');
+            card.setAttribute('draggable', true);
+
+            card.addEventListener('dragstart', e => {
+                setTimeout(() => card.classList.add('dragging'), 0);
+            });
+
+            card.addEventListener('dragend', e => {
+                card.classList.remove('dragging');
             });
         }
     });
 }
 
-/*Añade el comportamiento para que las columnas puedan recibir las tarjetas, tabmién evita que se incluya contenido si el ratón 
-está fuera de la columna*/
+/* Añade el comportamiento para que las columnas puedan recibir las tarjetas */
 function dropAndLoadTasks() {
     taskColumns.forEach(column => {
         column.addEventListener('dragenter', e => {
@@ -36,26 +42,27 @@ function dropAndLoadTasks() {
 
         column.addEventListener('dragover', e => {
             e.preventDefault();
-            e.target.classList.add('drag-over');
         });
 
         column.addEventListener('dragleave', e => {
-            e.target.classList.remove('drag-over');
+            column.classList.remove('drag-over');
         });
 
         column.addEventListener('drop', e => {
             e.preventDefault();
+            column.classList.remove('drag-over');
+
             const card = document.querySelector('.dragging');
+            if (!card) return; 
+
             column.appendChild(card);
-            card.dataset.status = column.getAttribute('data-status')
+            const taskId = card.getAttribute('data-task-id');
+            const status = column.getAttribute('data-status');
 
-            let taskId = card.getAttribute('data-task-id');
-            let status = column.getAttribute('data-status');
+            card.dataset.status = status;
 
-            /*Quita el evento de arrastre y la propiedad si esta en 'DONE'*/
-            if (card.dataset.status == 'done'){
-                card.setAttribute('draggable', false)
-                card.removeEventListener('dragstart')
+            if (status === 'done') {
+                card.setAttribute('draggable', false);
             }
 
             updateTaskStatus(taskId, status);
@@ -63,9 +70,9 @@ function dropAndLoadTasks() {
     });
 }
 
-/*Al cambiar la tarjeta de columna, se prepara la request para el UPDATE a la BD con la ID de la tarea y el nuevo estado.*/
+/* Actualiza el estado de la tarea en la BD */
 function updateTaskStatus(taskId, status) {
-    fetch('/updateStatus/${taskId}', {
+    fetch(`/updateStatus/${taskId}`, { 
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -74,5 +81,5 @@ function updateTaskStatus(taskId, status) {
             id: taskId,
             status: status
         }),
-    })
+    });
 }

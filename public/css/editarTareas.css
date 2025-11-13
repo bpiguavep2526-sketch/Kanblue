@@ -8,36 +8,46 @@
 }
 
 .ultimacarta {
-    width: 92rem !important;
+    width: 93rem !important;
     height: 50.7rem;
     background-color: #457582 !important;
     margin-top: 3%;
     margin-left: 2%;
-    border-left-width: 0px;
-    border-top-width: 0px;
+    border-top-right-radius: 38px;
+    border-top-left-radius: 38px;
+    border-bottom: none;
     border-color: #176F9E;
 
 }
 
 .segundacarta {
     width: 91rem;
-    height: 102.2%;
+    height: 100%;
     background-color: #79AAB7;
     border-left-width: 0px;
-    border-top-width: 0px;
+    border-top-right-radius: 38px;
+    border-top-left-radius: 38px;
+    border-bottom: none;
+    border-top: none;
+    border-left: none;
     border-color: #176F9E;
 
 }
 
 .primeracarta {
-    width: 90rem;
-    height: 102.1%;
+    width: 89rem;
+    height: 100%;
     background-color: #EDEDED;
     border-color: #176F9E;
+    border-top-right-radius: 38px;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-top-left-radius: 38px;
 }
 
 .ultimacardbody {
-    padding: 0px 0px 16px 0px;
+    padding: 0px 0px 0px 0px;
 }
 
 .my-custom-style {
@@ -81,30 +91,33 @@
 }
 
 .center-form-label {
-    margin-right: 4%;
-    margin-top: 6%;
+    margin-top: 0.8%;
 }
 
-.ultimacardbody legend {
-    font-size: 2.3rem;
+.ultimacardbody .titleinput {
+    font-size: 2rem;
     font-weight: bold;
     background: #d3d3d3;
     border-radius: 18px;
     padding: 12px 32px;
     border: 2px solid #444;
     box-shadow: none;
-    margin-bottom: 16px;
+    margin-bottom: 37px;
     letter-spacing: 1px;
     margin-top: 19px;
-    width: 96%;
+    width: 95%;
     margin-left: 25px;
+    text-align: left;
+}
 
+.ultimacardbody .titleinput::-webkit-scrollbar {
+    display: none;
 }
 
 .my-custom-style {
   display: flex;
   align-items: center;
-  margin: 18px 0;
+  margin: 45px 0 0 32px;
   gap: 12px;
 }
 
@@ -141,10 +154,6 @@ textarea.form-control {
   resize: vertical;
 }
 
-.center-form-label {
-  margin-right: 12px;
-}
-
 .btn-danger {
   background: #e74c3c;
   color: #fff;
@@ -160,9 +169,10 @@ textarea.form-control {
   background: #cc3a29;
 }
 
-.editTaskBg {
+.imgTareas{
   width: 32px;
   margin-right: 12px;
+  margin-bottom: .5rem;
 }
 
 .lineformat {
@@ -172,4 +182,8 @@ textarea.form-control {
   margin: 0px auto;
   opacity: 1;
   border: none;
+}
+
+.btntareas {
+  width: 23%;
 }

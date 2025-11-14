@@ -24,7 +24,7 @@
 <nav class="navbar" style="background-color: #79AAB7;" data-bs-theme="dark" >
   <div class="container-fluid">
     <a class="navbar-brand d-flex align-items-center" href="#"  style="font-family: 'Poppins', sans-serif; font-weight: 600;">
-      <img src="images/nav_icon.png" alt="Kanblue Logo" width="55" height="50" class="d-inline-block align-text-center">
+      <img src="{{ asset('images/nav_icon.png') }}" alt="Kanblue Logo" width="55" height="50" class="d-inline-block align-text-center">
       <span class="ms-2">KanBlue</span>
     </a>
     @yield('navbar')

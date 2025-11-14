@@ -5,7 +5,7 @@
     <span class="text-white small me-3" style="font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 20px">PROYECTO NUEVO</span>
     <div class="vr text-white me-3" style="height: 50px;"></div>
     <a href="" >    
-      <img src="images/cerrar-sesion.png" alt="Volver" width="30" height="30">
+      <img src="{{ asset('images/cerrar-sesion.png') }}" alt="Volver" width="30" height="30">
     </a>
   </div>
 @endsection

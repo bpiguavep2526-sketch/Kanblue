@@ -24,7 +24,7 @@ class KanblueProfileController extends Controller
     }
 
     public function proyect(){
-        return view('EditarProyecto');
+        return view('projects.edit');
     }
 
     public function editarperfil(){

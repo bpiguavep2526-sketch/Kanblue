@@ -19,7 +19,7 @@
     <div class="d-flex justify-content-between p-3 headerProyectos">
         <h1><img src="{{ asset('images/cortana.png') }}" alt="Volver" width="50" height="50"> Bienvenido
             Usuario#123123 , estos son sus proyectos actuales</h1>
-        <a href="{{ route('tasks.edit') }}" class="btnstylenewproject btnOg"> NUEVO PROYECTO </a>
+        <a href="{{ route('projects.edit') }}" class="btnstylenewproject btnOg"> NUEVO PROYECTO </a>
     </div>
     <div class="borderContainer">
         <div class="container text-center">
@@ -31,10 +31,10 @@
                                 <div class="col-md-auto projectCard">
                                     <div class="headerCard">
                                         <h3>{{ $project->nom }} #{{ $project->id_proyectos }}</h3>
-                                        {{-- <a href="{{ route('projects.edit', $project->id) }}">
+                                        <a href="{{ route('projects.edit', $project->id_proyectos) }}">
                                             <img src="{{ asset('images/botonEditar.png') }}" alt="Editar"
                                                 class="imgEditar">
-                                        </a> --}}
+                                        </a>
                                     </div>
                                     <hr class="hrCard">
                                     <ul>

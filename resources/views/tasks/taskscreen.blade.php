@@ -36,7 +36,7 @@
                     <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
                     <div class="taskDetails">
                         <div style="font-family: 'Poppins', sans-serif;">
-                            <img src="images/available_task.png" alt="Disponible" width="20px" height="20px"
+                            <img src="{{ asset('images/available_task.png') }}" alt="Disponible" width="20px" height="20px"
                                 class="d-inline-block align-text-center me-1">
                             @if ($tarea->id_tipus)
                                 @foreach ($usuarios as $user)
@@ -54,7 +54,7 @@
                                     <form action="{{ route('tasks.edit', ['task' => $tarea->id_tarea]) }}" method="get"
                                         class="d-inline me-1">
                                         <button class="btn btn-primary" style="margin-top: 10px">
-                                            <img src="images/info_task.png" alt="Disponible" width="25px" height="25px">
+                                            <img src="{{ asset('images/info_task.png') }}" alt="Disponible" width="25px" height="25px">
                                         </button>
                                     </form>
                                     <p class="tagRed">{{ $tasktype->nom }}</p>

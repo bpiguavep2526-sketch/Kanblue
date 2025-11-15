@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Iniciar sesión</title>
+    <link rel="icon" type="image/x-icon" href="images/nav_icon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/estiloslogin.css') }}">
 </head>

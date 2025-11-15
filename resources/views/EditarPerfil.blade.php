@@ -4,12 +4,14 @@
   <div class="d-flex align-items-center ms-auto">
     <span class="text-white small me-3" style="font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 20px">AJUSTES DE USUARIO</span>
     <div class="vr text-white me-3" style="height: 50px;"></div>
-    <a href="" class="icon-container" >    
-      <img src="images/salvar.png" alt="Volver" width="30" height="30">
-      <img src="images/cerrar-sesion.png" alt="Volver" width="30" height="30">
-      
+   
+      <button type="button" class="btn btn-light btnstyle borderizq"><img src="{{ asset('images/salvar.png') }}"
+                alt="Volver" width="30" height="30" onclick="document.getElementById('form-card').submit();"></button>
+      <a>
+        <img src="{{ asset('images/cerrar-sesion.png') }}" alt="Volver" width="30" height="30">
+      </a>  
     </a>
-  </div>
+ 
 @endsection
 @section('content')
 <main class="main-editarperfil">
@@ -23,7 +25,9 @@
                 CERRAR SESIÓN</button>
           </div>
         
-           <form class="form-card">
+           <form class="form-card" action="{{ route('usuaris.update',  $user->id_usuario) }}" method="POST">
+            @method('PUT')
+            @csrf
   <!-- Correo electrónico -->
   <div class="mb-5 row align-items-center">
     <label class="col-md-3 col-form-label d-flex align-items-center">
@@ -31,7 +35,7 @@
       Correo electrónico
     </label>
     <div class="col-md-9">
-      <input type="email" class="form-control uniform-input" >
+      <input type="email" name="email" class="form-control uniform-input" >
     </div>
   </div>
   <!-- Usuario -->
@@ -40,7 +44,7 @@
        <img src="{{ asset('images/avatar.png') }}" alt="icono correo" class="me-2" style="width:33px; height:33px;">
       Usuario</label>
     <div class="col-md-9">
-      <input type="text" class="form-control uniform-input" id="inputUsuario">
+      <input type="text" name="username" class="form-control uniform-input" id="inputUsuario">
     </div>
   </div>
   <!-- Contraseña -->
@@ -49,7 +53,7 @@
       <img src="{{ asset('images/bloquear.png') }}" alt="icono correo" class="me-2" style="width:33px; height:33px;">
       Contraseña</label>
     <div class="col-md-9">
-      <input type="password" class="form-control uniform-input" id="inputPassword" >
+      <input type="password" name="password" class="form-control uniform-input" id="inputPassword" >
     </div>
   </div>
   <!-- Confirmar contraseña -->
@@ -58,7 +62,7 @@
       <img src="{{ asset('images/aprobar.png') }}" alt="icono correo" class="me-2" style="width:33px; height:33px;">
       Confirmar contraseña</label>
     <div class="col-md-9">
-      <input type="password" class="form-control uniform-input" id="inputConfirmPassword">
+      <input type="password" name="passwordconfirm" class="form-control uniform-input" id="inputConfirmPassword">
     </div>
   </div>
 </form> 

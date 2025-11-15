@@ -7,9 +7,10 @@
     <div class="d-flex align-items-center ms-auto">
         <span class="text-white small me-3" style="font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 20px">
             {{ $usuario->username }}</span>
-        <div class="iconoUsuario">
+         <a href="{{ route('usuaris.edit', $usuario->id_usuario) }}"
+            class="iconoUsuario">
             <img src="{{ asset('images/usuario.png') }}" alt="Icono Usuario" width="50" height="50">
-        </div>
+        </a>
     </div>
 
 @endsection

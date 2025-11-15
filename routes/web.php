@@ -12,9 +12,8 @@ Route::get('/', function () {
 
 Route::get('/editarperfil',[KanblueProfileController::class,'editarperfil']);
 
-Route::get('/editarTarea',[TaskController::class,'edit']) ->name('tasks.edit');
 
-Route::get('/pantallaproyectos',[ProjectController::class,'index']);
+Route::get('/pantallaproyectos',[ProjectController::class,'index'])->name('projects.index');
 Route::get('/crearProyecto/{usuario}', [ProjectController::class, 'create'])->name('projects.crearProyecto');
 Route::get('/proyectos/{id}/editar', [ProjectController::class, 'edit'])->name('projects.edit');
 Route::post('/crearProyecto/{usuario}', [ProjectController::class, 'store'])->name('projects.store');
@@ -27,12 +26,13 @@ Route::get('/Login', [KanblueProfileController::class, 'profile']);
 Route::post('/Login', [KanblueProfileController::class, 'Login']);
 
 Route::get('/Registro',[UsuariController::class,'index']);
-Route::post('/Registro', [KanblueProfileController::class, 'store'])-> name ('registar.store');
+Route::post('/Registro', [KanblueProfileController::class, 'store'])->name('registar.store');
 
-Route::resource('tasks', TaskController::Class);
-
-
-
+Route::get('tasks', [TaskController::Class, 'index'])->name('tasks.index');
+Route::get('/crearTarea/{id_proyecto}',[TaskController::class,'create']) ->name('tasks.create');
+Route::get('/editarTarea/{id_tarea}',[TaskController::class,'edit']) ->name('tasks.edit');
+Route::post('/crearTarea/{project}', [TaskController::class, 'store'])->name('tasks.store');
+Route::put('/editarTarea/{task}', [TaskController::class, 'update'])->name('tasks.update');
 
 
 Route::put('/updateStatus/{taskId}/{status}', [TaskController::class, 'updateStatus']);

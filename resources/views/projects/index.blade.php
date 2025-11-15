@@ -19,7 +19,7 @@
     <div class="d-flex justify-content-between p-3 headerProyectos">
         <h3><img src="{{ asset('images/cortana.png') }}" alt="Volver" width="40" height="40"> Bienvenido
             {{ $usuario->username }} , estos son sus proyectos actuales</h3>
-        <a href="{{ route('projects.EditarProyecto', ['usuario' => $usuario->id_usuario]) }}"
+        <a href="{{ route('projects.crearProyecto', ['usuario' => $usuario->id_usuario]) }}"
             class="btnstylenewproject btnOg">
             NUEVO PROYECTO
         </a>

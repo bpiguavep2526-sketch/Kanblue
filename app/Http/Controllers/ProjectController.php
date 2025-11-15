@@ -7,6 +7,7 @@ use App\Models\Status;
 use App\Models\Project;
 use App\Models\Usuaris;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ProjectController extends Controller
 {
@@ -72,16 +73,19 @@ class ProjectController extends Controller
      */
     public function edit(string $id_proyecto)
     {
-        $project = Project::findOrFail($id_proyecto);
+        $project = Project::find($id_proyecto);
         return view('projects.edit', compact('project'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Project $project)
+    public function update(Request $request, string $id_proyecto)
     {
-        //
+        $project = Project::find($id_proyecto);
+        $project->nom = $request->input('nom');
+        $project->descripcion = $request->input('descripcion');
+        $project-> save();
     }
 
     /**

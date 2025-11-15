@@ -27,42 +27,44 @@
                     </div>
 
                     @if ($project == null)
-                    <form class="form-card" action="{{ route('projects.store', ['usuario' => $usuario->id_usuario]) }}" method="POST">
-                    @else 
-                    <form class="form-card" action="{{ route('projects.update') }}" method="PUT">
+                        <form class="form-card" action="{{ route('projects.store', ['usuario' => $usuario->id_usuario]) }}"
+                            method="POST">
+                        @else
+                        <form class="form-card" action="{{ route('projects.update', ['project' => $project->id_proyecto]) }}" method="POST">
+                          @method('PUT')
                     @endif
 
-                        @csrf 
+                    @csrf
 
-                        <div class="mb-5 row align-items-center">
-                            <label class="col-md-3 col-form-label d-flex align-items-center">
-                                <img src="{{ asset('images/gestion-de-proyectos.png') }}" alt="icono proyecto"
-                                    class="me-2" style="width:33px; height:33px;">
-                                Nombre del proyecto
-                            </label>
-                            <div class="col-md-9">
+                    <div class="mb-5 row align-items-center">
+                        <label class="col-md-3 col-form-label d-flex align-items-center">
+                            <img src="{{ asset('images/gestion-de-proyectos.png') }}" alt="icono proyecto" class="me-2"
+                                style="width:33px; height:33px;">
+                            Nombre del proyecto
+                        </label>
+                        <div class="col-md-9">
                                 <input type="text" name="nom" class="form-control uniform-input"
-                                    placeholder="Escribe el nombre del proyecto" value="{{ old('nom') }}" required>
-                            </div>
+                                    placeholder="Escribe el nombre del proyecto" value="{{ $project ? $project->nom : ''}}" required>
                         </div>
+                    </div>
 
-                        <!-- Descripción del proyecto -->
-                        <div class="mb-5 row align-items-start">
-                            <label class="col-md-3 col-form-label d-flex align-items-center ">
-                                <img src="{{ asset('images/fuente.png') }}" alt="icono descripción" class="me-2"
-                                    style="width:33px; height:33px;">
-                                Descripción
-                            </label>
-                            <div class="col-md-9">
-                                <textarea name="descripcion" class="form-control" rows="3" placeholder="Describe el proyecto..." required>{{ old('descripcion') }}</textarea>
-                            </div>
+                    <!-- Descripción del proyecto -->
+                    <div class="mb-5 row align-items-start">
+                        <label class="col-md-3 col-form-label d-flex align-items-center ">
+                            <img src="{{ asset('images/fuente.png') }}" alt="icono descripción" class="me-2"
+                                style="width:33px; height:33px;">
+                                Nombre del proyecto
+                        </label>
+                        <div class="col-md-9">
+                            <textarea name="descripcion" class="form-control" rows="3" placeholder="Describe el proyecto..." required>{{ $project ? $project->descripcion : ''}}</textarea>
                         </div>
+                    </div>
 
-                        <!-- Botones -->
-                        <div class="d-flex justify-content-between">
-                            <button type="submit" class="btn-guardar">GUARDAR</button>
-                            <button type="button" class="btn-eliminar">ELIMINAR</button>
-                        </div>
+                    <!-- Botones -->
+                    <div class="d-flex justify-content-between">
+                        <button type="submit" class="btn-guardar">GUARDAR</button>
+                        <button type="button" class="btn-eliminar">ELIMINAR</button>
+                    </div>
                     </form>
                 </div>
             </div>

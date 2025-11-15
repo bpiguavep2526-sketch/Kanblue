@@ -6,7 +6,7 @@
 
     <div class="d-flex align-items-center ms-auto">
         <span class="text-white small me-3" style="font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 20px">
-            Usuario #123123</span>
+            {{ $usuario->username }}</span>
         <div class="iconoUsuario">
             <img src="{{ asset('images/usuario.png') }}" alt="Icono Usuario" width="50" height="50">
         </div>
@@ -17,8 +17,7 @@
 @section('content')
 
     <div class="d-flex align-items-center justify-content-between p-3 headerProyectos">
-        <h3 ><img src="{{ asset('images/cortana.png') }}" alt="Volver" width="40" height="40"> Bienvenido
-            Usuario#123123 , estos son sus proyectos actuales</h1>
+        <h3 ><img src="{{ asset('images/cortana.png') }}" alt="Volver" width="40" height="40"> Bienvenido {{ $usuario->username }} , estos son sus proyectos actuales</h3>
         <a href="{{ route('tasks.edit') }}" class="btnstylenewproject btnOg"> NUEVO PROYECTO </a>
     </div>
     <div class="borderContainer">

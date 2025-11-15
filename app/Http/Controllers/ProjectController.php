@@ -15,9 +15,10 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        $usuario = session('usuario');
+        $projects = Project::select('PROYECTOS.*')->join('TAREAS', 'PROYECTOS.id_proyecto', '=', 'TAREAS.id_proyecto')->where('TAREAS.id_usuario', $usuario->id_usuario)->distinct()->get();
 
-        return view('projects.index', compact('projects'));
+        return view('projects.index', compact('projects', 'usuario'));
     }
 
     /**

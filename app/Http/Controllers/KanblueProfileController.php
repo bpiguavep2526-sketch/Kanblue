@@ -15,7 +15,7 @@ public function login(Request $request)
 
     if ($usuario && Hash::check($request->input('password'), $usuario->password)) {
         // Si el usuario y contraseña son correctos
-        return redirect('/pantallaproyectos');
+        return redirect('/pantallaproyectos')->with('usuario', $usuario);
     } else {
         // Si son incorrectos
         return back()->withInput()->with('error', 'Usuario o contraseña incorrecta');
@@ -30,6 +30,8 @@ public function store(Request $request)
     $hashedpassword = Hash::make($request-> input('password'));
     $usuario-> password = $hashedpassword;
     $usuario-> save();
+
+    return redirect('/Login');
 
 }
 

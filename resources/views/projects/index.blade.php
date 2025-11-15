@@ -17,8 +17,8 @@
 @section('content')
 
     <div class="d-flex align-items-center justify-content-between p-3 headerProyectos">
-        <h3 ><img src="{{ asset('images/cortana.png') }}" alt="Volver" width="40" height="40"> Bienvenido {{ $usuario->username }} , estos son sus proyectos actuales</h3>
-        <a href="{{ route('tasks.edit') }}" class="btnstylenewproject btnOg"> NUEVO PROYECTO </a>
+        <h3 ><img src="{{ asset('images/cortana.png') }}" alt="Volver" width="40" height="40"> Bienvenido {{ $usuario->username }} , estos son sus proyectos actuales</h>
+        <a href="{{ route('projects.EditarProyecto') }}" class="btnstylenewproject btnOg"> NUEVO PROYECTO </a>
     </div>
     <div class="borderContainer">
         <div class="container text-center">

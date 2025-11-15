@@ -13,7 +13,10 @@ Route::get('/', function () {
 Route::get('/editarperfil',[KanblueProfileController::class,'editarperfil']);
 
 Route::get('/editarTarea',[TaskController::class,'edit']) ->name('tasks.edit');
+
 Route::get('/pantallaproyectos',[ProjectController::class,'index']);
+Route::get('/crearProyecto', [ProjectController::class, 'create'])->name('projects.EditarProyecto');
+
 
 Route::get('/proyecto',[KanblueProfileController::class,'proyect']);
 Route::get(('/KanblueProfile'),[KanblueProfileController::class,'kanblueprofile']) ->name('KanblueProfile');

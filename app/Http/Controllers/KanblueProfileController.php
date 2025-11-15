@@ -39,8 +39,8 @@ public function store(Request $request)
         return view('Kanbluelogin');
     }
 
-    public function proyect() {
-        return view('EditarProyecto');
+    public function proyect(){
+        return view('projects.edit');
     }
 
     public function editarperfil() {

@@ -29,6 +29,8 @@ Route::post('/Registro', [KanblueProfileController::class, 'store'])-> name ('re
 
 Route::resource('tasks', TaskController::Class);
 
+Route::get('/proyectos/{id}/editar', [ProjectController::class, 'edit'])->name('projects.edit');
+
 Route::put('/updateStatus/{taskId}/{status}', [TaskController::class, 'updateStatus']);
 
 Route::get('/proyectos/{id}/tareas', [ProjectController::class, 'show'])->name('projects.show');

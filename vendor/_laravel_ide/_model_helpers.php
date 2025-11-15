@@ -323,12 +323,14 @@ namespace App\Models {
      * App\Models\User
      *
      * @property string $password
+     * @property string $email
      * @property string $username
      * @property int $id_usuario
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
      * @property-read int|null $notifications_count
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereIdUsuario($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereUsername($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereEmail($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User wherePassword($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User newQuery()
@@ -634,12 +636,14 @@ namespace App\Models {
      * App\Models\Usuari
      *
      * @property string $password
+     * @property string $email
      * @property string $username
      * @property int $id_usuario
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
      * @property-read int|null $notifications_count
      * @method static \Illuminate\Database\Eloquent\Builder<Usuari>|Usuari whereIdUsuario($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Usuari>|Usuari whereUsername($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Usuari>|Usuari whereEmail($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Usuari>|Usuari wherePassword($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Usuari>|Usuari newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Usuari>|Usuari newQuery()

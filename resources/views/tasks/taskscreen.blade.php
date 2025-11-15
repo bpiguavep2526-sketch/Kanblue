@@ -1,12 +1,14 @@
 @extends('templates.base')
 
+@section('title', 'Tareas')
+
 @section('navbar')
     <div class="d-flex align-items-center ms-auto">
         <span class="text-white small me-3"
             style="font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 20px">PROYECTO #45</span>
         <div class="vr text-white me-3" style="height: 50px;"></div>
         <a href="">
-            <img src="images/return.png.png" alt="Volver" width="30" height="30">
+            <img src="{{ asset('images/return.png') }}" alt="Volver" width="30" height="30">
         </a>
     </div>
 @endsection
@@ -15,7 +17,7 @@
     <div class="d-flex justify-content-end p-2">
         <a href="{{ route('tasks.edit') }}" class="btnOg"
             style="margin-right: 20px; margin-top: 10px; display:inline-block; text-decoration:none; text-align:center;">
-            EDITAR TAREA
+            CREAR TAREA
         </a>
     </div>
     <div class="kanbanTable">
@@ -36,7 +38,7 @@
                     <hr style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
                     <div class="taskDetails">
                         <div style="font-family: 'Poppins', sans-serif;">
-                            <img src="images/available_task.png" alt="Disponible" width="20px" height="20px"
+                            <img src="{{ asset('images/available_task.png') }}" alt="Disponible" width="20px" height="20px"
                                 class="d-inline-block align-text-center me-1">
                             @if ($tarea->id_tipus)
                                 @foreach ($usuarios as $user)
@@ -51,10 +53,10 @@
                         @foreach ($tipostarea as $tasktype)
                             @if ($tasktype->id_tipus == $tarea->id_tipus)
                                 <div class="d-flex justify-content-between">
-                                    <form action="{{ route('tasks.edit', ['task' => $tarea->id_tarea]) }}" method="get"
+                                    <form action="{{ route('tasks.edit', ['task' => $tarea]) }}" method="get"
                                         class="d-inline me-1">
                                         <button class="btn btn-primary" style="margin-top: 10px">
-                                            <img src="images/info_task.png" alt="Disponible" width="25px" height="25px">
+                                            <img src="{{ asset('images/info_task.png') }}" alt="Disponible" width="25px" height="25px">
                                         </button>
                                     </form>
                                     <p class="tagRed">{{ $tasktype->nom }}</p>
@@ -87,7 +89,7 @@
                                 style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
                             <div class="taskDetails">
                                 <div style="font-family: 'Poppins', sans-serif;">
-                                    <img src="images/available_task.png" alt="Disponible" width="20px" height="20px"
+                                    <img src="{{ asset('images/available_task.png') }}" alt="Disponible" width="20px" height="20px"
                                         class="d-inline-block align-text-center me-1">
                                     @if ($tarea->id_tipus)
                                         @foreach ($usuarios as $user)
@@ -105,7 +107,7 @@
                                             <form action="{{ route('tasks.edit', ['task' => $tarea->id_tarea]) }}"
                                                 method="get" class="d-inline me-1">
                                                 <button class="btn btn-primary" style="margin-top: 10px">
-                                                    <img src="images/info_task.png" alt="Disponible" width="25px"
+                                                    <img src="{{ asset('images/info_task.png') }}" alt="Disponible" width="25px"
                                                         height="25px">
                                                 </button>
                                             </form>
@@ -140,7 +142,7 @@
                                 style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
                             <div class="taskDetails">
                                 <div style="font-family: 'Poppins', sans-serif;">
-                                    <img src="images/available_task.png" alt="Disponible" width="20px" height="20px"
+                                    <img src="{{ asset('images/available_task.png') }}" alt="Disponible" width="20px" height="20px"
                                         class="d-inline-block align-text-center me-1">
                                     @if ($tarea->id_tipus)
                                         @foreach ($usuarios as $user)
@@ -158,7 +160,7 @@
                                             <form action="{{ route('tasks.edit', ['task' => $tarea]) }}" method="get"
                                                 class="d-inline me-1">
                                                 <button class="btn btn-primary" style="margin-top: 10px">
-                                                    <img src="images/info_task.png" alt="Disponible" width="25px"
+                                                    <img src="{{ asset('images/info_task.png') }}" alt="Disponible" width="25px"
                                                         height="25px">
                                                 </button>
                                             </form>
@@ -192,7 +194,7 @@
                                 style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
                             <div class="taskDetails">
                                 <div style="font-family: 'Poppins', sans-serif;">
-                                    <img src="images/available_task.png" alt="Disponible" width="20px" height="20px"
+                                    <img src="{{ asset('images/available_task.png') }}" alt="Disponible" width="20px" height="20px"
                                         class="d-inline-block align-text-center me-1">
                                     @if ($tarea->id_tipus)
                                         @foreach ($usuarios as $user)
@@ -210,7 +212,7 @@
                                             <form action="{{ route('tasks.edit', ['task' => $tarea->id_tarea]) }}"
                                                 method="get" class="d-inline me-1">
                                                 <button class="btn btn-primary" style="margin-top: 10px">
-                                                    <img src="images/info_task.png" alt="Disponible" width="25px"
+                                                    <img src="{{ asset('images/info_task.png') }}" alt="Disponible" width="25px"
                                                         height="25px">
                                                 </button>
                                             </form>

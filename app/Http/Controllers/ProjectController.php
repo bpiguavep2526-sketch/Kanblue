@@ -39,9 +39,9 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id_proyectos)
+    public function show($id_proyecto)
     {
-        $project = Project::with('Task')->findOrFail($id_proyectos);
+        $project = Project::with('Task')->findOrFail($id_proyecto);
         $tareas = $project->Task;
         $tipostarea = Tipus::all();
         $estados = Status::all();

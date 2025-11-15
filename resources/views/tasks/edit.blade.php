@@ -5,7 +5,7 @@
 @section('navbar')
     <div class="d-flex align-items-center ms-auto">
         <span class="text-white small me-3"
-            style="font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 20px">PROYECTO #42378 | TAREA #2</span>
+            style="font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 20px">NUEVA TAREA</span>
         <div class="vr text-white me-3" style="height: 50px;"></div>
         <a href="">
             <button type="button" class="btn btn-light btnstyle borderizq"><img src="{{ asset('images/salvar.png') }}"
@@ -19,6 +19,7 @@
 @endsection
 
 @section('content')
+
     <div class="card ultimacarta">
         <div class="card-body ultimacardbody">
             <div class="card segundacarta">
@@ -27,20 +28,21 @@
                         <div class="card-body ultimacardbody">
                             <form>
                                 <fieldset>
-                                    <textarea class="titleinput">
-                                        @if ($task != null)
-                                            {{ $task->titulo }}
-                                        @else
-                                            Escribe el nombre de la tarea...
-                                        @endif
-                                    </textarea>
+                                    @if ($tarea != null)
+                                        <input type="text" class="titleinput" placeholder="Escribe el título..."
+                                            value="{{ $tarea->titulo }}">
+                                    @else
+                                        <input type="text" class="titleinput" placeholder="Escribe el título...">
+                                    @endif
+                                    </input>
                                     <div class="mb-3 my-custom-style">
-                                        <img class="imgTareas" src="{{ asset('images/usuario2.png') }}" alt="Volver" width="30" height="30">
+                                        <img class="imgTareas" src="{{ asset('images/usuario2.png') }}" alt="Volver"
+                                            width="30" height="30">
                                         <label for="disabledSelect" class="form-label">Asignado a: </label>
                                         <select id="disabledSelect" class="form-select center-form" placeholder='usuario'>
                                             @foreach ($usuarios as $usuari)
-                                                @if ($task != null)
-                                                    @if ($usuari->id_usuario == $task->id_usuario)
+                                                @if ($tarea != null)
+                                                    @if ($usuari->id_usuario == $tarea->id_usuario)
                                                         <option selected>{{ $usuari->username }}</option>
                                                     @else
                                                         <option>{{ $usuari->username }}</option>
@@ -52,7 +54,8 @@
                                         </select>
                                     </div>
                                     <div class="mb-3 my-custom-style">
-                                        <img class="imgTareas" src="{{ asset('images/etiqueta2.png') }}" alt="Volver" width="30" height="30">
+                                        <img class="imgTareas" src="{{ asset('images/etiqueta2.png') }}" alt="Volver"
+                                            width="30" height="30">
                                         <label for="disabledSelect" class="form-label">Tipo de tarea: </label>
                                         <select id="disabledSelect" class="form-select center-form-one"
                                             holder="Usuario #32">
@@ -62,22 +65,24 @@
                                         </select>
                                     </div>
                                     <div class="mb-3 my-custom-style">
-                                        <img class="imgTareas" src="{{ asset('images/fuente.png') }}" alt="Volver" width="30" height="30">
+                                        <img class="imgTareas" src="{{ asset('images/fuente.png') }}" alt="Volver"
+                                            width="30" height="30">
                                         <label for="exampleFormControlTextarea1"
-                                            class="form-label center-form-label">Descripción</label>
-                                        @if ($task != null)
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Escribe aquí....">{{ $task->descripcion }}</textarea>
+                                            class="form-label center-form-label">{{ $tarea->descripcion }}</label>
+                                        @if ($tarea != null)
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Escribe aquí....">{{ $tarea->descripcion }}</textarea>
                                         @else
                                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Escribe aquí...."></textarea>
                                         @endif
                                     </div>
                                     <div class="mb-3 my-custom-style">
-                                        <img class="imgTareas" src="{{ asset('images/lista2.png') }}" alt="Volver" width="30" height="30">
+                                        <img class="imgTareas" src="{{ asset('images/lista2.png') }}" alt="Volver"
+                                            width="30" height="30">
                                         <label for="disabledSelect" class="form-label">Estado</label>
                                         <select id="disabledSelect" class="form-select center-form-two" holder="TODO">
                                             @foreach ($estados as $status)
-                                                @if ($task != null)
-                                                    @if ($task->id_estado = $status->id_estado)
+                                                @if ($tarea != null)
+                                                    @if ($tarea->id_estado = $status->id_estado)
                                                         <option selected>{{ $status->nom }}</option>
                                                     @else
                                                         <option>{{ $status->nom }}</option>
@@ -102,7 +107,4 @@
             </div>
         </div>
     </div>
-    <img class="editTaskBg" src="{{ asset('images/formasGeometricas.png') }}" alt="Formas geométricas" class="img-esquina"
-        width="200" height="200">
-
 @endsection

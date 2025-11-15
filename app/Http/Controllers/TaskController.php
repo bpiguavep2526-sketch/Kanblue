@@ -55,13 +55,13 @@ class TaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Task $task)
+    public function edit(Task $tarea)
     {
         $usuarios = Usuaris::all();
         $tipostarea = Tipus::all();
         $estados = Status::all();
 
-        return view('tasks.edit', compact('task', 'usuarios', 'tipostarea', 'estados'));
+        return view('tasks.edit', compact('tarea', 'usuarios', 'tipostarea', 'estados'));
     }
 
     /**

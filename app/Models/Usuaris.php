@@ -2,20 +2,28 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Models\Usuaris;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Usuaris extends Model
+class Usuaris extends  Authenticatable
 {
-    protected $table = 'usuario';
+    use HasFactory,  Notifiable;
+    protected $table = 'USUARIO';
     protected $primaryKey = 'id_usuario';
+    protected $fillable = ['username', 'password', 'email'];
+
 
     public $timestamps = false;
 
     /**
      * Get all of the Task for the Usuaris
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function Task(): HasMany
     {

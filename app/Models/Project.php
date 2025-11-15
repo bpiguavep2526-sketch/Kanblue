@@ -30,7 +30,7 @@ class Project extends Model
      */
     public function Usuarios(): BelongsToMany
     {
-        return $this->belongsToMany(Usuaris::class, 'CREAR', 'id_proyecto', 'id_usuario')->whitPivot('id_rol');
+        return $this->belongsToMany(Usuaris::class, 'CREAR', 'id_proyecto', 'id_usuario');
     }
 
 }

@@ -16,7 +16,13 @@ class ProjectController extends Controller
     public function index()
     {
         $usuario = session('usuario');
-        $projects = Project::select('PROYECTOS.*')->join('TAREAS', 'PROYECTOS.id_proyecto', '=', 'TAREAS.id_proyecto')->where('TAREAS.id_usuario', $usuario->id_usuario)->distinct()->get();
+        $projects = Project::select('PROYECTOS.*')
+        ->leftJoin('TAREAS', 'PROYECTOS.id_proyecto', '=', 'TAREAS.id_proyecto')
+        ->leftJoin('CREAR', 'PROYECTOS.id_proyecto', '=', 'CREAR.id_proyecto')
+        ->where('TAREAS.id_usuario', $usuario->id_usuario)
+        ->orWhere('CREAR.id_usuario', $usuario->id_usuario)
+        ->distinct()
+        ->get();
 
         return view('projects.index', compact('projects', 'usuario'));
     }
@@ -24,17 +30,27 @@ class ProjectController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()  
+    public function create(string $id_usuario)  
     {
-         return view('projects.EditarProyecto');
+        $project = null;
+        $usuario = Usuaris::find($id_usuario);
+        return view('projects.edit', compact('project', 'usuario'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, string $id_usuario)
     {
-        //
+        $project=new Project();
+        $project-> nom=$request->input('nom');
+        $project-> descripcion=$request->input('descripcion');
+        $project-> save();
+
+        $usuario = Usuaris::find($id_usuario);
+        $usuario->Projects()->attach($project->id_proyecto);
+
+        return redirect()->back();
     }
 
     /**
@@ -54,9 +70,9 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id_proyectos)
+    public function edit(string $id_proyecto)
     {
-        $project = Project::findOrFail($id_proyectos);
+        $project = Project::findOrFail($id_proyecto);
         return view('projects.edit', compact('project'));
     }
 

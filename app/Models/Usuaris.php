@@ -37,6 +37,6 @@ class Usuaris extends  Authenticatable
      */
     public function Projects(): BelongsToMany
     {
-        return $this->belongsToMany(Project::class, 'CREAR', 'id_usuario', 'id_proyecto')->withPivot('id_rol');
+        return $this->belongsToMany(Project::class, 'CREAR', 'id_usuario', 'id_proyecto');
     }
 }

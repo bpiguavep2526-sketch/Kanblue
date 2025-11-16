@@ -101,8 +101,12 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Project $project)
+    public function destroy(string $id_proyecto)
     {
-        //
+        $project = Project::find($id_proyecto);
+        $project->activo = 0;
+        $project->save();
+
+        return redirect()->route('projects.index');
     }
 }

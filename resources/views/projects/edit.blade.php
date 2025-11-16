@@ -40,8 +40,8 @@
                     @if (session('error'))
                         <div class="alert alert-danger">{{ session('error') }}</div>
                     @endif
-                    @if(session('success'))
-                                <div class="alert alert-success">{{ session('success') }}</div>
+                    @if (session('success'))
+                        <div class="alert alert-success">{{ session('success') }}</div>
                     @endif
 
                     <div class="mb-5 row align-items-center">
@@ -72,7 +72,14 @@
                     <!-- Botones -->
                     <div class="d-flex justify-content-between">
                         <button type="submit" class="btn-guardar">GUARDAR</button>
-                        <button type="button" class="btn-eliminar">ELIMINAR</button>
+                        @if ($project)
+                            <form action="{{ route('projects.delete',  $project->id_proyecto) }}"
+                                method="POST">
+                                @csrf
+                                @method('PUT')
+                                <button type="submit" class="btn-eliminar">ELIMINAR</button>
+                            </form>
+                        @endif
                     </div>
                     </form>
                 </div>

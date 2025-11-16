@@ -7,10 +7,10 @@
         <div class="vr text-white me-3" style="height: 50px;"></div>
 
         <button type="button" class="btn btn-light btnstyle borderizq"><img src="{{ asset('images/salvar.png') }}"
-                alt="Volver" width="30" height="30"
-                onclick="document.getElementById('formUser').submit();"></button>
-        <a>
-            <img src="{{ asset('images/cerrar-sesion.png') }}" alt="Volver" width="30" height="30">
+                alt="Volver" width="30" height="30" onclick="document.getElementById('formUser').submit();"></button>
+        <a href="{{ url()->previous() }}">
+            <button type="button" class="btn btn-light btnstyle borderdrch"><img src="{{ asset('images/salida.png') }}"
+                    alt="Volver" width="30" height="30"></button>
         </a>
         </a>
     @endsection
@@ -21,13 +21,18 @@
                     <div class="card-custom">
                         <div class="perfil-header d-flex align-items-center justify-content-between mb-4">
                             <h5 class="perfil-title m-0 flex-fill text-center">INFORMACIÓN DEL PERFIL</h5>
-                            <button class="btn-logout mybutton">
-                                <img src="{{ asset('images/cambiar.png') }}" alt="Cerrar sesión"
-                                    style="width:25px; height:25px; margin-right:12px;">
-                                CERRAR SESIÓN</button>
-                        </div>
 
-                        <form class="form-card" id="formUser" action="{{ route('usuaris.update', $user->id_usuario) }}" method="POST">
+                            <form action="{{ route('logout') }}" method="POST" style="display:inline">
+                                @csrf
+                                <button type="submit" class="btn-logout mybutton">
+                                    <img src="{{ asset('images/cambiar.png') }}" alt="Cerrar sesión"
+                                        style="width:25px; height:25px; margin-right:12px;">
+                                    CERRAR SESIÓN
+                                </button>
+                            </form>
+                        </div>
+                        <form class="form-card" id="formUser" action="{{ route('usuaris.update', $user->id_usuario) }}"
+                            method="POST">
                             @method('PUT')
                             @csrf
                             <!-- Correo electrónico -->

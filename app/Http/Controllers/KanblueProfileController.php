@@ -38,6 +38,14 @@ public function store(Request $request)
 
 }
 
+/*Cerrar sesión, vaciar datos guardados*/
+public function logout()
+{
+    Auth::logout();
+    session()->flush();
+    return redirect('/Login');
+}
+
 /*Comprueba que si, el usuario se ha dejado la sesión abierta, redireccione a la vista principal (proyectos) */
 public function profile() {
     if (Auth::check()) {
@@ -54,3 +62,5 @@ public function profile() {
         return view('EditarPerfil');
     }
 }
+
+

@@ -37,6 +37,9 @@ Route::middleware('auth')->group(function () {
 
     /* ACTUALIZAR ESTADO POR ARRASTRE */
     Route::put('/updateStatus/{taskId}/{status}', [TaskController::class, 'updateStatus']);
+
+    /*CERRAR SESIÓN*/
+    Route::post('/logout', [KanblueProfileController::class, 'logout'])->name('logout');
 });
 
 /*REDIRECCIÓN A LOGIN EN CASO DE PONER RUTA NO VALIDA (404) */

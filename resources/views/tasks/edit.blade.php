@@ -122,10 +122,10 @@
                             </fieldset>
                             </form>
                             <div class="mb-3 my-custom-style">
+                                @if ($tarea != null)
                                 <img class="imgTareas" src="{{ asset('images/borrar2.png') }}" alt="">
                                 <label for="disabledSelect" class="form-label">Borrar Tarea</label>
                                 <label for="disabledSelect" class="form-label"></label>
-                                @if ($tarea != null)
                                     <form action="{{ route('tasks.delete', $tarea->id_tarea) }}" method="POST">
                                         @csrf
                                         @method('PUT')

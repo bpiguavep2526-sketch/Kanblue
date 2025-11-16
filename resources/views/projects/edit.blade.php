@@ -60,7 +60,7 @@
                         <label class="col-md-3 col-form-label d-flex align-items-center ">
                             <img src="{{ asset('images/fuente.png') }}" alt="icono descripción" class="me-2"
                                 style="width:33px; height:33px;">
-                            Nombre del proyecto
+                            Descripción 
                         </label>
                         <div class="col-md-9">
                             <textarea name="descripcion" class="form-control" rows="3" placeholder="Describe el proyecto..." required>{{ $project ? $project->descripcion : '' }}</textarea>

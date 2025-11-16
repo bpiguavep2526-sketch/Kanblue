@@ -33,7 +33,7 @@ Route::get('/Registro',[UsuariController::class,'index']);
 Route::post('/Registro', [KanblueProfileController::class, 'store'])->name('registar.store');
 
 /*TAREAS*/
-Route::get('tasks', [TaskController::Class, 'index'])->name('tasks.index');
+Route::get('/proyectos/{id}/tareas', [ProjectController::class, 'show'])->name('projects.show');
 Route::get('/crearTarea/{id_proyecto}',[TaskController::class,'create']) ->name('tasks.create');
 Route::get('/editarTarea/{id_tarea}',[TaskController::class,'edit']) ->name('tasks.edit');
 Route::post('/crearTarea/{project}', [TaskController::class, 'store'])->name('tasks.store');
@@ -42,5 +42,3 @@ Route::put('/editarTarea/{task}', [TaskController::class, 'update'])->name('task
 
 /*ACTUALIZAR ESTADO POR ARRASTRE*/
 Route::put('/updateStatus/{taskId}/{status}', [TaskController::class, 'updateStatus']);
-
-Route::get('/proyectos/{id}/tareas', [ProjectController::class, 'show'])->name('projects.show');

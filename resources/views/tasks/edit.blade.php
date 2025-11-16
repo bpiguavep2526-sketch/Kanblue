@@ -16,7 +16,7 @@
         <button type="button" class="btn btn-light btnstyle borderizq"><img src="{{ asset('images/salvar.png') }}"
                 alt="Volver" width="30" height="30" onclick="document.getElementById('taskForm').submit();"></button>
 
-        <a href="{{ route('tasks.index') }}">
+        <a href="{{ url()->previous() }}">
             <button type="button" class="btn btn-light btnstyle borderdrch"><img src="{{ asset('images/salida.png') }}"
                     alt="Volver" width="30" height="30"></button>
         </a>

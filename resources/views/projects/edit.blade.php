@@ -30,11 +30,19 @@
                         <form class="form-card" action="{{ route('projects.store', ['usuario' => $usuario->id_usuario]) }}"
                             method="POST">
                         @else
-                        <form class="form-card" action="{{ route('projects.update', ['project' => $project->id_proyecto]) }}" method="POST">
-                          @method('PUT')
+                            <form class="form-card"
+                                action="{{ route('projects.update', ['project' => $project->id_proyecto]) }}"
+                                method="POST">
+                                @method('PUT')
                     @endif
 
                     @csrf
+                    @if (session('error'))
+                        <div class="alert alert-danger">{{ session('error') }}</div>
+                    @endif
+                    @if(session('success'))
+                                <div class="alert alert-success">{{ session('success') }}</div>
+                    @endif
 
                     <div class="mb-5 row align-items-center">
                         <label class="col-md-3 col-form-label d-flex align-items-center">
@@ -43,8 +51,9 @@
                             Nombre del proyecto
                         </label>
                         <div class="col-md-9">
-                                <input type="text" name="nom" class="form-control uniform-input"
-                                    placeholder="Escribe el nombre del proyecto" value="{{ $project ? $project->nom : ''}}" required>
+                            <input type="text" name="nom" class="form-control uniform-input"
+                                placeholder="Escribe el nombre del proyecto" value="{{ $project ? $project->nom : '' }}"
+                                required>
                         </div>
                     </div>
 
@@ -53,10 +62,10 @@
                         <label class="col-md-3 col-form-label d-flex align-items-center ">
                             <img src="{{ asset('images/fuente.png') }}" alt="icono descripción" class="me-2"
                                 style="width:33px; height:33px;">
-                                Nombre del proyecto
+                            Nombre del proyecto
                         </label>
                         <div class="col-md-9">
-                            <textarea name="descripcion" class="form-control" rows="3" placeholder="Describe el proyecto..." required>{{ $project ? $project->descripcion : ''}}</textarea>
+                            <textarea name="descripcion" class="form-control" rows="3" placeholder="Describe el proyecto..." required>{{ $project ? $project->descripcion : '' }}</textarea>
                         </div>
                     </div>
 

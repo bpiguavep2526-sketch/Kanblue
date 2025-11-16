@@ -43,7 +43,7 @@
                                     @if ($tarea->id_tipus)
                                         @foreach ($usuarios as $user)
                                             @if ($user->id_usuario == $tarea->id_usuario)
-                                                <img src="{{ asset('images/asigned_task.png') }}" alt="Disponible"
+                                                <img src="{{ asset('images/asigned_task.png') }}" alt="Usuario asignado"
                                                     width="20px" height="20px"
                                                     class="d-inline-block align-text-center me-1">
                                                 {{ $user->username }}
@@ -93,8 +93,9 @@
                                 style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
                             <div class="taskDetails">
                                 <div style="font-family: 'Poppins', sans-serif;">
-                                    <img src="{{ asset('images/available_task.png') }}" alt="Disponible" width="20px"
-                                        height="20px" class="d-inline-block align-text-center me-1">
+                                    <img src="{{ asset('images/asigned_task.png') }}" alt="Usuario asignado"
+                                                    width="20px" height="20px"
+                                                    class="d-inline-block align-text-center me-1">
                                     @if ($tarea->id_tipus)
                                         @foreach ($usuarios as $user)
                                             @if ($user->id_usuario == $tarea->id_usuario)
@@ -146,8 +147,9 @@
                                 style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
                             <div class="taskDetails">
                                 <div style="font-family: 'Poppins', sans-serif;">
-                                    <img src="{{ asset('images/available_task.png') }}" alt="Disponible" width="20px"
-                                        height="20px" class="d-inline-block align-text-center me-1">
+                                    <img src="{{ asset('images/asigned_task.png') }}" alt="Usuario asignado"
+                                                    width="20px" height="20px"
+                                                    class="d-inline-block align-text-center me-1">
                                     @if ($tarea->id_tipus)
                                         @foreach ($usuarios as $user)
                                             @if ($user->id_usuario == $tarea->id_usuario)
@@ -198,8 +200,9 @@
                                 style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
                             <div class="taskDetails">
                                 <div style="font-family: 'Poppins', sans-serif;">
-                                    <img src="{{ asset('images/available_task.png') }}" alt="Disponible" width="20px"
-                                        height="20px" class="d-inline-block align-text-center me-1">
+                                    <img src="{{ asset('images/asigned_task.png') }}" alt="Usuario asignado"
+                                                    width="20px" height="20px"
+                                                    class="d-inline-block align-text-center me-1">
                                     @if ($tarea->id_tipus)
                                         @foreach ($usuarios as $user)
                                             @if ($user->id_usuario == $tarea->id_usuario)

@@ -43,15 +43,20 @@ class ProjectController extends Controller
      */
     public function store(Request $request, string $id_usuario)
     {
-        $project=new Project();
-        $project-> nom=$request->input('nom');
-        $project-> descripcion=$request->input('descripcion');
-        $project-> save();
+        if ($request->filled('nom') && $request->filled('descripcion')) {
+            $project=new Project();
+            $project-> nom=$request->input('nom');
+            $project-> descripcion=$request->input('descripcion');
+            $project-> activo = 1;
+            $project-> save();
 
-        $usuario = Usuaris::find($id_usuario);
-        $usuario->Projects()->attach($project->id_proyecto);
+            $usuario = Usuaris::find($id_usuario);
+            $usuario->Projects()->attach($project->id_proyecto);
 
-        return redirect()->back();
+            return back()->with('success', 'Proyecto creado correctamente');
+        } else {
+            return back()->withInput()->with('error', 'Rellena todos los campos.');
+        }
     }
 
     /**
@@ -83,9 +88,14 @@ class ProjectController extends Controller
     public function update(Request $request, string $id_proyecto)
     {
         $project = Project::find($id_proyecto);
-        $project->nom = $request->input('nom');
-        $project->descripcion = $request->input('descripcion');
+        if ($request->filled('nom')){
+            $project->nom = $request->input('nom');
+        }
+        if ($request->filled('descripcion')){
+            $project->descripcion = $request->input('descripcion');
+        }
         $project-> save();
+        return back()->with('success', 'Proyecto actualizado correctamente');
     }
 
     /**

@@ -19,6 +19,9 @@
         <form method="post" action ="{{route('registar.store')}}"  > 
             @csrf
             <h2 class="text-center mb-4">Registro de Cuenta</h2>
+            @if(session('error'))
+            <div class="alert alert-danger">{{ session('error') }}</div>
+            @endif
 
             <div class="row mb-3 align-items-center">
                 <label for="Email" class="col-sm-4 col-form-label">Email</label>
@@ -44,7 +47,7 @@
             <div class="row mb-3 align-items-center">
                 <label for="password-confirm" class="col-sm-4 col-form-label">Confirmar contraseña</label>
                 <div class="col-sm-8">
-                    <input type="password" class="form-control rounded-pill border border-primary" id="password">
+                    <input type="password" name="passwordconfirm" class="form-control rounded-pill border border-primary" id="password">
                 </div>
             </div>
 

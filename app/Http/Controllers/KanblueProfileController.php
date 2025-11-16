@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Usuari;
 use App\Models\Usuaris;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -27,15 +28,27 @@ public function login(Request $request)
 
 public function store(Request $request)
 {
-    $usuario=new Usuaris();
-    $usuario-> username=$request->input('username');
-    $usuario-> email=$request->input('email');
-    $hashedpassword = Hash::make($request-> input('password'));
-    $usuario-> password = $hashedpassword;
-    $usuario-> save();
-
-    return redirect('/Login');
-
+    if(!$request->filled('username')){
+        return back()->withInput()->with('error', 'Rellena todos los campos y comprueba que la contraseña sea igual.');
+    } else if (!$request->filled('email')){
+        return back()->withInput()->with('error', 'Rellena todos los campos y comprueba que la contraseña sea igual.');
+    } else if (!$request->filled('password') || !$request->filled('passwordconfirm')){
+        return back()->withInput()->with('error', 'Rellena todos los campos y comprueba que la contraseña sea igual.');
+    } else if ($request->input('password') != $request->input('passwordconfirm')){
+        return back()->withInput()->with('error', 'Las contraseñas no són iguales');
+    } else if (Usuaris::whereRaw('LOWER(username) = ?', [Str::lower($request->input('username'))])->exists()) {
+        return back()->withInput()->with('error', 'El nombre de usuario ya está en uso');
+    } else if (Usuaris::whereRaw('LOWER(email) = ?', [Str::lower($request->input('email'))])->exists()) {
+        return back()->withInput()->with('error', 'El correo electrónico ya está en uso');
+    } else {
+        $usuario=new Usuaris();
+        $usuario-> username=$request->input('username');
+        $usuario-> email=$request->input('email');
+        $hashedpassword = Hash::make($request-> input('password'));
+        $usuario-> password = $hashedpassword;
+        $usuario-> save();
+        return redirect('/Login');
+    }
 }
 
 /*Cerrar sesión, vaciar datos guardados*/

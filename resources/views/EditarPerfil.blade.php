@@ -35,6 +35,12 @@
                             method="POST">
                             @method('PUT')
                             @csrf
+                            @if (session('error'))
+                                <div class="alert alert-danger">{{ session('error') }}</div>
+                            @endif
+                            @if(session('success'))
+                                <div class="alert alert-success">{{ session('success') }}</div>
+                            @endif
                             <!-- Correo electrónico -->
                             <div class="mb-5 row align-items-center">
                                 <label class="col-md-3 col-form-label d-flex align-items-center">
@@ -80,6 +86,7 @@
                                         id="inputConfirmPassword">
                                 </div>
                             </div>
+                            
                         </form>
                     </div>
                 </div>

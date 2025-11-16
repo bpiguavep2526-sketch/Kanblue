@@ -44,18 +44,25 @@ class TaskController extends Controller
     public function store(Request $request, string $id_proyecto)
     {
         $task= new Task();
-        $task->titulo=$request->input('titulo');
-        $task->descripcion=$request->input('descripcion');
-        $estado = Status::where('ESTADO.nom', $request->input('estado'))->first();
-        $user = Usuaris::where('USUARIO.username', $request->input('usuario'))->first();
-        $tipus = Tipus::where('TIPUS.nom', $request->input('tipo'))->first();
-        $project = Project::find($id_proyecto);
-        $task->id_estado = $estado->id_estado;
-        $task->id_proyecto = $project->id_proyecto;
-        $task->id_tipus = $tipus->id_tipus;
-        $task->id_usuario = $user->id_usuario;
-        $task-> save();
-
+        if(!$request->filled('titulo')){
+            return back()->withInput()->with('error', 'Rellena todos los campos.');
+        } else if (!$request->filled('descripcion')){
+            return back()->withInput()->with('error', 'Rellena todos los campos.');
+        } else {
+            $task->titulo=$request->input('titulo');
+            $task->descripcion=$request->input('descripcion');
+             $estado = Status::where('ESTADO.nom', $request->input('estado'))->first();
+            $user = Usuaris::where('USUARIO.username', $request->input('usuario'))->first();
+            $tipus = Tipus::where('TIPUS.nom', $request->input('tipo'))->first();
+            $project = Project::find($id_proyecto);
+            $task->id_estado = $estado->id_estado;
+            $task->id_proyecto = $project->id_proyecto;
+            $task->id_tipus = $tipus->id_tipus;
+            $task->id_usuario = $user->id_usuario;
+            $task->activo = 1;
+            $task-> save();
+            return back()->with('success', 'Tarea creada correctamente');
+        }
     }
 
     /**
@@ -98,6 +105,7 @@ class TaskController extends Controller
         $task->id_tipus = $tipus->id_tipus;
         $task->id_usuario = $user->id_usuario;
         $task-> save();
+        return back()->with('success', 'Tarea actualizada correctamente');
     }
 
     /**

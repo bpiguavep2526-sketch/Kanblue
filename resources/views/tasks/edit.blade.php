@@ -36,11 +36,18 @@
                                     action="{{ route('tasks.store', ['project' => $project->id_proyecto]) }}"
                                     method="POST">
                                 @else
-                                    <form id="taskForm" action="{{ route('tasks.update', ['task' => $tarea->id_tarea]) }}" method="POST">
+                                    <form id="taskForm" action="{{ route('tasks.update', ['task' => $tarea->id_tarea]) }}"
+                                        method="POST">
                                         @method('PUT')
                             @endif
                             @csrf
                             <fieldset>
+                                @if (session('error'))
+                                    <div class="alert alert-danger">{{ session('error') }}</div>
+                                @endif
+                                @if(session('success'))
+                                <div class="alert alert-success">{{ session('success') }}</div>
+                                @endif
                                 @if ($tarea != null)
                                     <input type="text" name="titulo" class="titleinput"
                                         placeholder="Escribe el título..." value="{{ $tarea->titulo }}">

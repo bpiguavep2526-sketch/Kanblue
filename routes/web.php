@@ -27,7 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/proyectos/{id}/editar', [ProjectController::class, 'edit'])->name('projects.edit');
     Route::post('/crearProyecto/{usuario}', [ProjectController::class, 'store'])->name('projects.store');
     Route::put('/updateProyecto/{project}', [ProjectController::class, 'update'])->name('projects.update');
-    Route::put('/deleteProyecto/{project}', [ProjectController::class, 'delete'])->name('projects.delete');
+    Route::put('/deleteProyecto/{project}', [ProjectController::class, 'destroy'])->name('projects.delete');
 
 
     /* TAREAS */
@@ -36,6 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/editarTarea/{id_tarea}', [TaskController::class, 'edit'])->name('tasks.edit');
     Route::post('/crearTarea/{project}', [TaskController::class, 'store'])->name('tasks.store');
     Route::put('/editarTarea/{task}', [TaskController::class, 'update'])->name('tasks.update');
+    Route::put('/deleteTarea/{id_tarea}', [TaskController::class, 'delete'])->name('tasks.delete');
 
     /* ACTUALIZAR ESTADO POR ARRASTRE */
     Route::put('/updateStatus/{taskId}/{status}', [TaskController::class, 'updateStatus']);

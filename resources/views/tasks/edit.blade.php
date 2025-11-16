@@ -45,8 +45,8 @@
                                 @if (session('error'))
                                     <div class="alert alert-danger">{{ session('error') }}</div>
                                 @endif
-                                @if(session('success'))
-                                <div class="alert alert-success">{{ session('success') }}</div>
+                                @if (session('success'))
+                                    <div class="alert alert-success">{{ session('success') }}</div>
                                 @endif
                                 @if ($tarea != null)
                                     <input type="text" name="titulo" class="titleinput"
@@ -122,7 +122,14 @@
                                     <img class="imgTareas" src="{{ asset('images/borrar2.png') }}" alt="">
                                     <label for="disabledSelect" class="form-label">Borrar Tarea</label>
                                     <label for="disabledSelect" class="form-label"></label>
-                                    <button type="submit" class="btn btn-danger btntareas">ELIMINAR</button>
+                                    @if ($tarea != null)
+                                        <form action="{{ route('tasks.delete', $tarea->id_tarea) }}"
+                                            method="POST">
+                                            @csrf
+                                            @method('PUT')
+                                            <button type="submit" class="btn-eliminar">ELIMINAR</button>
+                                        </form>
+                                    @endif
                                 </div>
                             </fieldset>
                             </form>

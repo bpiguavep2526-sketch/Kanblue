@@ -111,9 +111,13 @@ class TaskController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id_tarea)
     {
-        //
+        $tarea = Project::find($id_tarea);
+        $tarea->activo = 0;
+        $tarea->save();
+
+        return redirect()->route('projects.show');
     }
 
     /* Recibe la petición, busca en la base de datos la tarea con la misma ID, cambia su estado y lo guarda. */

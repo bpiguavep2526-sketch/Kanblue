@@ -10,7 +10,7 @@
                 style="font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 20px">{{ $project->nom }}</span>
         @endif
         <div class="vr text-white me-3" style="height: 50px;"></div>
-        <a href="{{ url()->previous() }}">
+        <a href="{{ route('projects.index') }}">
             <img src="{{ asset('images/cerrar-sesion.png') }}" alt="Volver" width="30" height="30">
         </a>
     </div>

@@ -53,21 +53,28 @@ class UsuarisController extends Controller
      */
     public function update(Request $request, string $id_usuario)
     {
-        $user = User::find($id_usuario);
-        if ($request->input('email') != null){
-            $user->email = $request->input('email');
+        $user = Usuaris::find($id_usuario);
+
+    if ($request->filled('email')) {
+        $user->email = $request->email;
+    }
+
+    if ($request->filled('username')) {
+        $user->username = $request->username;
+    }
+
+    if ($request->filled('password')) {
+
+        if ($request->password === $request->passwordconfirm) {
+            $user->password = Hash::make($request->password);
+        } else {
+            return back()->withInput()->with('error', 'Las contraseñas no son iguales');
         }
-        if ($request->input('username') != null){
-            $user->email = $request->input('username');
-        }
-        if ($request->input('password'!= null)){
-            if($request->input('passwordconfirm' != null && $request->input('password') == $request->input('passwordconfirm'))){
-                $hashedpassword = Hash::make($request-> input('password'));
-                $user->password = $hashedpassword;
-            } else {
-                return back()->withInput()->with('error', 'Las contraseñas no son iguales');
-            }
-        }
+    }
+
+    $user->save();
+
+    return back()->with('success', 'Usuario actualizado correctamente');
     }
 
     /**

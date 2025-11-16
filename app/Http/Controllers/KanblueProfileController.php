@@ -15,7 +15,7 @@ public function login(Request $request)
 
     if ($usuario && Hash::check($request->input('password'), $usuario->password)) {
         // Si el usuario y contraseña son correctos
-        return redirect('/pantallaproyectos')->with('usuario', $usuario);
+    return redirect()->route('projects.index');
     } else {
         // Si son incorrectos
         return back()->withInput()->with('error', 'Usuario o contraseña incorrecta');

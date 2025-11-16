@@ -82,8 +82,9 @@ class TaskController extends Controller
         $usuarios = Usuaris::all();
         $tipostarea = Tipus::all();
         $estados = Status::all();
+        $project = Project::find($tarea->id_proyecto);
 
-        return view('tasks.edit', compact('tarea', 'usuarios', 'tipostarea', 'estados'));
+        return view('tasks.edit', compact('tarea', 'usuarios', 'tipostarea', 'estados', 'project'));
     }
 
     /**
@@ -119,6 +120,17 @@ class TaskController extends Controller
 
         return redirect()->route('projects.show');
     }
+
+    public function deactivate(string $id_tarea)
+    {
+
+        $tarea = Task::find($id_tarea);
+        $tarea->activo = 0;
+        $tarea->save();
+
+        return redirect()->route('projects.show', $tarea->id_proyecto);
+    }
+
 
     /* Recibe la petición, busca en la base de datos la tarea con la misma ID, cambia su estado y lo guarda. */
     public function updateStatus(string $taskId, string $status)

@@ -16,9 +16,10 @@
         <button type="button" class="btn btn-light btnstyle borderizq"><img src="{{ asset('images/salvar.png') }}"
                 alt="Volver" width="30" height="30" onclick="document.getElementById('taskForm').submit();"></button>
 
-        <a href="{{ url()->previous() }}">
-            <button type="button" class="btn btn-light btnstyle borderdrch"><img src="{{ asset('images/salida.png') }}"
-                    alt="Volver" width="30" height="30"></button>
+        <a href="{{ route('projects.show', $project->id_proyecto) }}">
+            <button type="button" class="btn btn-light btnstyle borderdrch">
+                <img src="{{ asset('images/salida.png') }}" alt="Volver" width="30" height="30">
+            </button>
         </a>
     </div>
 @endsection
@@ -107,7 +108,7 @@
                                         holder="TODO">
                                         @foreach ($estados as $status)
                                             @if ($tarea != null)
-                                                @if ($tarea->id_estado = $status->id_estado)
+                                                @if ($tarea->id_estado == $status->id_estado)
                                                     <option selected>{{ $status->nom }}</option>
                                                 @else
                                                     <option>{{ $status->nom }}</option>
@@ -118,21 +119,20 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="mb-3 my-custom-style">
-                                    <img class="imgTareas" src="{{ asset('images/borrar2.png') }}" alt="">
-                                    <label for="disabledSelect" class="form-label">Borrar Tarea</label>
-                                    <label for="disabledSelect" class="form-label"></label>
-                                    @if ($tarea != null)
-                                        <form action="{{ route('tasks.delete', $tarea->id_tarea) }}"
-                                            method="POST">
-                                            @csrf
-                                            @method('PUT')
-                                            <button type="submit" class="btn-eliminar">ELIMINAR</button>
-                                        </form>
-                                    @endif
-                                </div>
                             </fieldset>
                             </form>
+                            <div class="mb-3 my-custom-style">
+                                <img class="imgTareas" src="{{ asset('images/borrar2.png') }}" alt="">
+                                <label for="disabledSelect" class="form-label">Borrar Tarea</label>
+                                <label for="disabledSelect" class="form-label"></label>
+                                @if ($tarea != null)
+                                    <form action="{{ route('tasks.delete', $tarea->id_tarea) }}" method="POST">
+                                        @csrf
+                                        @method('PUT')
+                                        <button type="submit" class="btn-eliminar">ELIMINAR</button>
+                                    </form>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>

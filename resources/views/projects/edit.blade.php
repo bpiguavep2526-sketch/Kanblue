@@ -23,14 +23,12 @@
                 <div class="card-custom">
                     <div class="perfil-header d-flex align-items-center justify-content-between mb-4">
                         <h5 class="perfil-title m-0 flex-fill text-center">EDITAR PROYECTO</h5>
-
                     </div>
-
                     @if ($project == null)
-                        <form class="form-card" action="{{ route('projects.store', ['usuario' => $usuario->id_usuario]) }}"
+                        <form class="form-card" style="height: fit-content;" action="{{ route('projects.store', ['usuario' => $usuario->id_usuario]) }}"
                             method="POST">
                         @else
-                            <form class="form-card"
+                            <form class="form-card"   style="height: fit-content;"
                                 action="{{ route('projects.update', ['project' => $project->id_proyecto]) }}"
                                 method="POST">
                                 @method('PUT')
@@ -72,16 +70,18 @@
                     <!-- Botones -->
                     <div class="d-flex justify-content-between">
                         <button type="submit" class="btn-guardar">GUARDAR</button>
+                    </div>
+                    </form>
+                    <div>
                         @if ($project)
-                            <form action="{{ route('projects.delete',  $project->id_proyecto) }}"
-                                method="POST">
+                            <form action="{{ route('projects.delete', $project->id_proyecto) }}" method="POST">
                                 @csrf
                                 @method('PUT')
-                                <button type="submit" class="btn-eliminar">ELIMINAR</button>
+                                <button type="submit"  class="btn-eliminar ms-4">ELIMINAR</button>
                             </form>
                         @endif
                     </div>
-                    </form>
+
                 </div>
             </div>
         </div>

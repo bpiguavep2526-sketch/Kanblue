@@ -72,14 +72,16 @@ function dropAndLoadTasks() {
 
 /* Actualiza el estado de la tarea en la BD */
 function updateTaskStatus(taskId, status) {
-    fetch(`/updateStatus/${taskId}`, { 
+
+     const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+    fetch(`http://localhost/Kanblue/public/updateStatus/${taskId}/${status}`, {
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': token,
+            'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-            id: taskId,
-            status: status
-        }),
-    });
-}
+        body: JSON.stringify({}) // Laravel necesita un body aunque sea vacío para PUT/PATCH
+    })
+
+}  

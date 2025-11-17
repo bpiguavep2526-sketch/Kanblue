@@ -12,7 +12,12 @@ Route::get('/', function () {
 
 Route::get('/editarperfil',[KanblueProfileController::class,'editarperfil']);
 
-Route::get('/editarTarea',[TaskController::class,'edit']) ->name('tasks.edit');
+
+
+
+
+
+
 Route::get('/pantallaproyectos',[ProjectController::class,'index']);
 
 Route::get('/proyecto',[KanblueProfileController::class,'proyect']);

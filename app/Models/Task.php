@@ -7,12 +7,21 @@ use App\Models\Status;
 use App\Models\Project;
 use App\Models\Usuaris;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Task extends Model
 {
     protected $table = 'TAREAS';
     protected $primaryKey = 'id_tarea';
     public $timestamps = false;
+    protected $fillable = [
+        'titulo',
+        'descripcion',
+        'id_estado', 
+        'id_proyectos', // Asegúrate de que este campo esté aquí si lo vas a guardar
+        'id_tipus',
+        'id_usuario',
+    ];
 
     /**
      * Get the Project that owns the Task

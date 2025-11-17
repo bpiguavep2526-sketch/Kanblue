@@ -6,6 +6,7 @@ use App\Models\Task;
 use App\Models\Tipus;
 use App\Models\Status;
 use App\Models\Usuaris;
+use App\Classes\TaskClass;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -34,13 +35,37 @@ class TaskController extends Controller
 
         return view('tasks.edit', compact('task',  'usuarios', 'tipostarea', 'estados'));
     }
+     
+
+
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+
+      $validatedData = $request->validate([
+            'titulo' => 'required|string|max:255',
+            'descripcion' => 'nullable|string',
+            'id_usuario' => 'required|exists:USUARIO,id_usuario', 
+            'id_tipus' => 'required|exists:TIPUS,id_tipus', 
+            'id_estado' => 'required|exists:ESTADO,id_estado', 
+        ]);
+
+
+       $task= new Task();
+       $task->titulo=$request->input('titulo');
+       $task->descripcion=$request->input('descripcion');
+       $task->id_proyectos=1;
+       $task->id_usuario = $validatedData['id_usuario'];
+        $task->id_tipus = $validatedData['id_tipus'];
+        $task->id_estado = $validatedData['id_estado'];
+       $task->save();
+       
+       return redirect()->route('tasks.index');
+       
+       
     }
 
     /**
@@ -66,9 +91,27 @@ class TaskController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Task $task)
     {
-        //
+        $validatedData = $request->validate([
+            'titulo' => 'required|string|max:255',
+            'descripcion' => 'nullable|string',
+            'id_usuario' => 'required|exists:USUARIO,id_usuario',
+            'id_tipus' => 'required|exists:TIPUS,id_tipus',
+            'id_estado' => 'required|exists:ESTADO,id_estado',
+        ]);
+        
+        $task->titulo = $validatedData['titulo'];
+        $task->descripcion = $validatedData['descripcion'];
+        $task->id_usuario = $validatedData['id_usuario'];
+        $task->id_tipus = $validatedData['id_tipus'];
+        $task->id_estado = $validatedData['id_estado'];
+        
+        $task->save();
+       
+        return redirect()->route('tasks.index')->with('success', 'Tarea actualizada exitosamente.');
+       
+       
     }
 
     /**

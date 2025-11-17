@@ -8,7 +8,7 @@
       <img src="images/cerrar-sesion.png" alt="Volver" width="30" height="30">
     </a>
   </div>
-@endsection
+@endsection0
 
 @section('content')
 <main class="main-editarperfil">

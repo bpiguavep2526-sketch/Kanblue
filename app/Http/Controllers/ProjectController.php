@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tipus;
-use App\Models\Status;
 use App\Models\Project;
+use App\Models\Status;
+use App\Models\Tipus;
 use App\Models\Usuaris;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ProjectController extends Controller
 {
@@ -15,25 +16,48 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        $usuario = session('usuario');
+        $projects = Project::select('PROYECTOS.*')
+            ->leftJoin('TAREAS', 'PROYECTOS.id_proyecto', '=', 'TAREAS.id_proyecto')
+            ->leftJoin('CREAR', 'PROYECTOS.id_proyecto', '=', 'CREAR.id_proyecto')
+            ->where('TAREAS.id_usuario', $usuario->id_usuario)
+            ->orWhere('CREAR.id_usuario', $usuario->id_usuario)
+            ->distinct()
+            ->get();
 
-        return view('projects.index', compact('projects'));
+        return view('projects.index', compact('projects', 'usuario'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(string $id_usuario)
     {
-        return view('projects.create');
+        $project = null;
+        $usuario = Usuaris::find($id_usuario);
+
+        return view('projects.edit', compact('project', 'usuario'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, string $id_usuario)
     {
-        //
+        if ($request->filled('nom') && $request->filled('descripcion')) {
+            $project = new Project;
+            $project->nom = $request->input('nom');
+            $project->descripcion = $request->input('descripcion');
+            $project->activo = 1;
+            $project->save();
+
+            $usuario = Usuaris::find($id_usuario);
+            $usuario->Projects()->attach($project->id_proyecto);
+
+            return back()->with('success', 'Proyecto creado correctamente');
+        } else {
+            return back()->withInput()->with('error', 'Rellena todos los campos.');
+        }
     }
 
     /**
@@ -47,31 +71,57 @@ class ProjectController extends Controller
         $estados = Status::all();
         $usuarios = Usuaris::all();
 
-        return view('tasks.taskscreen', compact('project', 'tareas','tipostarea' ,'estados', 'usuarios'));
+        return view('tasks.taskscreen', compact('project', 'tareas', 'tipostarea', 'estados', 'usuarios'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id_proyectos)
+    public function edit(string $id_proyecto)
     {
-        $project = Project::findOrFail($id_proyectos);
+        $project = Project::find($id_proyecto);
+
+        if ($project->estado == 0) { 
+            return redirect()->route('projects.index')->with('error', 'Este proyecto está desactivado');
+        }
+
         return view('projects.edit', compact('project'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Project $project)
+    public function update(Request $request, string $id_proyecto)
     {
-        //
+        $project = Project::find($id_proyecto);
+        
+        if ($project->estado == 0) { 
+            return redirect()->route('projects.index')->with('error', 'Este proyecto está desactivado');
+        }
+
+        if ($request->filled('nom')) {
+            $project->nom = $request->input('nom');
+        }
+        if ($request->filled('descripcion')) {
+            $project->descripcion = $request->input('descripcion');
+        }
+        $project->save();
+
+        return back()->with('success', 'Proyecto actualizado correctamente');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Project $project)
+    public function destroy(string $id_proyecto) {}
+
+    public function deactivate(string $id_proyecto)
     {
-        //
+
+        $project = Project::find($id_proyecto);
+        $project->activo = 0;
+        $project->save();
+
+        return redirect()->route('projects.index');
     }
 }

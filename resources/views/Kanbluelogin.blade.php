@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Iniciar sesión</title>
+    <link rel="icon" type="image/x-icon" href="images/nav_icon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/estiloslogin.css') }}">
 </head>
@@ -23,7 +24,7 @@
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
 
-        <form method="POST" action="/Registro">
+        <form method="POST" action="/Kanblue/public/Login">
             @csrf
             <div class="form-floating mb-3">
                 <input type="text" name="username" class="form-control rounded-pill border border-primary" id="username" placeholder="Usuario" value="{{ old('username') }}">

@@ -31,7 +31,6 @@
 
 .headerCard {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     font-weight: bold;
     padding: 6% 4% 0% 14%;

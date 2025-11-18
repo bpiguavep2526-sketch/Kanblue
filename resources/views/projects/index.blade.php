@@ -6,20 +6,21 @@
 
     <div class="d-flex align-items-center ms-auto">
         <span class="text-white small me-3" style="font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 20px">
-            Usuario #123123</span>
-        <div class="iconoUsuario">
+            {{ $usuario->username }}</span>
+        <a href="{{ route('usuaris.edit', $usuario->id_usuario) }}" class="iconoUsuario">
             <img src="{{ asset('images/usuario.png') }}" alt="Icono Usuario" width="50" height="50">
-        </div>
+        </a>
     </div>
 
 @endsection
 
 @section('content')
 
-    <div class="d-flex justify-content-between p-3 headerProyectos">
-        <h1><img src="{{ asset('images/cortana.png') }}" alt="Volver" width="50" height="50"> Bienvenido
-            Usuario#123123 , estos son sus proyectos actuales</h1>
-        <a href="{{ route('projects.create') }}" class="btnstylenewproject btnOg">
+    <div class="d-flex align-items-center justify-content-between p-3 headerProyectos">
+        <h3><img src="{{ asset('images/cortana.png') }}" alt="Volver" width="40" height="40"> Bienvenido
+            {{ $usuario->username }}, estos son sus proyectos actuales.</h3>
+        <a href="{{ route('projects.crearProyecto', ['usuario' => $usuario->id_usuario]) }}"
+            class="btnstylenewproject btnOg">
             NUEVO PROYECTO
         </a>
     </div>
@@ -35,16 +36,14 @@
                                 <div class="col-md-auto cardSegunda">
                                     <div class="col-md-auto projectCard">
                                         <div class="headerCard">
-                                            <h3>{{ $project->nom }} #{{ $project->id_proyecto }}</h3>
-                                            <a href="{{ route('projects.edit', $project->id_proyecto) }}">
+                                            <h3>{{ $project->nom }}</h3>
+                                            <a class="ms-4" href="{{ route('projects.edit', $project->id_proyecto) }}">
                                                 <img src="{{ asset('images/botonEditar.png') }}" alt="Editar"
                                                     class="imgEditar">
                                             </a>
                                         </div>
                                         <hr class="hrCard">
-                                        <ul>
-                                            <li>{{ $project->descripcion ?? 'Sin descripción' }}</li>
-                                        </ul>
+                                        <h5>{{ $project->descripcion ?? 'Sin descripción' }}</h5>
                                         <div class="footerCard">
                                             <a href="{{ route('projects.show', $project->id_proyecto) }}"
                                                 class="btnstylenewproject btnOg">

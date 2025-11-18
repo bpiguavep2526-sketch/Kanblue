@@ -13,7 +13,6 @@ Route::get('/', function () {
 Route::get('/editarperfil',[KanblueProfileController::class,'editarperfil']);
 
 Route::get('/editarTarea',[TaskController::class,'edit']) ->name('tasks.edit');
-Route::get('/pantallaproyectos',[ProjectController::class,'index']);
 
 Route::get('/proyecto',[KanblueProfileController::class,'proyect']);
 Route::get(('/KanblueProfile'),[KanblueProfileController::class,'kanblueprofile']) ->name('KanblueProfile');
@@ -28,8 +27,8 @@ Route::get('/Registro', function () {
 
 Route::resource('tasks', TaskController::Class);
 
-Route::get('/proyectos/{id}/editar', [ProjectController::class, 'edit'])->name('projects.edit');
-
-Route::put('/updateStatus/{taskId}/{status}', [TaskController::class, 'updateStatus']);
+Route::get('/pantallaproyectos',[ProjectController::class,'index']);
 
 Route::get('/proyectos/{id}/tareas', [ProjectController::class, 'show'])->name('projects.show');
+
+Route::get('/proyectos/{id}/editar', [ProjectController::class, 'edit'])->name('projects.edit');

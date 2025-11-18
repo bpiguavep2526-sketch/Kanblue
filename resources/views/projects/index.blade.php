@@ -19,41 +19,46 @@
     <div class="d-flex justify-content-between p-3 headerProyectos">
         <h1><img src="{{ asset('images/cortana.png') }}" alt="Volver" width="50" height="50"> Bienvenido
             Usuario#123123 , estos son sus proyectos actuales</h1>
-        <a href="{{ route('projects.edit') }}" class="btnstylenewproject btnOg"> NUEVO PROYECTO </a>
+        <a href="{{ route('projects.create') }}" class="btnstylenewproject btnOg">
+            NUEVO PROYECTO
+        </a>
     </div>
     <div class="borderContainer">
         <div class="container text-center">
-            @foreach ($projects->chunk(3) as $projectChunk)
-                <div class="row flex-nowrap justify-content-md-center">
-                    @forelse ($projectChunk as $project)
-                        <div class="col-md-auto cardUltima">
-                            <div class="col-md-auto cardSegunda">
-                                <div class="col-md-auto projectCard">
-                                    <div class="headerCard">
-                                        <h3>{{ $project->nom }} #{{ $project->id_proyectos }}</h3>
-                                        <a href="{{ route('projects.edit', $project->id_proyectos) }}">
-                                            <img src="{{ asset('images/botonEditar.png') }}" alt="Editar"
-                                                class="imgEditar">
-                                        </a>
-                                    </div>
-                                    <hr class="hrCard">
-                                    <ul>
-                                        <li>{{ $project->descripcion ?? 'Sin descripción' }}</li>
-                                    </ul>
-                                    <div class="footerCard">
-                                        <a href="{{ route('projects.show', $project->id_proyectos) }}"
-                                            class="btnstylenewproject btnOg">
-                                            <strong>ABRIR PROYECTO</strong>
-                                        </a>
+            @if ($projects->isEmpty())
+                <p>No hay proyectos disponibles.</p>
+            @else
+                @foreach ($projects->chunk(3) as $projectChunk)
+                    <div class="row flex-nowrap justify-content-md-center">
+                        @forelse ($projectChunk as $project)
+                            <div class="col-md-auto cardUltima">
+                                <div class="col-md-auto cardSegunda">
+                                    <div class="col-md-auto projectCard">
+                                        <div class="headerCard">
+                                            <h3>{{ $project->nom }} #{{ $project->id_proyecto }}</h3>
+                                            <a href="{{ route('projects.edit', $project->id_proyecto) }}">
+                                                <img src="{{ asset('images/botonEditar.png') }}" alt="Editar"
+                                                    class="imgEditar">
+                                            </a>
+                                        </div>
+                                        <hr class="hrCard">
+                                        <ul>
+                                            <li>{{ $project->descripcion ?? 'Sin descripción' }}</li>
+                                        </ul>
+                                        <div class="footerCard">
+                                            <a href="{{ route('projects.show', $project->id_proyecto) }}"
+                                                class="btnstylenewproject btnOg">
+                                                <strong>ABRIR PROYECTO</strong>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @empty
-                        <p>No hay proyectos disponibles.</p>    
-                    @endforelse
-                </div>
-            @endforeach
+                        @empty
+                        @endforelse
+                    </div>
+                @endforeach
+            @endif
         </div>
     </div>
 @endsection

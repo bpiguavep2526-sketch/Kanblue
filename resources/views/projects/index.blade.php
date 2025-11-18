@@ -26,10 +26,12 @@
     </div>
     <div class="borderContainer">
         <div class="container text-center">
-            @foreach ($projects->chunk(3) as $projectChunk)
-                <div class="row justify-content-center mb-4">
-                    @forelse ($projectChunk as $project)
-                        @if ($project->activo == 1)
+            @if ($projects->isEmpty())
+                <p>No hay proyectos disponibles.</p>
+            @else
+                @foreach ($projects->chunk(3) as $projectChunk)
+                    <div class="row flex-nowrap justify-content-md-center">
+                        @forelse ($projectChunk as $project)
                             <div class="col-md-auto cardUltima">
                                 <div class="col-md-auto cardSegunda">
                                     <div class="col-md-auto projectCard">
@@ -51,12 +53,11 @@
                                     </div>
                                 </div>
                             </div>
-                        @endif
-                    @empty
-                        <p>No hay proyectos disponibles.</p>
-                    @endforelse
-                </div>
-            @endforeach
+                        @empty
+                        @endforelse
+                    </div>
+                @endforeach
+            @endif
         </div>
     </div>
 @endsection

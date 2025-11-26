@@ -42,7 +42,8 @@ La aplicación ha sido creada usando HTML, JS, CSS y Bootstrap y Laravel.
 
 ***
 https://github.com/bpiguavep2526-sketch/Kanblue/wiki
-Para mas información de uso, características en profundidad y explicación de despliegue, recomendamos consultar nuestra [Wiki]([https://github.com/bpiguavep2526-sketch/Kanblue/wiki/CARACTER%C3%8DSTICAS-DEL-PROGRAMA](https://github.com/bpiguavep2526-sketch/Kanblue/wiki)).
+Para más información de uso, características en profundidad y explicación de despliegue, recomendamos consultar nuestra [Wiki](https://github.com/bpiguavep2526-sketch/Kanblue/wiki).
+
 En ella, encontrará información variada sobre Kanblue.
 
 ### Esperamos que disfrute de utilizar nuestra aplicación.

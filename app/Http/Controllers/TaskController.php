@@ -63,6 +63,7 @@ class TaskController extends Controller
             $task->id_usuario = $user->id_usuario;
             $task->activo = 1;
             $task-> save();
+            
             return back()->with('success', 'Tarea creada correctamente');
         }
     }
@@ -92,7 +93,7 @@ class TaskController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Task $task)
+    public function update(Request $request, string $id)
     {
         $task = Task::find($id);
         if ($request->input('titulo') != null){
@@ -107,7 +108,7 @@ class TaskController extends Controller
         $task->id_estado = $estado->id_estado;
         $task->id_tipus = $tipus->id_tipus;
         $task->id_usuario = $user->id_usuario;
-        $task-> save();
+        $task->save();
         return back()->with('success', 'Tarea actualizada correctamente');
     }
 

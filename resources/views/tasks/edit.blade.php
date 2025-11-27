@@ -47,7 +47,7 @@
                                     <div class="alert alert-danger">{{ session('error') }}</div>
                                 @endif
                                 @if (session('success'))
-                                    <div class="alert alert-success">{{ session('success') }}</div>
+                                <div class=" alert-success">{{ session('success') }}</div>
                                 @endif
                                 @if ($tarea != null)
                                     <input type="text" name="titulo" class="titleinput"

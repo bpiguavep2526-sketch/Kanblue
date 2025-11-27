@@ -37,3 +37,12 @@ a:hover {
     background-attachment: fixed;
     background-size: cover;
 }
+
+
+@media (max-width: 1000px) {
+  .contenedor_login {
+     width: 75%;;
+     
+
+  }
+}

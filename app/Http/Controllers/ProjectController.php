@@ -81,7 +81,7 @@ class ProjectController extends Controller
     {
         $project = Project::find($id_proyecto);
 
-        if ($project->estado == 0) { 
+        if ($project->activo == 0) { 
             return redirect()->route('projects.index')->with('error', 'Este proyecto está desactivado');
         }
 

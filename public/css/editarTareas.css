@@ -188,3 +188,31 @@ textarea.form-control {
 .btntareas {
   width: 23%;
 }
+.alert-success{
+   text-align: center;
+   justify-content: center;
+    background-color: #d4edda; 
+    color: #155724;             
+    border: 1px solid #c3e6cb; 
+    width: 50%;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px ;
+    display: flex;
+}
+.alert-danger{
+   text-align: center;
+   justify-content: center;
+   color: #721C24;
+  background-color: #F8D7DA;
+    border: 1px solid #F5C6CB; 
+    width: 50%;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px ;
+    display: flex;
+}

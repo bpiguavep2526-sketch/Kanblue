@@ -6,13 +6,25 @@
 
 .headerProyectos {
     margin-top: 15px;
+    /* Ajuste para móvil: padding horizontal para evitar que el texto toque los bordes */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    /* Para que los elementos se apilen en móvil si es necesario */
+    flex-wrap: wrap; 
+}
+
+.headerProyectos h3 {
+    /* Ajuste el tamaño de la fuente para pantallas pequeñas */
+    font-size: 1.2rem;
+    margin-bottom: 10px; /* Espacio al apilarse con el botón */
 }
 
 .borderContainer {
     border: 1px solid #176F9E;
     border-bottom: none;
     border-radius: 15px 15px 0 0;
-    width: 96%;
+    /* Usamos un ancho relativo para que se ajuste mejor al contenedor */
+    width: 98%; 
     margin: 19px auto 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
@@ -27,19 +39,22 @@
     background: #AACED8;
     border-radius: 15px 15px 15px 15px;
     padding: 15px 10px;
+    text-align: center; /* Centrar el botón en el footer */
 }
 
 .headerCard {
     display: flex;
     align-items: center;
     font-weight: bold;
+    /* Reducimos el padding para pantallas grandes */
     padding: 6% 4% 0% 14%;
 }
 
 .cardUltima {
     border-radius: 20px;
     border: 3px solid;
-    width: 40%;
+    /* Modificado para que ocupe todo el ancho disponible en móvil */
+    width: 40%; 
     height: 300px;
     margin-top: 3%;
     margin-bottom: 2.7%;
@@ -77,18 +92,89 @@
 .imgEditar {
     height: 30px;
     width: 30px;
- }
+}
 
- .projectCard li{
+.projectCard li{
     font-size: 22px;
     width: 93%;
- }
+}
 
- .hrCard{
+.hrCard{
     height: 3px;
     background-color: black;
     width: 99%;
     margin: 0px auto;
     opacity: 1;
     border: none;
- }
+}
+
+/* --- Media Queries para Móviles --- */
+
+@media (max-width: 768px) {
+    
+    /* Encabezado */
+    .headerProyectos {
+       
+        flex-direction: column; 
+        align-items: flex-start !important; 
+    }
+
+    .headerProyectos h3 {
+        
+        font-size: 1.1rem; 
+        text-align: center;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .btnstylenewproject {
+        
+        width: 100%; 
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    
+    .borderContainer {
+        
+        width: 95%; 
+        margin-top: 10px;
+    }
+
+    /* Tarjetas de Proyecto */
+    .cardUltima {
+        
+        width: 90% !important; 
+        height: auto; 
+        margin: 15px auto !important; 
+    }
+    
+    .cardSegunda {
+        
+        height: auto; 
+    }
+    
+    .headerCard {
+        /* Menos padding en móviles para dar espacio al contenido */
+        padding: 4% 4% 0% 6%; 
+    }
+    
+    .headerCard h3 {
+        /* Reduce el tamaño del título del proyecto */
+        font-size: 1.2rem; 
+    }
+    
+    .projectCard h5 {
+        /* Asegura que la descripción no sea demasiado grande */
+        font-size: 1rem; 
+        padding: 10px;
+    }
+
+    /* Imagen de Edición */
+    .imgEditar {
+        /* Reducir el tamaño de la imagen de edición */
+        height: 25px;
+        width: 25px;
+    }
+
+}

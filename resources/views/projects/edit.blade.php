@@ -22,7 +22,13 @@
             <div class="container-layer">
                 <div class="card-custom">
                     <div class="perfil-header d-flex align-items-center justify-content-between mb-4">
-                        <h5 class="perfil-title m-0 flex-fill text-center">EDITAR PROYECTO</h5>
+                        <h5 class="perfil-title m-0 flex-fill text-center">
+                        @if ($project == null)
+                            CREAR PROYECTO
+                        @else
+                            EDITAR PROYECTO
+                        @endif
+                        </h5>
                     </div>
                     @if ($project == null)
                         <form class="form-card" style="height: fit-content;" action="{{ route('projects.store', ['usuario' => $usuario->id_usuario]) }}"

@@ -20,6 +20,7 @@ class ProjectController extends Controller
         $projects = Project::select('PROYECTOS.*')
             ->leftJoin('TAREAS', 'PROYECTOS.id_proyecto', '=', 'TAREAS.id_proyecto')
             ->leftJoin('CREAR', 'PROYECTOS.id_proyecto', '=', 'CREAR.id_proyecto')
+            ->where('PROYECTOS.activo', 1)
             ->where('TAREAS.id_usuario', $usuario->id_usuario)
             ->orWhere('CREAR.id_usuario', $usuario->id_usuario)
             ->distinct()
@@ -81,7 +82,7 @@ class ProjectController extends Controller
     {
         $project = Project::find($id_proyecto);
 
-        if ($project->estado == 0) { 
+        if ($project->activo == 0) { 
             return redirect()->route('projects.index')->with('error', 'Este proyecto está desactivado');
         }
 
@@ -95,7 +96,7 @@ class ProjectController extends Controller
     {
         $project = Project::find($id_proyecto);
         
-        if ($project->estado == 0) { 
+        if ($project->activo == 0) { 
             return redirect()->route('projects.index')->with('error', 'Este proyecto está desactivado');
         }
 

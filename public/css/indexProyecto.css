@@ -10,6 +10,7 @@
 
 .borderContainer {
     border: 1px solid #176F9E;
+    background-color: rgba(237, 237, 237, 0.8);
     border-bottom: none;
     border-radius: 15px 15px 0 0;
     width: 96%;
@@ -32,6 +33,7 @@
 .headerCard {
     display: flex;
     align-items: center;
+    justify-content: center;
     font-weight: bold;
     padding: 6% 4% 0% 14%;
 }
@@ -77,18 +79,44 @@
 .imgEditar {
     height: 30px;
     width: 30px;
- }
+}
 
- .projectCard li{
+.projectCard li {
     font-size: 22px;
     width: 93%;
- }
+}
 
- .hrCard{
+.hrCard {
     height: 3px;
     background-color: black;
     width: 99%;
     margin: 0px auto;
     opacity: 1;
     border: none;
- }
+}
+
+.projectTitle {
+    max-width: 25ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+}
+
+.projectDesc{
+    max-width: 25ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+}
+
+.introText{
+    border-radius: 40px;
+    border-style: solid;
+    border-color: #000;
+    background-color: #E8E8E8;
+    font-family: 'Poppins';
+    font-size: 25px;
+    padding: 20px;
+}

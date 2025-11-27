@@ -74,6 +74,11 @@
   font-size: 20px; 
   font-weight: 600;
   font-family: Poppins, sans-serif;
+  max-width: 25ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  white-space: nowrap;
 }
 
 .taskCard hr {
@@ -88,6 +93,11 @@
   margin: 5px 0;
   font-size: 15px;
   font-family: Poppins, sans-serif;
+  max-width: 25ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  white-space: nowrap;
 }
 
 

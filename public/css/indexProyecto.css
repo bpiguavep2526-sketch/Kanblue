@@ -21,6 +21,7 @@
 
 .borderContainer {
     border: 1px solid #176F9E;
+    background-color: rgba(237, 237, 237, 0.8);
     border-bottom: none;
     border-radius: 15px 15px 0 0;
     /* Usamos un ancho relativo para que se ajuste mejor al contenedor */
@@ -45,6 +46,7 @@
 .headerCard {
     display: flex;
     align-items: center;
+    justify-content: center;
     font-weight: bold;
     /* Reducimos el padding para pantallas grandes */
     padding: 6% 4% 0% 14%;
@@ -94,12 +96,12 @@
     width: 30px;
 }
 
-.projectCard li{
+.projectCard li {
     font-size: 22px;
     width: 93%;
 }
 
-.hrCard{
+.hrCard {
     height: 3px;
     background-color: black;
     width: 99%;
@@ -108,73 +110,28 @@
     border: none;
 }
 
-/* --- Media Queries para Móviles --- */
+.projectTitle {
+    max-width: 25ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+}
 
-@media (max-width: 768px) {
-    
-    /* Encabezado */
-    .headerProyectos {
-       
-        flex-direction: column; 
-        align-items: flex-start !important; 
-    }
+.projectDesc{
+    max-width: 25ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+}
 
-    .headerProyectos h3 {
-        
-        font-size: 1.1rem; 
-        text-align: center;
-        width: 100%;
-        margin-bottom: 15px;
-    }
-    
-    .btnstylenewproject {
-        
-        width: 100%; 
-        text-align: center;
-        padding: 10px 0;
-    }
-
-    
-    .borderContainer {
-        
-        width: 95%; 
-        margin-top: 10px;
-    }
-
-    /* Tarjetas de Proyecto */
-    .cardUltima {
-        
-        width: 90% !important; 
-        height: auto; 
-        margin: 15px auto !important; 
-    }
-    
-    .cardSegunda {
-        
-        height: auto; 
-    }
-    
-    .headerCard {
-        /* Menos padding en móviles para dar espacio al contenido */
-        padding: 4% 4% 0% 6%; 
-    }
-    
-    .headerCard h3 {
-        /* Reduce el tamaño del título del proyecto */
-        font-size: 1.2rem; 
-    }
-    
-    .projectCard h5 {
-        /* Asegura que la descripción no sea demasiado grande */
-        font-size: 1rem; 
-        padding: 10px;
-    }
-
-    /* Imagen de Edición */
-    .imgEditar {
-        /* Reducir el tamaño de la imagen de edición */
-        height: 25px;
-        width: 25px;
-    }
-
+.introText{
+    border-radius: 40px;
+    border-style: solid;
+    border-color: #000;
+    background-color: #E8E8E8;
+    font-family: 'Poppins';
+    font-size: 25px;
+    padding: 20px;
 }

@@ -28,7 +28,7 @@
             </div>
             <div class="taskList" data-status="backlog">
                 @foreach ($tareas as $tarea)
-                    @if ($tarea->id_estado == 1 && $tarea->activo==1)
+                    @if ($tarea->id_estado == 1 && $tarea->activo == 1)
                         <div draggable="true" class="taskCard" data-status="backlog" data-task-id={{ $tarea->id_tarea }}>
                             <div class="taskHeader">
                                 <h4>{{ $tarea->titulo }}</h4>
@@ -81,7 +81,7 @@
             </div>
             <div class="taskList" data-status="todo">
                 @foreach ($tareas as $tarea)
-                    @if ($tarea->id_estado == 2 && $tarea->activo==1)
+                    @if ($tarea->id_estado == 2 && $tarea->activo == 1)
                         <div draggable="true" class="taskCard" data-status="todo" data-task-id={{ $tarea->id_tarea }}>
                             <div class="taskHeader">
                                 <h4>{{ $tarea->titulo }}</h4>
@@ -93,9 +93,8 @@
                                 style="width:100%;text-align:left;margin-left:0;border:none; height: 3px; background-color: black;">
                             <div class="taskDetails">
                                 <div style="font-family: 'Poppins', sans-serif;">
-                                    <img src="{{ asset('images/asigned_task.png') }}" alt="Usuario asignado"
-                                                    width="20px" height="20px"
-                                                    class="d-inline-block align-text-center me-1">
+                                    <img src="{{ asset('images/asigned_task.png') }}" alt="Usuario asignado" width="20px"
+                                        height="20px" class="d-inline-block align-text-center me-1">
                                     @if ($tarea->id_tipus)
                                         @foreach ($usuarios as $user)
                                             @if ($user->id_usuario == $tarea->id_usuario)
@@ -109,8 +108,8 @@
                                 @foreach ($tipostarea as $tasktype)
                                     @if ($tasktype->id_tipus == $tarea->id_tipus)
                                         <div class="d-flex justify-content-between">
-                                            <form action="{{ route('tasks.edit', $tarea->id_tarea) }}"
-                                                method="get" class="d-inline me-1">
+                                            <form action="{{ route('tasks.edit', $tarea->id_tarea) }}" method="get"
+                                                class="d-inline me-1">
                                                 <button class="btn btn-primary" style="margin-top: 10px">
                                                     <img src="{{ asset('images/info_task.png') }}" alt="Disponible"
                                                         width="25px" height="25px">
@@ -134,7 +133,7 @@
             </div>
             <div class="taskList" data-status="in progress">
                 @foreach ($tareas as $tarea)
-                    @if ($tarea->id_estado == 3 && $tarea->activo==1)
+                    @if ($tarea->id_estado == 3 && $tarea->activo == 1)
                         <div draggable="true" class="taskCard" data-status="in progress"
                             data-task-id={{ $tarea->id_tarea }}>
                             <div class="taskHeader">
@@ -148,8 +147,7 @@
                             <div class="taskDetails">
                                 <div style="font-family: 'Poppins', sans-serif;">
                                     <img src="{{ asset('images/asigned_task.png') }}" alt="Usuario asignado"
-                                                    width="20px" height="20px"
-                                                    class="d-inline-block align-text-center me-1">
+                                        width="20px" height="20px" class="d-inline-block align-text-center me-1">
                                     @if ($tarea->id_tipus)
                                         @foreach ($usuarios as $user)
                                             @if ($user->id_usuario == $tarea->id_usuario)
@@ -188,7 +186,7 @@
             </div>
             <div class="taskList" data-status="done">
                 @foreach ($tareas as $tarea)
-                    @if ($tarea->id_estado == 4 && $tarea->activo==1)
+                    @if ($tarea->id_estado == 4 && $tarea->activo == 1)
                         <div draggable="true" class="taskCard" data-status="done" data-task-id={{ $tarea->id_tarea }}>
                             <div class="taskHeader">
                                 <h4>{{ $tarea->titulo }}</h4>
@@ -201,8 +199,7 @@
                             <div class="taskDetails">
                                 <div style="font-family: 'Poppins', sans-serif;">
                                     <img src="{{ asset('images/asigned_task.png') }}" alt="Usuario asignado"
-                                                    width="20px" height="20px"
-                                                    class="d-inline-block align-text-center me-1">
+                                        width="20px" height="20px" class="d-inline-block align-text-center me-1">
                                     @if ($tarea->id_tipus)
                                         @foreach ($usuarios as $user)
                                             @if ($user->id_usuario == $tarea->id_usuario)
@@ -216,8 +213,8 @@
                                 @foreach ($tipostarea as $tasktype)
                                     @if ($tasktype->id_tipus == $tarea->id_tipus)
                                         <div class="d-flex justify-content-between">
-                                            <form action="{{ route('tasks.edit', $tarea->id_tarea) }}"
-                                                method="get" class="d-inline me-1">
+                                            <form action="{{ route('tasks.edit', $tarea->id_tarea) }}" method="get"
+                                                class="d-inline me-1">
                                                 <button class="btn btn-primary" style="margin-top: 10px">
                                                     <img src="{{ asset('images/info_task.png') }}" alt="Disponible"
                                                         width="25px" height="25px">
@@ -233,6 +230,6 @@
                 @endforeach
             </div>
         </div>
-        <script src="js/tasks/tasks.js"></script>
+        <script src="{{ asset('js/tasks/tasks.js') }}"></script>
     </div>
 @endsection

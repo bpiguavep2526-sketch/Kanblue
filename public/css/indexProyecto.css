@@ -1,22 +1,22 @@
+/* ----------------- Estilos Base ----------------- */
 .btnstylenewproject {
     display: inline-block;
     text-decoration: none;
-    padding-top: 11px;
+    padding: 11px 20px;
 }
 
 .headerProyectos {
     margin-top: 15px;
-    /* Ajuste para móvil: padding horizontal para evitar que el texto toque los bordes */
-    padding-left: 1rem;
-    padding-right: 1rem;
-    /* Para que los elementos se apilen en móvil si es necesario */
-    flex-wrap: wrap; 
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que los elementos se apilen en móvil */
 }
 
 .headerProyectos h3 {
-    /* Ajuste el tamaño de la fuente para pantallas pequeñas */
     font-size: 1.2rem;
-    margin-bottom: 10px; /* Espacio al apilarse con el botón */
+    margin-bottom: 10px;
 }
 
 .borderContainer {
@@ -24,39 +24,16 @@
     background-color: rgba(237, 237, 237, 0.8);
     border-bottom: none;
     border-radius: 15px 15px 0 0;
-    /* Usamos un ancho relativo para que se ajuste mejor al contenedor */
-    width: 98%; 
+    width: 98%;
     margin: 19px auto 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
-.p-3 h1 {
-    margin-bottom: 0px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.footerCard {
-    background: #AACED8;
-    border-radius: 15px 15px 15px 15px;
-    padding: 15px 10px;
-    text-align: center; /* Centrar el botón en el footer */
-}
-
-.headerCard {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    /* Reducimos el padding para pantallas grandes */
-    padding: 6% 4% 0% 14%;
-}
-
 .cardUltima {
     border-radius: 20px;
     border: 3px solid;
-    /* Modificado para que ocupe todo el ancho disponible en móvil */
-    width: 40%; 
+    width: 40%;
     height: 300px;
     margin-top: 3%;
     margin-bottom: 2.7%;
@@ -66,6 +43,16 @@
     padding-right: unset;
     padding-top: 1%;
     background-color: #79AAB7;
+}
+
+
+.cardSegunda {
+    background-color: #3290AA;
+    border-radius: 20px;
+    border-top: 3px solid;
+    height: 280px;
+    padding-top: 3%;
+    width: 100%;
 }
 
 .projectCard {
@@ -82,13 +69,19 @@
     height: 100%;
 }
 
-.cardSegunda {
-    background-color: #3290AA;
-    border-radius: 20px;
-    border-top: 3px solid;
-    height: 280px;
-    padding-top: 3%;
-    width: 100%;
+.headerCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding: 6% 4% 0% 14%;
+}
+
+.footerCard {
+    background: #AACED8;
+    border-radius: 15px 15px 15px 15px;
+    padding: 15px 10px;
+    text-align: center;
 }
 
 .imgEditar {
@@ -96,42 +89,62 @@
     width: 30px;
 }
 
-.projectCard li {
-    font-size: 22px;
-    width: 93%;
+.projectTitle,
+.projectDesc {
+    max-width: 18ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
 }
 
 .hrCard {
     height: 3px;
     background-color: black;
     width: 99%;
-    margin: 0px auto;
-    opacity: 1;
+    margin: 0 auto;
     border: none;
 }
 
-.projectTitle {
-    max-width: 25ch;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
-    white-space: nowrap;
-}
-
-.projectDesc{
-    max-width: 25ch;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
-    white-space: nowrap;
-}
-
-.introText{
+.introText {
     border-radius: 40px;
-    border-style: solid;
-    border-color: #000;
+    border: 1px solid #000;
     background-color: #E8E8E8;
     font-family: 'Poppins';
     font-size: 25px;
     padding: 20px;
+}
+
+/* ----------------- Media Queries ----------------- */
+
+@media (max-width: 992px) {
+    .cardUltima {
+        width: 48%; /* Dos tarjetas por fila */
+        margin: 2%;  /* Reducimos margen para que entren dos */
+        height: auto; /* Altura flexible según contenido */
+        padding-top: 2%;
+    }
+
+    .cardUltima .projectTitle,
+    .cardUltima .projectDesc {
+        max-width: 20ch; /* Ajustamos para pantalla más pequeña */
+        font-size: 0.95rem;
+    }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+    .cardUltima {
+        width: 90%; /* Una tarjeta por fila */
+        margin: 5% auto; /* Centramos horizontalmente */
+        height: auto;
+        padding-top: 3%;
+    }
+
+    .cardUltima .projectTitle,
+    .cardUltima .projectDesc {
+        max-width: 100%; /* Permite varias líneas en móvil */
+        white-space: normal;
+        font-size: 1rem;
+    }
 }

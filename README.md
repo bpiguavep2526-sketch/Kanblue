@@ -49,6 +49,8 @@ En ella, encontrará información variada sobre Kanblue.
 
 ### Esperamos que disfrute de utilizar nuestra aplicación.
 
+https://epsdespliegue.tech/Kanblue/public/Login
+
 ***
 <div align="center">
 <img width="100" height="100" alt="nav_icon" src="https://github.com/user-attachments/assets/24ab4bf0-50bc-4d99-b4b5-bfd298f377c2" />

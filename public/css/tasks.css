@@ -241,7 +241,23 @@
     background-attachment: fixed;
     background-size: cover;
 }
+
+.chartTitle{
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 400;
+}
     
+.userSelector{
+    padding: 8px 20px 8px;
+    border-color: #000000;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 20px;
+    background-color: #58aedc;
+    color: white;
+    font-size: 20px;
+}
 
     
     

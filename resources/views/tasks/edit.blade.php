@@ -1,6 +1,6 @@
 @extends('templates.base')
 
-@section('title', 'Editar Tareas')
+@section('title', 'Kanblue | Editar Tarea')
 
 @section('navbar')
     <div class="d-flex align-items-center ms-auto">
@@ -44,10 +44,10 @@
                             @csrf
                             <fieldset>
                                 @if (session('error'))
-                                    <div class="alert alert-danger">{{ session('error') }}</div>
+                                    <div class="alert alert-danger mt-2">{{ session('error') }}</div>
                                 @endif
                                 @if (session('success'))
-                                    <div class="alert alert-success">{{ session('success') }}</div>
+                                    <div class="alert alert-success mt-2" style="max-width: 85%">{{ session('success') }}</div>
                                 @endif
                                 @if ($tarea != null)
                                     <input type="text" name="titulo" class="titleinput"

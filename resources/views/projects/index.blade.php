@@ -1,6 +1,6 @@
 @extends('templates.base')
 
-@section('title', 'Proyectos')
+@section('title', 'Kanblue | Proyectos')
 
 @section('navbar')
 
@@ -17,31 +17,45 @@
 @section('content')
 
     <div class="d-flex align-items-center justify-content-between p-3 headerProyectos">
-        <h3 class="introText"><img src="{{ asset('images/cortana.png') }}" alt="Volver" width="40" height="40"> Bienvenido
-            {{ $usuario->username }}, estos son sus proyectos actuales.</h3>
-        <a href="{{ route('projects.crearProyecto', ['usuario' => $usuario->id_usuario]) }}"
-            class="btnstylenewproject btnOg">
-            NUEVO PROYECTO
-        </a>
+        @if ($projects->isEmpty())
+            <h3 class="introText"><img src="{{ asset('images/cortana.png') }}" alt="Volver" width="40"
+                    height="40">¡Bienvenido a Kanblue! Cree un proyecto para empezar.</h3>
+            <a href="{{ route('projects.crearProyecto', ['usuario' => $usuario->id_usuario]) }}"
+                class="btnstylenewproject btnOg">
+                NUEVO PROYECTO
+            </a>
+        @else
+            <h3 class="introText"><img src="{{ asset('images/cortana.png') }}" alt="Volver" width="40"
+                    height="40">Bienvenido, estos són sus proyectos actuales.</h3>
+            <a href="{{ route('projects.crearProyecto', ['usuario' => $usuario->id_usuario]) }}"
+                class="btnstylenewproject btnOg">
+                NUEVO PROYECTO
+            </a>
+        @endif
+
     </div>
     <div class="borderContainer">
         <div class="container text-center">
             @if ($projects->isEmpty())
-                <p>No hay proyectos disponibles.</p>
+                <p class="noprojectfound">No hay proyectos disponibles.</p>
             @else
-                @foreach ($projects->chunk(3) as $projectChunk)
+                @foreach ($projects->chunk(2) as $projectPair)
                     <div class="row justify-content-md-center mb-4">
-                        @forelse ($projectChunk as $project)
-                        @if ($project->activo == 1)
+                        @forelse ($projectPair as $project)
                             <div class="col-md-auto cardUltima">
                                 <div class="col-md-auto cardSegunda">
                                     <div class="col-md-auto align-items-center projectCard">
                                         <div class="headerCard">
                                             <h3 class="projectTitle">{{ $project->nom }}</h3>
-                                            <a class="ms-4" href="{{ route('projects.edit', $project->id_proyecto) }}">
-                                                <img src="{{ asset('images/botonEditar.png') }}" alt="Editar"
-                                                    class="imgEditar">
-                                            </a>
+                                            @foreach ($ids_myProjects as $id_myProject)
+                                                @if ($id_myProject == $project->id_proyecto)
+                                                    <a class="ms-4"
+                                                        href="{{ route('projects.edit', $project->id_proyecto) }}">
+                                                        <img src="{{ asset('images/botonEditar.png') }}" alt="Editar"
+                                                            class="imgEditar">
+                                                    </a>
+                                                @endif
+                                            @endforeach
                                         </div>
                                         <hr class="hrCard">
                                         <h5 class="projectDesc">{{ $project->descripcion ?? 'Sin descripción' }}</h5>
@@ -54,7 +68,6 @@
                                     </div>
                                 </div>
                             </div>
-                        @endif    
                         @empty
                         @endforelse
                     </div>

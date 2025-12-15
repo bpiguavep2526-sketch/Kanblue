@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/x-icon" href="images/nav_icon.png">
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/nav_icon.png') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Document')</title>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ asset('css/perfil.css') }}">
     <link rel="stylesheet" href="{{ asset('css/editar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/indexProyecto.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </script>
 </head>
 

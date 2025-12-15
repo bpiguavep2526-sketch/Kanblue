@@ -1,6 +1,6 @@
 @extends('templates.base')
 
-@section('title', 'Tareas')
+@section('title', 'Kanblue | Tareas')
 
 @section('navbar')
     <div class="d-flex align-items-center ms-auto">
@@ -15,6 +15,10 @@
 
 @section('content')
     <div class="d-flex justify-content-end p-2">
+        <a href="{{ route('tasks.chart', $project->id_proyecto) }}" class="btnOg"
+            style="margin-right: 20px; margin-top: 10px; display:inline-block; text-decoration:none; text-align:center;">
+            VER GRAFICOS
+        </a>
         <a href="{{ route('tasks.create', $project->id_proyecto) }}" class="btnOg"
             style="margin-right: 20px; margin-top: 10px; display:inline-block; text-decoration:none; text-align:center;">
             CREAR TAREA

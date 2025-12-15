@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Registro</title>
+    <title>Kanblue | Registro</title>
     <link rel="icon" type="image/x-icon" href="images/nav_icon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/estilosregistro.css') }}">
@@ -22,32 +22,33 @@
             @if(session('error'))
             <div class="alert alert-danger">{{ session('error') }}</div>
             @endif
+            <div class="alert alert-danger" style="visibility: hidden; display: none;">{{ session('error') }}</div>
 
             <div class="row mb-3 align-items-center">
                 <label for="Email" class="col-sm-4 col-form-label">Email</label>
                 <div class="col-sm-8">
-                    <input type="email" class="form-control rounded-pill border border-primary" id="email" name='email'>
+                    <input type="email" class="form-control rounded-pill border border-primary" id="email" name='email'required>
                 </div>
             </div>
 
             <div class="row mb-3 align-items-center">
                 <label for="Username" class="col-sm-4 col-form-label">Username</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control rounded-pill border border-primary" id="username" name='username'>
+                    <input type="text" class="form-control rounded-pill border border-primary" id="username" name='username'required>
                 </div>
             </div>
 
             <div class="row mb-3 align-items-center">
                 <label for="password" class="col-sm-4 col-form-label">Contraseña</label>
                 <div class="col-sm-8">
-                    <input type="password" class="form-control rounded-pill border border-primary" id="password" name='password' >
+                    <input type="password" class="form-control rounded-pill border border-primary" id="password" name='password'required >
                 </div>
             </div>
 
             <div class="row mb-3 align-items-center">
                 <label for="password-confirm" class="col-sm-4 col-form-label">Confirmar contraseña</label>
                 <div class="col-sm-8">
-                    <input type="password" name="passwordconfirm" class="form-control rounded-pill border border-primary" id="password">
+                    <input type="password" name="passwordconfirm" class="form-control rounded-pill border border-primary" id="passwordconfirm" required>
                 </div>
             </div>
 
@@ -59,5 +60,9 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const users = @json($users);
+</script>
+<script src="{{ asset('js/loginregister/register.js') }}"></script>
 </body>
 </html>

@@ -10,39 +10,10 @@ use Illuminate\Support\Facades\Hash;
 class UsuarisController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Usuaris $usuaris)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
+     * Muestra el formulario de edición del perfil de un usuario.
+     *
+     * @param string $id_usuario  ID del usuario a editar.
+     * @return \Illuminate\View\View Vista de edición del perfil del usuario.
      */
     public function edit(string $id_usuario)
     {
@@ -51,7 +22,14 @@ class UsuarisController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualiza los datos de un usuario específico.
+     *
+     * Valida que el email y el nombre de usuario sean únicos,
+     * y que la contraseña coincida con su confirmación si se proporciona.
+     *
+     * @param \Illuminate\Http\Request $request  Datos enviados desde el formulario de edición.
+     * @param string $id_usuario  ID del usuario a actualizar.
+     * @return \Illuminate\Http\RedirectResponse Redirige de vuelta con mensaje de éxito o error.
      */
     public function update(Request $request, string $id_usuario)
     {
@@ -84,13 +62,5 @@ class UsuarisController extends Controller
     $user->save();
 
     return back()->with('success', 'Usuario actualizado correctamente');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Usuaris $usuaris)
-    {
-        //
     }
 }

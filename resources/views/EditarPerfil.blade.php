@@ -19,7 +19,7 @@
             <div class="container-box">
                 <div class="container-layer">
                     <div class="card-custom">
-                        <div class="perfil-header d-flex align-items-center justify-content-between mb-4">
+                        <div class="perfil-header d-flex align-items-center justify-content-between">
                             <h5 class="perfil-title m-0 flex-fill text-center">INFORMACIÓN DEL PERFIL</h5>
 
                             <form action="{{ route('logout') }}" method="POST" style="display:inline">

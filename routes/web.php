@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/proyectos/{id}/tareas', [ProjectController::class, 'show'])->name('projects.show');
     Route::get('/crearTarea/{id_proyecto}', [TaskController::class, 'create'])->name('tasks.create');
     Route::get('/editarTarea/{id_tarea}', [TaskController::class, 'edit'])->name('tasks.edit');
+    Route::get('/stats/{id_proyecto}', [TaskController::class, 'showCharts'])->name('tasks.chart');
     Route::post('/crearTarea/{project}', [TaskController::class, 'store'])->name('tasks.store');
     Route::put('/editarTarea/{task}', [TaskController::class, 'update'])->name('tasks.update');
     Route::put('/deleteTarea/{id_tarea}', [TaskController::class, 'deactivate'])->name('tasks.delete');

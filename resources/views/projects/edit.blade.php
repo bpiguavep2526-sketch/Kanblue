@@ -1,5 +1,7 @@
 @extends('templates.base')
 
+@section('title', 'Kanblue | Editar proyecto')
+
 @section('navbar')
     <div class="d-flex align-items-center ms-auto">
         @if ($project == null)

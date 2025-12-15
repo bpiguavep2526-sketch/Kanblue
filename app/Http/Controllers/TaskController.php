@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
+use App\Models\Status;
 use App\Models\Task;
 use App\Models\Tipus;
-use App\Models\Status;
-use App\Models\Project;
 use App\Models\Usuaris;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Log;
 class TaskController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Carga la vista Kanban con las tareas y sus detalles.
+     *
+     * @return \Illuminate\View\View Vista con las tareas, usuarios y tipos de tarea existentes.
      */
     public function index()
     {
@@ -24,8 +26,11 @@ class TaskController extends Controller
         return view('tasks.taskscreen', compact('tareas', 'usuarios', 'tipostarea'));
     }
 
-    /**
-     * Show the form for creating a new resource.
+     /**
+     * Muestra el formulario para crear una nueva tarea.
+     *
+     * @param string $id_proyecto  ID del proyecto al que se asignará la tarea.
+     * @return \Illuminate\View\View Vista del formulario de creación de tarea.
      */
     public function create(string $id_proyecto)
     {
@@ -39,19 +44,23 @@ class TaskController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Almacena una nueva tarea en la base de datos.
+     *
+     * @param \Illuminate\Http\Request $request  Datos de la tarea.
+     * @param string $id_proyecto  ID del proyecto al que pertenece la tarea.
+     * @return \Illuminate\Http\RedirectResponse Redirige atrás con mensaje de éxito o error.
      */
     public function store(Request $request, string $id_proyecto)
     {
-        $task= new Task();
-        if(!$request->filled('titulo')){
+        $task = new Task;
+        if (! $request->filled('titulo')) {
             return back()->withInput()->with('error', 'Rellena todos los campos.');
-        } else if (!$request->filled('descripcion')){
+        } elseif (! $request->filled('descripcion')) {
             return back()->withInput()->with('error', 'Rellena todos los campos.');
         } else {
-            $task->titulo=$request->input('titulo');
-            $task->descripcion=$request->input('descripcion');
-             $estado = Status::where('ESTADO.nom', $request->input('estado'))->first();
+            $task->titulo = $request->input('titulo');
+            $task->descripcion = $request->input('descripcion');
+            $estado = Status::where('ESTADO.nom', $request->input('estado'))->first();
             $user = Usuaris::where('USUARIO.username', $request->input('usuario'))->first();
             $tipus = Tipus::where('TIPUS.nom', $request->input('tipo'))->first();
             $project = Project::find($id_proyecto);
@@ -60,21 +69,17 @@ class TaskController extends Controller
             $task->id_tipus = $tipus->id_tipus;
             $task->id_usuario = $user->id_usuario;
             $task->activo = 1;
-            $task-> save();
+            $task->save();
+
             return back()->with('success', 'Tarea creada correctamente');
         }
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
+     * Muestra el formulario para editar una tarea existente, y carga sus datos.
+     *
+     * @param string $id_tarea  ID de la tarea a editar.
+     * @return \Illuminate\View\View Vista del formulario de edición de tarea.
      */
     public function edit(string $id_tarea)
     {
@@ -87,16 +92,20 @@ class TaskController extends Controller
         return view('tasks.edit', compact('tarea', 'usuarios', 'tipostarea', 'estados', 'project'));
     }
 
-    /**
-     * Update the specified resource in storage.
+     /**
+     * Actualiza los datos de una tarea existente.
+     *
+     * @param \Illuminate\Http\Request $request  Datos actualizados de la tarea.
+     * @param string $id  ID de la tarea a actualizar.
+     * @return \Illuminate\Http\RedirectResponse Redirige atrás con mensaje de éxito.
      */
     public function update(Request $request, string $id)
     {
         $task = Task::find($id);
-        if ($request->input('titulo') != null){
+        if ($request->input('titulo') != null) {
             $task->titulo = $request->input('titulo');
         }
-        if ($request->input('descripcion') != null){
+        if ($request->input('descripcion') != null) {
             $task->descripcion = $request->input('descripcion');
         }
         $estado = Status::where('ESTADO.nom', $request->input('estado'))->first();
@@ -105,22 +114,17 @@ class TaskController extends Controller
         $task->id_estado = $estado->id_estado;
         $task->id_tipus = $tipus->id_tipus;
         $task->id_usuario = $user->id_usuario;
-        $task-> save();
+        $task->save();
+
         return back()->with('success', 'Tarea actualizada correctamente');
     }
 
-    /**
-     * Remove the specified resource from storage.
+     /**
+     * Desactiva una tarea estableciendo su campo 'activo' a 0.
+     *
+     * @param string $id_tarea  ID de la tarea a desactivar.
+     * @return \Illuminate\Http\RedirectResponse Redirige a la vista del proyecto correspondiente.
      */
-    public function destroy(string $id_tarea)
-    {
-        $tarea = Project::find($id_tarea);
-        $tarea->activo = 0;
-        $tarea->save();
-
-        return redirect()->route('projects.show');
-    }
-
     public function deactivate(string $id_tarea)
     {
 
@@ -131,12 +135,16 @@ class TaskController extends Controller
         return redirect()->route('projects.show', $tarea->id_proyecto);
     }
 
-
-    /* Recibe la petición, busca en la base de datos la tarea con la misma ID, cambia su estado y lo guarda. */
+ /**
+     * Actualiza el estado de una tarea específica tras su arrastre en la tabla Kanban.
+     *
+     * @param string $taskId  ID de la tarea.
+     * @param string $status  Nombre del nuevo estado.
+     */    
     public function updateStatus(string $taskId, string $status)
     {
 
-        $taskId = (int) $taskId; // por seguridad
+        $taskId = (int) $taskId; 
         $task = Task::find($taskId);
 
         if (! $task) {
@@ -155,8 +163,26 @@ class TaskController extends Controller
 
         $task->id_estado = $statusBD->id_estado;
         $task->save();
+    }
 
-        Log::info("Task actualizada correctamente: id_tarea={$task->id_tarea}, id_estado={$task->id_estado}");
+    /**
+     * Muestra gráficos relacionados con las tareas de un proyecto.
+     *
+     * @param string $id_proyecto  ID del proyecto.
+     * @return \Illuminate\View\View Vista con gráficos de tareas por usuario.
+     */
+    public function showCharts(string $id_proyecto)
+    {
+        $taskList = Task::select('TAREAS.*')
+            ->where('TAREAS.id_proyecto', $id_proyecto)
+            ->get();
 
+        $userList = Usuaris::select('USUARIO.*')
+            ->leftJoin('TAREAS', 'TAREAS.id_usuario', '=', 'USUARIO.id_usuario')
+            ->where('TAREAS.id_proyecto', $id_proyecto)
+            ->distinct()
+            ->get();
+
+        return view('tasks.charts', compact('taskList', 'userList'));
     }
 }

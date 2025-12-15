@@ -25,11 +25,8 @@
 @endsection
 
 @section('content')
-
     <div class="card ultimacarta">
-        <div class="card-body ultimacardbody">
             <div class="card segundacarta">
-                <div class="card-body ultimacardbody">
                     <div class="card primeracarta">
                         <div class="card-body ultimacardbody">
                             @if ($tarea == null)
@@ -135,8 +132,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                
             </div>
-        </div>
+        
     </div>
 @endsection

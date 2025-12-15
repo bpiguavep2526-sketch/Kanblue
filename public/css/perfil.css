@@ -102,3 +102,89 @@
   align-items: center;
   height: calc(100vh - 70px); /* Ajusta 70px según la altura de tu navbar */
 }
+
+@media (max-width: 768px) {
+
+    /* Ajustar el contenedor principal */
+    .container-box {
+        width: 100%; /* Ocupa todo el ancho */
+        height: 100%; /* Ocupa toda la altura disponible */
+        max-width: none; /* Sin límite de ancho */
+        border-radius: 0; /* Eliminar bordes redondeados */
+        border-right: none; /* Eliminar borde derecho */
+        box-shadow: none; /* Eliminar sombra */
+        /* Ajustar margin/padding si es necesario */
+        padding: 0;
+    }
+
+    /* Ajustar la capa interna */
+    .container-layer {
+        border-radius: 0;
+        border-right: none;
+        box-shadow: none;
+        /* Padding en la capa para que el contenido no pegue a los bordes */
+        padding: 20px 10px; 
+    }
+    
+    /* Título */
+    .perfil-title {
+        font-size: 1.3rem; /* Tamaño de fuente más pequeño */
+    }
+
+    /* Header de la tarjeta */
+    .perfil-header {
+        margin-bottom: 20px;
+    }
+
+    /* Campos de formulario */
+    .mb-5.row.align-items-center,
+    .mb-5.row.align-items-start {
+        /* En móvil, las etiquetas y los campos deben apilarse */
+        display: block !important;
+        margin-bottom: 1.5rem !important; /* Separación entre grupos de campos */
+    }
+
+    .form-card label {
+        display: block; /* La etiqueta ocupa su propia línea */
+        margin-bottom: 5px; /* Espacio debajo de la etiqueta */
+        width: 100%;
+    }
+
+    .form-card .col-md-9 {
+        width: 100%; /* El contenedor del input ocupa todo el ancho */
+    }
+
+    .uniform-input,
+    textarea.form-control {
+        font-size: 1rem; /* Tamaño de fuente más apropiado para móvil */
+        padding: 10px;
+    }
+    
+    /* Botones */
+    .d-flex.justify-content-between {
+        flex-direction: column; /* Apilar los botones */
+        gap: 15px; /* Espacio entre botones apilados */
+    }
+    
+    .btn-guardar, .btn-eliminar {
+        width: 100%; /* Botones de ancho completo */
+        text-align: center;
+        /* Ajustar padding y margen si es necesario */
+        padding: 10px;
+        margin: 0 !important;
+    }
+    
+    /* Navbar text */
+    .navbar .text-white.small.me-3 {
+        font-size: 16px !important;
+        white-space: nowrap; /* Evita que el nombre del proyecto se rompa si es posible */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 150px; /* Limita el ancho del texto en la navbar */
+    }
+    
+    /* Ocultar el separador vertical si la pantalla es muy pequeña */
+    .navbar .vr {
+        display: none !important;
+    }
+}

@@ -29,7 +29,7 @@
             @if ($projects->isEmpty())
                 <p>No hay proyectos disponibles.</p>
             @else
-                @foreach ($projects->chunk(3) as $projectChunk)
+                @foreach ($projects->chunk(8) as $projectChunk)
                     <div class="row justify-content-md-center mb-4">
                         @forelse ($projectChunk as $project)
                         @if ($project->activo == 1)

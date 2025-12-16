@@ -18,15 +18,15 @@
 
     <div class="d-flex align-items-center justify-content-between p-3 headerProyectos">
         @if ($projects->isEmpty())
-            <h3 class="introText"><img src="{{ asset('images/cortana.png') }}" alt="Volver" width="40"
-                    height="40">¡Bienvenido a Kanblue! Cree un proyecto para empezar.</h3>
+            <h3 class="introText"><img src="{{ asset('images/cortana.gif') }}" alt="Volver" width="50"
+                    height="50">¡Bienvenido a Kanblue! Cree un proyecto para empezar.</h3>
             <a href="{{ route('projects.crearProyecto', ['usuario' => $usuario->id_usuario]) }}"
                 class="btnstylenewproject btnOg">
                 NUEVO PROYECTO
             </a>
         @else
-            <h3 class="introText"><img src="{{ asset('images/cortana.png') }}" alt="Volver" width="40"
-                    height="40">Bienvenido, estos són sus proyectos actuales.</h3>
+            <h3 class="introText"><img class="me-2" src="{{ asset('images/cortana.gif') }}" alt="Volver" width="70"
+                    height="70">Bienvenido, estos són sus proyectos actuales.</h3>
             <a href="{{ route('projects.crearProyecto', ['usuario' => $usuario->id_usuario]) }}"
                 class="btnstylenewproject btnOg">
                 NUEVO PROYECTO

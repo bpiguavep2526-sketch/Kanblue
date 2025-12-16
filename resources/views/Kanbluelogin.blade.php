@@ -14,7 +14,7 @@
     <div class="logo-login">
         <img src="{{ asset('images/color_mid.png') }}" alt="Logo" class="img-fluid">
     </div>
-    <div class="card shadow p-4" style="width: 350px; border-radius: 1rem; background-color: rgba(255, 255, 255, 0.9);">
+    <div class="card shadow p-4 loginForm" style="width: 350px; border-radius: 1rem; background-color: rgba(255, 255, 255, 0.9);">
 
         @if(session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>

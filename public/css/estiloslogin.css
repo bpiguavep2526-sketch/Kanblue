@@ -40,9 +40,10 @@ a:hover {
 
 
 @media (max-width: 1000px) {
-  .contenedor_login {
-     width: 75%;;
-     
-
+  .logo-login img {
+    width: 100%;   
+}
+  .loginForm {
+    width: 600px !important;
   }
 }

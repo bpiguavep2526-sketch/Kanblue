@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap; /* Permite que los elementos se apilen en móvil */
+    flex-wrap: wrap;
 }
 
 .headerProyectos h3 {
@@ -127,15 +127,15 @@
 
 @media (max-width: 992px) {
     .cardUltima {
-        width: 48%; /* Dos tarjetas por fila */
-        margin: 2%;  /* Reducimos margen para que entren dos */
-        height: auto; /* Altura flexible según contenido */
+        width: 48%;
+        margin: 2%;  
+        height: auto; 
         padding-top: 2%;
     }
 
     .cardUltima .projectTitle,
     .cardUltima .projectDesc {
-        max-width: 20ch; /* Ajustamos para pantalla más pequeña */
+        max-width: 20ch; 
         font-size: 0.95rem;
     }
 }
@@ -143,15 +143,15 @@
 /* Móviles */
 @media (max-width: 768px) {
     .cardUltima {
-        width: 90%; /* Una tarjeta por fila */
-        margin: 5% auto; /* Centramos horizontalmente */
+        width: 90%; 
+        margin: 5% auto; 
         height: auto;
         padding-top: 3%;
     }
 
     .cardUltima .projectTitle,
     .cardUltima .projectDesc {
-        max-width: 100%; /* Permite varias líneas en móvil */
+        max-width: 100%;
         white-space: normal;
         font-size: 1rem;
     }

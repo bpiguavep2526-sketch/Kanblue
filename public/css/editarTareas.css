@@ -248,6 +248,12 @@ textarea.form-control {
 }
 
 @media (max-width: 768px) {
+
+
+  .navbarLeft {
+   margin-left: 0 !important;
+  }
+
     
     .ultimacarta, .segundacarta, .primeracarta {
         width: 98% !important; 
@@ -302,21 +308,6 @@ textarea.form-control {
     }
 
   
-    .d-flex.align-items-center.ms-auto {
-        display: block !important;
-        width: 100%;
-        text-align: center;
-        margin-top: 10px;
-    }
-    
-    .text-white.small.me-3 {
-        display: block;
-        margin-bottom: 10px !important;
-    }
-
-    .vr.text-white.me-3 {
-        display: none;
-    }
 
     .btnstyle {
         width: 48%; 
@@ -329,6 +320,7 @@ textarea.form-control {
 
     .borderdrch {
         border-radius: 0 10px 10px 0;
+        width: 100px !important;
     }
     
     .btn-eliminar {
@@ -343,5 +335,13 @@ textarea.form-control {
         margin-right: 5%;
         font-size: 0.9rem;
         padding: 10px 15px;
+    }
+
+    .chartContainer{
+         flex-direction: column;
+    }
+    .userChartContainer{
+        margin-left: 0 !important;
+        margin-top: 30px !important;
     }
 }

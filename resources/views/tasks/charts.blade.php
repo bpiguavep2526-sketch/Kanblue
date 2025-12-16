@@ -14,13 +14,13 @@
     @endsection
 
     @section('content')
-        <div class="d-flex align-items-center justify-content-center p-5">
+        <div class="d-flex align-items-center justify-content-center p-5 chartContainer">
             <div class="d-flex flex-column border rounded-3 p-4 align-items-center"
                 style="background-color: rgba(243, 243, 243, 0.749)">
                 <h3 class="chartTitle">GRAFICOS DE TAREAS</h3>
                 <canvas id="taskChart"></canvas>
             </div>
-            <div class="d-flex flex-column border rounded-3 p-4 align-items-center ms-5"
+            <div class="d-flex flex-column border rounded-3 p-4 align-items-center ms-5 userChartContainer"
                 style="background-color: rgba(243, 243, 243, 0.749)">
                 <h3 class="chartTitle">TAREAS POR PERSONA</h3>
                 <div class="d-flex justify-content-center mb-3">

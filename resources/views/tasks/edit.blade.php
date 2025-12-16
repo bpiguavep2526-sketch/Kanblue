@@ -3,7 +3,7 @@
 @section('title', 'Kanblue | Editar Tarea')
 
 @section('navbar')
-    <div class="d-flex align-items-center ms-auto">
+    <div class="d-flex align-items-center ms-auto  navbarLeft">
         <span class="text-white small me-3" style="font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 20px">
             @if ($tarea == null)
                 NUEVA TAREA

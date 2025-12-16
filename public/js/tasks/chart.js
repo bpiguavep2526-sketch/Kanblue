@@ -4,7 +4,7 @@
 let taskChart = document.querySelector("#taskChart")
 let userChart = document.querySelector("#userChart")
 let backlogTasks = 0, todoTasks = 0, inProgressTasks = 0, doneTasks = 0
-let userBacklogTasks = 0, userTodoTasks = 0, userInProgressTasks = 0, userDoneTasks = 0;
+let usersChart = null
 
 getAllTasksStatus()
 let seeUserdata = document.querySelector("#userChart")
@@ -60,14 +60,20 @@ function getAllTasksStatus() {
 
 /**
  * Filtra las tareas según el usuario seleccionado, y carga un gráfico que indica
- * la cantidad de tareas x estado.
+ * la cantidad de tareas x estado. Comprueba si ya existe un gráfico previo, si lo hay lo destruye.
  * @function loadChartByUser
  */
 function loadChartByUser() {
+
     let userSelector = document.querySelector("#selectUser");
     let userId = userSelector.value;
 
     let userTasks = tasks.filter(task => task.id_usuario == userId);
+
+    let userBacklogTasks = 0;
+    let userTodoTasks = 0;
+    let userInProgressTasks = 0;
+    let userDoneTasks = 0;
 
     userTasks.forEach(task => {
         switch (task.id_estado) {
@@ -103,7 +109,11 @@ function loadChartByUser() {
     
     let userChart = document.querySelector("#userChartStats")
 
-    const usersChart = new Chart(userChart, {
+    if (usersChart) {
+        usersChart.destroy();
+    }
+
+    usersChart = new Chart(userChart, {
         type: 'bar',
         data: userdata,
         options: {

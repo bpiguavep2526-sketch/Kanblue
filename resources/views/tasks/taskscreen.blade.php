@@ -28,7 +28,7 @@
         <div class="column">
             <div class="d-flex align-items-center">
                 <h2 class="columnTitle">BACKLOG</h2>
-                <img src="images/showlist.png" class="showList" alt="Desplegar" width="30px" height="30px">
+                <img src="{{ asset('images/showlist.png') }}" class="showList" alt="Desplegar" width="30px" height="30px">
             </div>
             <div class="taskList" data-status="backlog">
                 @foreach ($tareas as $tarea)
@@ -80,7 +80,7 @@
         <div class="column">
             <div class="d-flex align-items-center">
                 <h2 class="columnTitle">TODO</h2>
-                <img src="images/showlist.png" class="showList" alt="Desplegar" width="30px" height="30px"
+                <img src="{{ asset('images/showlist.png') }}" class="showList" alt="Desplegar" width="30px" height="30px"
                     class="align-text-center ms-2">
             </div>
             <div class="taskList" data-status="todo">
@@ -132,7 +132,7 @@
         <div class="column">
             <div class="d-flex align-items-center">
                 <h2 class="columnTitle">IN PROGRESS</h2>
-                <img src="images/showlist.png" class="showList" alt="Desplegar" width="30px" height="30px"
+                <img src="{{ asset('images/showlist.png') }}" class="showList" alt="Desplegar" width="30px" height="30px"
                     class="align-text-center ms-2">
             </div>
             <div class="taskList" data-status="in progress">
@@ -185,7 +185,7 @@
         <div class="column">
             <div class="d-flex align-items-center">
                 <h2 class="columnTitle">DONE</h2>
-                <img src="images/showlist.png" class="showList" alt="Desplegar" width="30px" height="30px"
+                <img src="{{ asset('images/showlist.png') }}" class="showList" alt="Desplegar" width="30px" height="30px"
                     class="align-text-center ms-2">
             </div>
             <div class="taskList" data-status="done">

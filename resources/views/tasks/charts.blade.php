@@ -7,7 +7,7 @@
             <span class="text-white small me-3"
                 style="font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 20px">ESTADÍSTICAS</span>
             <div class="vr text-white me-3" style="height: 50px;"></div>
-            <a href="{{ route('projects.index') }}">
+            <a href="{{ url()->previous() }}">
                 <img src="{{ asset('images/return.png') }}" alt="Volver" width="30" height="30">
             </a>
         </div>

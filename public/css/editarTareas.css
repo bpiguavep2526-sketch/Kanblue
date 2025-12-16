@@ -1,54 +1,84 @@
-.img-esquina {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 50%;
-    height: 55%;
-    z-index: -1;
+.btn-logoutt {
+    background: #f39c12;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 5px 15px;
 }
+
+.btn-guardar {
+    background: #79AAB7;
+    color: #fff;
+    border-radius: 20px;
+    padding: 8px 20px;
+    border: none;
+}
+
+.btn-eliminar {
+    background: #c0392b;
+    color: #fff;
+    border-radius: 20px;
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-eliminar:hover {
+    background: #a93226;
+}
+
+
 
 .ultimacarta {
-    width: 93rem !important;
-    height: 50.7rem;
-    background-color: #457582 !important;
-    margin-top: 3%;
-    margin-left: 2%;
-    margin-bottom: 6%;
-    border-top-right-radius: 38px;
-    border-top-left-radius: 38px;
-    border-bottom: none;
-    border-color: #176F9E;
-
+    width: 95%; 
+    max-width: 1400px;
+    height: auto; 
+    background-color: transparent !important;
+    margin: 1% auto ; 
+    border: none; 
+    border-radius: 38px 38px 0 0;
+    display: block; 
+    box-shadow: none;
+    padding: 0;
 }
 
+/* --- Capa 2 (Contenedor principal del Formulario y Sombra de Capas) --- */
 .segundacarta {
-    width: 91rem;
+    width: 100%;
     height: 100%;
-    background-color: #79AAB7;
-    border-left-width: 0px;
-    border-top-right-radius: 38px;
-    border-top-left-radius: 38px;
-    border-bottom: none;
-    border-top: none;
-    border-left: none;
-    border-color: #176F9E;
-
+    background-color: #EDEDED; /* El contenido principal es gris */
+    border: none;
+    border-radius: 38px 38px 0 0;
+    
+   
+    box-shadow: 
+       
+        10px 0 0 0 #79AAB7,
+        
+        20px 0 0 0 #457582; 
+    
+    padding: 0;
+   
+    min-height: 500px; 
 }
+
 
 .primeracarta {
-    width: 89rem;
+    width: 100%;
     height: 100%;
-    background-color: #EDEDED;
-    border-color: #176F9E;
-    border-top-right-radius: 38px;
-    border-top: none;
-    border-bottom: none;
-    border-left: none;
-    border-top-left-radius: 38px;
+    background-color: transparent; 
+    border: none;
+    padding: 0;
 }
 
 .ultimacardbody {
-    padding: 0px 0px 0px 0px;
+    padding: 20px 40px;
+    background-color: transparent; 
+    height: 100%;
+   
+    overflow: hidden; 
 }
 
 .my-custom-style {
@@ -187,4 +217,131 @@ textarea.form-control {
 
 .btntareas {
   width: 23%;
+}
+.alert-success{
+   text-align: center;
+   justify-content: center;
+    background-color: #d4edda; 
+    color: #155724;             
+    border: 1px solid #c3e6cb; 
+    width: 50%;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px ;
+    display: flex;
+}
+.alert-danger{
+   text-align: center;
+   justify-content: center;
+   color: #721C24;
+  background-color: #F8D7DA;
+    border: 1px solid #F5C6CB; 
+    width: 50%;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px ;
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    
+    .ultimacarta, .segundacarta, .primeracarta {
+        width: 98% !important; 
+        height: auto;
+        border-radius: 20px;
+    }
+
+    .ultimacarta {
+        margin: 2% 1% 5% 1%;
+    }
+
+    .segundacarta {
+        
+        box-shadow: none; 
+    }
+
+    .ultimacardbody {
+        padding: 15px;
+    }
+
+    /* --- Título y Formulario --- */
+    .titleinput {
+        font-size: 1.5rem;
+        padding: 10px 15px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .my-custom-style {
+        display: block; /* Apilamiento */
+        margin: 20px 0;
+        padding: 0 10px;
+    }
+
+    label.form-label {
+        font-size: 1.1rem;
+        min-width: unset; 
+        display: block; 
+        margin-bottom: 8px;
+    }
+
+    select.form-select,
+    textarea.form-control,
+    input.form-control {
+        width: 100% !important;
+        margin-left: 0;
+        max-width: 100%; 
+    }
+    
+    .imgTareas {
+        display: none; 
+    }
+
+  
+    .d-flex.align-items-center.ms-auto {
+        display: block !important;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .text-white.small.me-3 {
+        display: block;
+        margin-bottom: 10px !important;
+    }
+
+    .vr.text-white.me-3 {
+        display: none;
+    }
+
+    .btnstyle {
+        width: 48%; 
+        height: 45px;
+    }
+
+    .borderizq {
+        border-radius: 10px 0 0 10px;
+    }
+
+    .borderdrch {
+        border-radius: 0 10px 10px 0;
+    }
+    
+    .btn-eliminar {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    
+    .alert-success, .alert-danger {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
 }

@@ -9,11 +9,11 @@
 </head>
 
 <body class="d-flex flex-column align-items-center justify-content-center vh-100 background_login">
-
+   <main>
+     <div class="contenerdor_login">
     <div class="logo-login">
         <img src="{{ asset('images/color_mid.png') }}" alt="Logo" class="img-fluid">
     </div>
-
     <div class="card shadow p-4" style="width: 350px; border-radius: 1rem; background-color: rgba(255, 255, 255, 0.9);">
 
         @if(session('success'))
@@ -41,6 +41,7 @@
 
         <p class="text-center mt-3 mb-0">¿Sin cuenta? <a href="Registro">Regístrate</a></p>
     </div>
+     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

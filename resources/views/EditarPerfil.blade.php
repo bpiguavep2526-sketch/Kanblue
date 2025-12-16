@@ -8,7 +8,7 @@
 
         <button type="button" class="btn btn-light btnstyle borderizq"><img src="{{ asset('images/salvar.png') }}"
                 alt="Volver" width="30" height="30" onclick="document.getElementById('formUser').submit();"></button>
-        <a href="{{ url()->previous() }}">
+        <a href="{{ route('projects.index') }}">
             <button type="button" class="btn btn-light btnstyle borderdrch"><img src="{{ asset('images/salida.png') }}"
                     alt="Volver" width="30" height="30"></button>
         </a>

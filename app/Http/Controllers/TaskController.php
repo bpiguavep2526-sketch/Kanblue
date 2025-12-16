@@ -7,6 +7,7 @@ use App\Models\Status;
 use App\Models\Task;
 use App\Models\Tipus;
 use App\Models\Usuaris;
+use App\Classes\TaskClass;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -42,6 +43,7 @@ class TaskController extends Controller
 
         return view('tasks.edit', compact('tarea', 'project', 'usuarios', 'tipostarea', 'estados'));
     }
+     
 
     /**
      * Almacena una nueva tarea en la base de datos.
@@ -115,7 +117,6 @@ class TaskController extends Controller
         $task->id_tipus = $tipus->id_tipus;
         $task->id_usuario = $user->id_usuario;
         $task->save();
-
         return back()->with('success', 'Tarea actualizada correctamente');
     }
 

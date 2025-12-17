@@ -50,7 +50,7 @@ En ella, encontrará información variada sobre Kanblue.
 
 ### Esperamos que disfrute de utilizar nuestra aplicación.
 
-[Visita Kanblue.](https://epsdespliegue.tech/Kanblue/public/Login)
+[Visita Kanblue haciendo clic en este enlace.](https://epsdespliegue.tech/Kanblue/public/Login)
 
 ***
 <div align="center">

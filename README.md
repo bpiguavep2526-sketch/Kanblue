@@ -33,7 +33,7 @@ La aplicación permite:
 - Registro de Usuarios
 - Inicio de sesión
 - Ver, crear y editar proyectos (disponibles en una vista de lista)
-- Interactuar con tareas (ver, editar, crear, arrastrar entre columnas...)
+- Interactuar con tareas (ver, editar, crear, arrastrar entre columnas, ver gráficos...)
 - Editar tu información de usuario.
 
 ***
@@ -41,6 +41,7 @@ La aplicación permite:
 ## CARACTERÍSTICAS
 
 La aplicación ha sido creada usando HTML, JS, CSS y Bootstrap y Laravel.
+Utiliza la libreria [Charts.js](https://www.chartjs.org/docs/latest/) para crear los gráficos.
 
 ***
 Para más información de uso, características en profundidad y explicación de despliegue, recomendamos consultar nuestra [Wiki](https://github.com/bpiguavep2526-sketch/Kanblue/wiki).

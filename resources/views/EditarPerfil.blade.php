@@ -1,5 +1,7 @@
 @extends('templates.base')
 
+@section('title', 'Kanblue | Ajustes de usuario')
+
 @section('navbar')
     <div class="d-flex align-items-center ms-auto navbarLeft">
         <span class="text-white small me-3"
